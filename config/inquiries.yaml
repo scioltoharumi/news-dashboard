@@ -1,0 +1,19 @@
+# inquiries.yaml — 問い（プロジェクトトラック、D-10）
+# 正の定義: 04_core/02_information_architecture.md §2、01_domain/USER_CONTEXT.md §3.1
+# 同時 3 本まで推奨（D-12）。Phase 1 では「登録のみ」、ディープリサーチは Phase 3 で稼働
+
+inquiries:
+  - id: facial_gate_2026
+    question: "鉄道系顔認証ゲート/改札案件で、競合からの排除圧力を逆転するにはどう動けばよいか"
+    context: |
+      B2B 顔認証ゲート/改札案件（鉄道系）。情報非対称を背景に、競合から排除圧力がかかっている局面。
+      対抗軸の仮説: (1) クライアント側の真の意思決定者へのエスカレーション、
+      (2) 競合のプロジェクト管理失敗事例を前面化する材料集め。
+    hypothesis: |
+      真の意思決定者への直接接触 + 競合の運用実績・失敗事例の可視化が鍵。
+      加えて、自社が提供できる「ワクワクする働き方」視点（利用者体験の質）を差別化軸に据える可能性。
+    check_points:
+      - 顔認証 改札
+      - 顔認証 鉄道
+    decision_deadline: 2026-06-30
+    depth: deep  # shallow | medium | deep

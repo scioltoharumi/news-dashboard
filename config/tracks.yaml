@@ -1,0 +1,74 @@
+# tracks.yaml — 定常トラック（4 トピック、D-35）
+# 正の定義: 04_core/02_information_architecture.md §2
+# スコア式: freshness * 0.5 + popularity * 0.5 + keyword_match * 0.1
+# 記事は最高スコアのトラックへ分類（補助タグとして layer / 重要度 / 問い を別途付与）
+# UI フィルタ軸: topic × importance（D-32、D-35）
+
+tracks:
+  - id: ai_agents
+    name: AIエージェント
+    description: AI エージェント・LLM 技術動向、エンタープライズ AI 基盤を含む
+    keywords:
+      - AIエージェント
+      - AI agent
+      - autonomous AI
+      - agentic
+      - 生成AI            # 2026-04-24 マスター指示
+      - LLM
+      - Copilot Studio
+      - Dify
+      - Power Automate
+      - M365 Copilot
+      - Microsoft 365 Copilot
+      - Claude
+      - ChatGPT
+      - Gemini
+      - マルチモーダル
+      - AGI
+
+  - id: automation
+    name: 業務自動化・RPA
+    description: RPA・ワークフロー・プロセス自動化
+    keywords:
+      - RPA
+      - ワークフロー自動化
+      - n8n
+      - Zapier
+      - 業務自動化
+      - プロセス自動化
+      - ハイパーオートメーション
+      - Robotic Process Automation
+
+  - id: dx_cases
+    name: DX事例
+    description: 企業の DX・業務変革・業務革新事例（D-39 中心テーマに沿い、ワクワク要素のある事例を優先）
+    keywords:
+      - DX事例
+      - 導入事例
+      - デジタル変革
+      - 業務変革
+      - 業務革新           # D-39 中心テーマ
+      - トランスフォーメーション
+      - 導入効果
+      - 活用事例
+
+  - id: other
+    name: その他
+    description: 他トラックに該当しない、ただし中心テーマ「幸せな働き方・創作」関連を広く拾う（D-39 + 2026-04-24 マスター指示）
+    keywords:
+      - 創作                # 2026-04-24 マスター指示（全領域カバー）
+      - クリエイティブ
+      - AI 小説
+      - AI 音楽
+      - AI 画像
+      - AI 映像
+      - 画像生成
+      - 音楽生成
+      - 映像生成
+      - コンテンツ生成
+      - プロダクト企画
+      - 創造性
+      - 幸せな働き方        # D-39 中心テーマ
+      - ワクワク
+      - やりがい
+      - 働き方

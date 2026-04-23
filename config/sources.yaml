@@ -1,0 +1,42 @@
+# sources.yaml — 情報源定義（Phase 1 = L1 はてブ + L2 IT メディア RSS、2〜3 本）
+# 正の定義: 04_core/02_information_architecture.md §3
+# Phase 2 で Zenn / Qiita / HN / Google News / Bluesky / Mastodon / ベンダーブログ を追加
+
+sources:
+  # L1 ニュース系（はてブ）
+  # 2026 時点 Hatena のカテゴリ名は "it"（日本語表示: テクノロジー）で統一
+  - id: hatena_it_hotentry
+    layer: L1
+    type: hatena_hotentry
+    name: はてなブックマーク - テクノロジー（ホットエントリ）
+    url: https://b.hatena.ne.jp/hotentry/it.rss
+    info_type: community_curated
+
+  - id: hatena_it_entrylist
+    layer: L1
+    type: hatena_entrylist
+    name: はてなブックマーク - テクノロジー（新着エントリ）
+    url: https://b.hatena.ne.jp/entrylist/it.rss
+    info_type: community_curated
+
+  # L2 業界分析系（IT メディア RSS）
+  - id: itmedia_news
+    layer: L2
+    type: rss
+    name: ITmedia NEWS
+    url: https://rss.itmedia.co.jp/rss/2.0/news_bursts.xml
+    info_type: industry_media
+
+  - id: publickey
+    layer: L2
+    type: rss
+    name: Publickey（エンタープライズ IT 向け）
+    url: https://www.publickey1.jp/atom.xml
+    info_type: industry_media
+
+  - id: zdnet_japan
+    layer: L2
+    type: rss
+    name: ZDNet Japan
+    url: https://japan.zdnet.com/rss/news/index.rdf
+    info_type: industry_media
