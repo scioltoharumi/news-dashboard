@@ -34,9 +34,9 @@ sources:
     url: https://www.publickey1.jp/atom.xml
     info_type: industry_media
 
-  - id: zdnet_japan
+  - id: nikkei_xtech
     layer: L2
     type: rss
-    name: ZDNet Japan
-    url: https://japan.zdnet.com/rss/news/index.rdf
+    name: 日経クロステック
+    url: https://xtech.nikkei.com/rss/index.rdf
     info_type: industry_media
