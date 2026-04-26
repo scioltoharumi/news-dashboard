@@ -51,9 +51,8 @@ def _build_env() -> Environment:
         trim_blocks=True,
         lstrip_blocks=True,
     )
-    # カスタムグローバル: asset() / url()（将来 base path 切替対応の余地）
-    env.globals["asset"] = lambda p: f"assets/{p}"
-    env.globals["url"] = lambda p: p
+    # 注: asset() / url() はテンプレ側で {{ root_prefix }} を直接使用する方針へ移行済 (2026-04-26)
+    #     深さ依存の正しいパスを得るには render 時の root_prefix が必要なため。
     return env
 
 
@@ -65,12 +64,28 @@ def _generated_at() -> str:
     return datetime.now(timezone.utc).astimezone().strftime("%Y-%m-%d %H:%M %Z")
 
 
+def _compute_root_prefix(output_path: Path) -> str:
+    """SITE_DIR からの深さに応じて '../' を必要数返す。
+
+    - site/index.html       → depth 0 → ''
+    - site/weekly/index.html → depth 1 → '../'
+    - site/daily/2026-04-24.html → depth 1 → '../'
+    - site/inquiries/{id}/latest.html → depth 2 → '../../'
+
+    これによりブラウザが `{root_prefix}assets/style.css` を常に正しい URL に解決できる。
+    """
+    rel = output_path.relative_to(SITE_DIR)
+    depth = len(rel.parts) - 1
+    return "../" * depth
+
+
 def _render(env: Environment, template_name: str, output_path: Path, **ctx: Any) -> None:
     template = env.get_template(template_name)
     output_path.parent.mkdir(parents=True, exist_ok=True)
     html = template.render(
         icons_sprite=_load_icons_sprite(),
         generated_at=_generated_at(),
+        root_prefix=_compute_root_prefix(output_path),
         **ctx,
     )
     output_path.write_text(html, encoding="utf-8")
