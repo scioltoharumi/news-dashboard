@@ -28,10 +28,14 @@ from pathlib import Path
 from typing import Any
 
 import yaml
+from dotenv import load_dotenv
 
 from src import dedup as _dedup
 from src import scoring, validate
 from src.collectors import hatena, rss
+
+# `.env` をロード（API Key 等。`.env` は .gitignore 対象、未配置でも黙って続行）
+load_dotenv()
 
 logger = logging.getLogger("daily_collect")
 
