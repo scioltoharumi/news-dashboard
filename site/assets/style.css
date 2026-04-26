@@ -583,65 +583,32 @@ a.card-source:hover {
 .card-body .label { display: inline-flex; align-items: center; gap: 6px; }
 .card-body .label .icon { width: 11px; height: 11px; }
 
-/* §12.10 月別グルーピング (ウィークリー一覧) */
-.month-section { margin-bottom: 28px; }
+/* §12.10 月別グルーピング (ウィークリー一覧) — section-head と同系統に統一 */
+.month-section { margin-bottom: 24px; }
 .month-header {
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  color: var(--text);
-  margin: 24px 0 12px 0;
-  padding: 10px 14px;
-  background: linear-gradient(90deg, var(--surface-2) 0%, transparent 100%);
-  border-left: 3px solid var(--accent-dim);
-  border-radius: 0 4px 4px 0;
-}
-
-/* §12.11 ウィークリー archive item 強化 — レンズバッジ + トピックチップ行 */
-.archive-lens-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 11px;
-  font-weight: 600;
-  padding: 3px 8px;
-  border-radius: 3px;
-  margin-bottom: 6px;
-  background: rgba(127, 183, 126, 0.1);
-  color: var(--signal);
-}
-.archive-lens-badge .icon { width: 12px; height: 12px; }
-.archive-lens-badge.lens-labor { background: rgba(127, 183, 126, 0.12); color: var(--signal); }
-.archive-lens-badge.lens-privacy { background: rgba(111, 179, 214, 0.12); color: var(--accent); }
-.archive-lens-badge.lens-power { background: rgba(214, 123, 123, 0.12); color: var(--danger); }
-.archive-lens-badge.lens-knowledge { background: rgba(199, 155, 199, 0.12); color: #c79bc7; }
-.archive-lens-badge.lens-generation { background: rgba(240, 185, 82, 0.12); color: var(--highlight); }
-.archive-lens-badge.lens-ethics { background: rgba(160, 168, 179, 0.12); color: var(--text-dim); }
-
-.archive-topics {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 8px;
-  padding-top: 8px;
-  border-top: 1px dashed var(--border);
-}
-.archive-topic-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 11px;
+  font-size: 12px;
+  letter-spacing: 3px;
   color: var(--text-mute);
-  padding: 2px 6px;
-  background: var(--surface-2);
-  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 24px 0 10px 4px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
 }
-.archive-topic-chip .icon { width: 11px; height: 11px; }
-.archive-topic-chip .chip-count { font-weight: 600; color: var(--text-dim); }
-.archive-topic-chip.topic-ai-agents .icon { color: var(--accent); }
-.archive-topic-chip.topic-automation .icon { color: var(--signal); }
-.archive-topic-chip.topic-dx-cases .icon { color: var(--highlight); }
-.archive-topic-chip.topic-other .icon { color: #c79bc7; }
+
+/* §12.11 ウィークリー archive item — タグスタイルに統一 (lens 色分け廃止) */
+.archive-lens-badge {
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 1px;
+  padding: 2px 8px;
+  border-radius: 3px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-dim);
+  font-weight: 500;
+  margin: 0;
+}
 
 /* §12.12 図解テンプレ (D-40 ② 構造図 / ③ 集約ビジュアル) */
 .diagram {
@@ -767,6 +734,106 @@ a.card-source:hover {
   letter-spacing: 1px;
 }
 
+/* §12.13 図解: ピボット矢印（旧 → 新） */
+.diagram-pivot {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 8px;
+  align-items: stretch;
+}
+.pivot-cell {
+  background: var(--surface);
+  border-radius: 6px;
+  padding: 10px 12px;
+  text-align: center;
+}
+.pivot-from { border-left: 2px solid var(--text-mute); opacity: 0.85; }
+.pivot-to { border-left: 2px solid var(--accent); }
+.pivot-arrow {
+  align-self: center;
+  color: var(--accent);
+  font-size: 18px;
+  font-weight: 700;
+}
+.pivot-label {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: var(--text-mute);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.pivot-text {
+  font-size: 13px;
+  color: var(--text);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* §12.14 図解: 番号付き bullet */
+.diagram-bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.bullet-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.bullet-num {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--accent-dim);
+  color: var(--accent);
+  font-size: 10.5px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+.bullet-text {
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.55;
+  flex: 1;
+}
+
+/* §12.15 図解: 時系列 (タイムライン) */
+.diagram-timeline {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.timeline-step {
+  flex: 1;
+  background: var(--surface);
+  padding: 8px 10px;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+  border-bottom: 2px solid var(--accent-dim);
+  min-width: 0;
+}
+.timeline-step.timeline-current { border-bottom-color: var(--highlight); }
+.timeline-step .timeline-cap {
+  display: block;
+  font-size: 10px;
+  color: var(--text-dim);
+  font-weight: 400;
+  margin-top: 2px;
+}
+.timeline-arrow {
+  color: var(--text-mute);
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
 /* §13 アイコン (D-40) */
 .icon {
   display: inline-block;
@@ -848,6 +915,7 @@ footer {
   /* 図解テンプレ: 480px で縦積みに */
   .stat-number { font-size: 26px; }
   .diagram-compare { grid-template-columns: 1fr; }
-  .compare-vs { display: none; }
-  .compare-right { margin-top: 4px; }
+  .diagram-pivot { grid-template-columns: 1fr; }
+  .compare-vs, .pivot-arrow { display: none; }
+  .compare-right, .pivot-to { margin-top: 4px; }
 }

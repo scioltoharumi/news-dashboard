@@ -23,10 +23,7 @@
   </div>
   <div class="archive-theme-title">{{ item.theme_title }}</div>
   {%- if item.lens %}
-  <span class="archive-lens-badge lens-{{ item.lens_id or 'labor' }}">
-    <svg class="icon" aria-hidden="true"><use href="#icon-lens-{{ item.lens_id or 'labor' }}"/></svg>
-    {{ item.lens }}
-  </span>
+  <span class="archive-lens-badge">{{ item.lens }}</span>
   {%- endif %}
 
   {%- elif type == 'daily' %}

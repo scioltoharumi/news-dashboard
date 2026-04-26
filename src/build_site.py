@@ -85,13 +85,18 @@ def _load_cards_json(path: Path) -> list[dict[str, Any]]:
 
 
 def _generate_dummy_cards(today: date) -> list[dict[str, Any]]:
-    """ダミーカード 8 件（G-2 レビュー用、文字数短縮 + 図解 4 種付与）。
+    """ダミーカード 8 件（G-2 用、ロジック全部図解、テキスト最小化）。
 
-    diagram_html は fact セクションに inline 表示される。
-    使えるテンプレ: diagram-stat / diagram-flow / diagram-compare （`style.css` §12.12）
+    各 card に diagram_fact / diagram_context / diagram_impact を任意で付けられる。
+    使えるテンプレ:
+      - diagram-flow / diagram-stat / diagram-compare
+      - diagram-pivot (旧→新)
+      - diagram-bullets (1.2.3 番号付き)
+      - diagram-timeline (時系列)
     """
     today_iso = today.isoformat()
 
+    # ---- 図解テンプレ集 ----
     flow_3layer = """
 <div class="diagram diagram-flow">
   <div class="flow-row">
@@ -119,6 +124,13 @@ def _generate_dummy_cards(today: date) -> list[dict[str, Any]]:
 </div>
 """.strip()
 
+    stat_growth = """
+<div class="diagram diagram-stat">
+  <div class="stat-number">×1.8</div>
+  <div class="stat-caption">国内エンタープライズ AI 基盤市場 (2025 年度 / 前年比)</div>
+</div>
+""".strip()
+
     compare_meeting = """
 <div class="diagram diagram-compare">
   <div class="compare-col compare-left">
@@ -135,6 +147,100 @@ def _generate_dummy_cards(today: date) -> list[dict[str, Any]]:
 </div>
 """.strip()
 
+    pivot_orchestration = """
+<div class="diagram diagram-pivot">
+  <div class="pivot-cell pivot-from">
+    <div class="pivot-label">これまで</div>
+    <div class="pivot-text">単体エージェント</div>
+  </div>
+  <div class="pivot-arrow">→</div>
+  <div class="pivot-cell pivot-to">
+    <div class="pivot-label">これから</div>
+    <div class="pivot-text">オーケストレーション</div>
+  </div>
+</div>
+""".strip()
+
+    pivot_voicebot = """
+<div class="diagram diagram-pivot">
+  <div class="pivot-cell pivot-from">
+    <div class="pivot-label">補助</div>
+    <div class="pivot-text">人 + 音声 AI</div>
+  </div>
+  <div class="pivot-arrow">→</div>
+  <div class="pivot-cell pivot-to">
+    <div class="pivot-label">完結</div>
+    <div class="pivot-text">音声 AI のみ</div>
+  </div>
+</div>
+""".strip()
+
+    pivot_creative = """
+<div class="diagram diagram-pivot">
+  <div class="pivot-cell pivot-from">
+    <div class="pivot-label">既存文脈</div>
+    <div class="pivot-text">効率化のための AI</div>
+  </div>
+  <div class="pivot-arrow">→</div>
+  <div class="pivot-cell pivot-to">
+    <div class="pivot-label">新文脈</div>
+    <div class="pivot-text">人間の余白を残す AI</div>
+  </div>
+</div>
+""".strip()
+
+    bullets_powerfx_impact = """
+<div class="diagram diagram-bullets">
+  <div class="bullet-item"><span class="bullet-num">1</span><span class="bullet-text">CS / Dify / PA の 3 層提案で前提化できる</span></div>
+  <div class="bullet-item"><span class="bullet-num">2</span><span class="bullet-text">プレビュー段階のため本番投入は慎重に</span></div>
+</div>
+""".strip()
+
+    bullets_yokohama_impact = """
+<div class="diagram diagram-bullets">
+  <div class="bullet-item"><span class="bullet-num">1</span><span class="bullet-text">金融提案の完結型音声 AI リファレンス化</span></div>
+  <div class="bullet-item"><span class="bullet-num">2</span><span class="bullet-text">顧客体験との両立は別途検討</span></div>
+</div>
+""".strip()
+
+    bullets_creative_impact = """
+<div class="diagram diagram-bullets">
+  <div class="bullet-item"><span class="bullet-num">1</span><span class="bullet-text">「ワクワク提案」の素材として引用可能</span></div>
+  <div class="bullet-item"><span class="bullet-num">2</span><span class="bullet-text">業務文脈と創作文脈の前提差を踏まえる</span></div>
+</div>
+""".strip()
+
+    bullets_n8n_context = """
+<div class="diagram diagram-bullets">
+  <div class="bullet-item"><span class="bullet-num">1</span><span class="bullet-text">複数ツール併用が現実的な選択肢として広がる</span></div>
+  <div class="bullet-item"><span class="bullet-num">2</span><span class="bullet-text">実装ノウハウの公開で業界リテラシー底上げ</span></div>
+</div>
+""".strip()
+
+    bullets_failure_impact = """
+<div class="diagram diagram-bullets">
+  <div class="bullet-item"><span class="bullet-num">1</span><span class="bullet-text">「利用率」単一 KPI のリスク提示材料</span></div>
+  <div class="bullet-item"><span class="bullet-num">2</span><span class="bullet-text">業務文脈調査を提案初期に組み込む後押し</span></div>
+</div>
+""".strip()
+
+    bullets_failure_context = """
+<div class="diagram diagram-bullets">
+  <div class="bullet-item"><span class="bullet-num">1</span><span class="bullet-text">技術ではなく業務文脈の理解不足が示唆</span></div>
+  <div class="bullet-item"><span class="bullet-num">2</span><span class="bullet-text">「答えが返ってこない」「検索が早い」の声</span></div>
+</div>
+""".strip()
+
+    timeline_anthropic = """
+<div class="diagram diagram-timeline">
+  <div class="timeline-step">OpenAI<span class="timeline-cap">2024</span></div>
+  <div class="timeline-arrow">→</div>
+  <div class="timeline-step">Google<span class="timeline-cap">2025</span></div>
+  <div class="timeline-arrow">→</div>
+  <div class="timeline-step timeline-current">Anthropic<span class="timeline-cap">2026 ベータ</span></div>
+</div>
+""".strip()
+
     return [
         {
             "id": "dummy-001",
@@ -146,10 +252,11 @@ def _generate_dummy_cards(today: date) -> list[dict[str, Any]]:
             "source_name": "ITmedia NEWS",
             "published_at": today_iso,
             "url": "https://example.com/dummy/1",
-            "fact": "Microsoft が Build 2026 で、Copilot Studio に Power Fx でエージェント間連携を制御する機能を発表しました。プレビュー版は本日提供開始です。",
-            "diagram_html": flow_3layer,
-            "context_analysis": "ベンダー発表であり第三者検証は未着です。エージェントの主戦場が「単体」から「オーケストレーション」へ移っている流れの上にあります。Power Platform 顧客基盤の活用が Dify などへの対抗軸です。",
-            "impact": "CS / Dify / PA の 3 層アーキテクチャ提案で、Power Fx 連携を前提にしたシナリオが描けます。プレビュー段階のため本番投入は慎重に判断します。",
+            "fact": "Build 2026 でプレビュー発表。",
+            "diagram_fact": flow_3layer,
+            "context_analysis": "ベンダー発表（第三者検証なし）。",
+            "diagram_context": pivot_orchestration,
+            "diagram_impact": bullets_powerfx_impact,
         },
         {
             "id": "dummy-002",
@@ -161,10 +268,11 @@ def _generate_dummy_cards(today: date) -> list[dict[str, Any]]:
             "source_name": "日経クロステック",
             "published_at": today_iso,
             "url": "https://example.com/dummy/2",
-            "fact": "横浜銀行のボイスボットが月 1,600 件の証明書発行を電話オペレーター介入なしで完結。導入 6 ヶ月の実績です。",
-            "diagram_html": stat_yokohama,
-            "context_analysis": "金融機関の音声 AI はこれまで「補助」が主流でした。月 1,600 件の完結処理は「人を介さない選択肢」が業界構造として現実化しつつある兆候です。導入事例レポートのため失敗側の言及はありません。",
-            "impact": "金融提案で「完結型音声 AI」のリファレンスとして引用できます。お客様体験の観点で「人を介さない」是非は別途検討します。",
+            "fact": "運用 6 ヶ月の実績。",
+            "diagram_fact": stat_yokohama,
+            "context_analysis": "業界構造が「補助」から「完結」へ動く兆候。",
+            "diagram_context": pivot_voicebot,
+            "diagram_impact": bullets_yokohama_impact,
         },
         {
             "id": "dummy-003",
@@ -176,9 +284,10 @@ def _generate_dummy_cards(today: date) -> list[dict[str, Any]]:
             "source_name": "はてなブックマーク - テクノロジー",
             "published_at": today_iso,
             "url": "https://example.com/dummy/3",
-            "fact": "「生成 AI の普及で創作の主体は誰なのか」を論じた個人ブログ記事が、はてブで 320 ブックマークを集めています。著者は文芸誌の連載作家です。",
-            "context_analysis": "創作の議論はこれまで効率化の文脈で語られがちでしたが、本記事は「人間の余白」という視点を持ち込みます。エッセイのため一般化は慎重に行います。",
-            "impact": "提案で「ワクワクする業務」を語る素材として引用できます。業務文脈と創作文脈の前提差を踏まえた展開が必要です。",
+            "fact": "文芸誌連載作家の個人ブログ。はてブ 320 ブクマ。",
+            "context_analysis": "視点の転換を提示する論説。",
+            "diagram_context": pivot_creative,
+            "diagram_impact": bullets_creative_impact,
         },
         {
             "id": "dummy-004",
@@ -190,9 +299,10 @@ def _generate_dummy_cards(today: date) -> list[dict[str, Any]]:
             "source_name": "Publickey",
             "published_at": today_iso,
             "url": "https://example.com/dummy/4",
-            "fact": "Publickey が n8n と Power Automate の統合パターン 5 種を、実装制約と落とし穴とともに検証記事として公開しました。",
-            "context_analysis": "技術検証記事であり、ベンダー宣伝とは異なる視点です。RPA 領域では複数ツール併用が現実解として広まっており、実装ノウハウの可視化が業界リテラシーに寄与します。",
-            "impact": "業務自動化案件のツール選定議論で本記事を参照できます。ハイブリッド構成の運用コスト試算に有用です。",
+            "fact": "技術検証記事（5 パターン分析）。",
+            "context_analysis": "ベンダー宣伝と異なる第三者視点。",
+            "diagram_context": bullets_n8n_context,
+            "impact": "ツール選定議論とハイブリッド構成のコスト試算に有用。",
         },
         {
             "id": "dummy-005",
@@ -204,9 +314,10 @@ def _generate_dummy_cards(today: date) -> list[dict[str, Any]]:
             "source_name": "はてなブックマーク - テクノロジー",
             "published_at": today_iso,
             "url": "https://example.com/dummy/5",
-            "fact": "民間調査会社が 2025 年度の国内エンタープライズ AI 基盤市場規模を発表。前年比 1.8 倍、CS / Dify / 国産プラットフォームの競合が激化と報告されています。",
-            "context_analysis": "調査会社レポートのため、サンプリング定義が結果を左右します。伸び率自体は他調査と整合的ですが、市場区分の取り方で解釈は変わります。",
-            "impact": "市場サイズの議論を提案資料に組み込む参考データになります。一次ソース確認の上で引用するのが望ましいです。",
+            "fact": "民間調査会社のレポート。",
+            "diagram_fact": stat_growth,
+            "context_analysis": "市場区分の取り方で解釈が変わる点に注意。",
+            "impact": "提案資料の参考データ。一次ソース確認の上で引用。",
         },
         {
             "id": "dummy-006",
@@ -218,10 +329,10 @@ def _generate_dummy_cards(today: date) -> list[dict[str, Any]]:
             "source_name": "日経クロステック",
             "published_at": today_iso,
             "url": "https://example.com/dummy/6",
-            "fact": "ある中堅製造業の社内 AI チャットボット利用率が運用 6 ヶ月で 8% まで低下したと報告されました。導入時の社内告知は「業務効率化」が前面でした。",
-            "diagram_html": stat_failure,
-            "context_analysis": "失敗事例は業界誌での扱いが少なく貴重です。低下要因は「答えが返ってこない」「検索した方が早い」という従業員の声で、技術ではなく業務文脈の理解不足が示唆されます。",
-            "impact": "提案で「利用率」単一 KPI 設計のリスクを示す材料になります。業務文脈調査を初期に組み込む提案アプローチの後押しになります。",
+            "fact": "導入時の社内告知は「業務効率化」が前面だった。",
+            "diagram_fact": stat_failure,
+            "diagram_context": bullets_failure_context,
+            "diagram_impact": bullets_failure_impact,
         },
         {
             "id": "dummy-007",
@@ -233,10 +344,10 @@ def _generate_dummy_cards(today: date) -> list[dict[str, Any]]:
             "source_name": "はてなブックマーク - テクノロジー",
             "published_at": today_iso,
             "url": "https://example.com/dummy/7",
-            "fact": "個人ブログ記事「生成 AI は本当に会議を減らしているのか」がはてブで 800 ブクマ超。著者は事業会社の DX 推進担当です。",
-            "diagram_html": compare_meeting,
-            "context_analysis": "ベンダー言説と現場感覚のずれを論じる記事です。批判的記事のため一般化には注意が必要ですが、この乖離は複数現場で観察される構造です。",
-            "impact": "導入効果を語る際、定量 ROI に加えて「現場での使用感」を定性指標として組み込む設計が、提案の深さに効きます。",
+            "fact": "事業会社の DX 推進担当の個人ブログ。",
+            "diagram_fact": compare_meeting,
+            "context_analysis": "ベンダー言説と現場感覚の乖離は複数現場で観察される構造。",
+            "impact": "定量 ROI に加え「現場での使用感」を定性指標として提案に組み込む。",
         },
         {
             "id": "dummy-008",
@@ -248,9 +359,10 @@ def _generate_dummy_cards(today: date) -> list[dict[str, Any]]:
             "source_name": "ITmedia NEWS",
             "published_at": today_iso,
             "url": "https://example.com/dummy/8",
-            "fact": "Anthropic が Claude のメモリ機能ベータ提供を開始しました。会話履歴を超えた永続コンテキスト保持を実現するとしています。",
-            "context_analysis": "ベンダー発表であり第三者検証は未着です。OpenAI / Google 先行領域への追随で、エンタープライズではデータ保護観点の評価が必要です。",
-            "impact": "エージェント設計でメモリを前提にしたシナリオが描けます。ベータのため SLA 確認が必要です。",
+            "fact": "永続コンテキスト保持機能。",
+            "context_analysis": "先行ベンダーへの追随。",
+            "diagram_context": timeline_anthropic,
+            "impact": "エージェント設計の選択肢拡張。ベータのため SLA 要確認。",
         },
     ]
 

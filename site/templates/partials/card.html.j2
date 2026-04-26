@@ -52,34 +52,35 @@
     {% endif %}
   </summary>
   <div class="card-body">
-    {% if card.fact %}
+    {% if card.fact or card.diagram_fact or card.diagram_html %}
     <section class="fact">
       <div class="label context">
         <svg class="icon" aria-hidden="true"><use href="#icon-section-fact"/></svg>
         ファクト
       </div>
-      <p>{{ card.fact }}</p>
-      {% if card.diagram_html %}
-      {{ card.diagram_html | safe }}
-      {% endif %}
+      {% if card.fact %}<p>{{ card.fact }}</p>{% endif %}
+      {% if card.diagram_fact %}{{ card.diagram_fact | safe }}{% endif %}
+      {% if card.diagram_html %}{{ card.diagram_html | safe }}{% endif %}
     </section>
     {% endif %}
-    {% if card.context_analysis %}
+    {% if card.context_analysis or card.diagram_context %}
     <section class="context">
       <div class="label summary">
         <svg class="icon" aria-hidden="true"><use href="#icon-section-context"/></svg>
         背景考察
       </div>
-      <p>{{ card.context_analysis }}</p>
+      {% if card.context_analysis %}<p>{{ card.context_analysis }}</p>{% endif %}
+      {% if card.diagram_context %}{{ card.diagram_context | safe }}{% endif %}
     </section>
     {% endif %}
-    {% if card.impact %}
+    {% if card.impact or card.diagram_impact %}
     <section class="impact">
       <div class="label sowhat">
         <svg class="icon" aria-hidden="true"><use href="#icon-section-impact"/></svg>
         実務への影響
       </div>
-      <p class="sowhat-text">{{ card.impact }}</p>
+      {% if card.impact %}<p class="sowhat-text">{{ card.impact }}</p>{% endif %}
+      {% if card.diagram_impact %}{{ card.diagram_impact | safe }}{% endif %}
     </section>
     {% endif %}
     {% if card.url %}
