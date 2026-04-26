@@ -99,6 +99,44 @@ def _load_cards_json(path: Path) -> list[dict[str, Any]]:
         return json.load(f)
 
 
+def _load_daily_summary_md(date_iso: str) -> str | None:
+    """data/processed/daily_summary-{date}.md があれば読込、HTML 化して返す。
+
+    マークダウンの場合は将来 markdown -> html を入れる。当面は <p> ラップだけ。
+    """
+    path = DATA_DIR / "processed" / f"daily_summary-{date_iso}.md"
+    if not path.exists():
+        return None
+    text = path.read_text(encoding="utf-8").strip()
+    if not text:
+        return None
+    # 段落単位で <p> ラップ（簡易処理、後続 Phase で markdown ライブラリ導入検討）
+    paragraphs = [p.strip() for p in text.split("\n\n") if p.strip()]
+    return "\n".join(f"<p>{p}</p>" for p in paragraphs)
+
+
+def _list_weekly_files() -> list[Path]:
+    """data/processed/weekly/{YYYY-WNN}.json の一覧を週降順で返す。"""
+    weekly_dir = DATA_DIR / "processed" / "weekly"
+    if not weekly_dir.exists():
+        return []
+    return sorted(weekly_dir.glob("*.json"), reverse=True)
+
+
+def _list_daily_archive_dates() -> list[date]:
+    """data/processed/cards/*.json から過去のデイリー日付一覧を降順で返す。"""
+    cards_dir = DATA_DIR / "processed" / "cards"
+    if not cards_dir.exists():
+        return []
+    dates: list[date] = []
+    for p in cards_dir.glob("*.json"):
+        try:
+            dates.append(date.fromisoformat(p.stem))
+        except ValueError:
+            continue
+    return sorted(dates, reverse=True)
+
+
 def _generate_dummy_cards(today: date) -> list[dict[str, Any]]:
     """ダミーカード 8 件（G-2 用、ロジック全部図解、テキスト最小化）。
 
@@ -595,6 +633,9 @@ def build_index(
     iso_year, iso_week, iso_dow = today.isocalendar()
     sorted_cards = sort_cards_by_importance(cards)
     stats = compute_today_stats(cards)
+    # 引数の daily_summary が None なら data/processed/ から読込試行
+    if daily_summary is None:
+        daily_summary = _load_daily_summary_md(today.isoformat())
     _render(
         env,
         "index.html.j2",
@@ -620,6 +661,200 @@ def build_weekly_index(env: Environment, items: list[dict[str, Any]]) -> None:
     )
 
 
+def build_weekly_details(env: Environment) -> int:
+    """data/processed/weekly/{YYYY-WNN}.json の各週から site/weekly/{YYYY-WNN}.html を生成。"""
+    count = 0
+    for p in _list_weekly_files():
+        with p.open(encoding="utf-8") as f:
+            weekly_data = json.load(f)
+        # Markdown 文字列を簡易 HTML 化
+        weekly_data = dict(weekly_data)
+        for k_md, k_html in [("part1", "part1_html"), ("part2", "part2_html"), ("part3", "part3_html")]:
+            if weekly_data.get(k_md) and not weekly_data.get(k_html):
+                weekly_data[k_html] = _md_to_simple_html(weekly_data[k_md])
+        if weekly_data.get("theme_summary") and not weekly_data.get("theme_summary_html"):
+            weekly_data["theme_summary"] = _md_to_simple_html(weekly_data["theme_summary"])
+        slug = p.stem  # YYYY-WNN
+        _render(
+            env,
+            "weekly_detail.html.j2",
+            SITE_DIR / "weekly" / f"{slug}.html",
+            weekly=weekly_data,
+        )
+        count += 1
+    return count
+
+
+def _load_inquiries() -> list[dict[str, Any]]:
+    path = REPO_ROOT / "config" / "inquiries.yaml"
+    if not path.exists():
+        return []
+    import yaml
+    with path.open(encoding="utf-8") as f:
+        data = yaml.safe_load(f) or {}
+    return data.get("inquiries", []) or []
+
+
+def _md_to_simple_html(md_text: str) -> str:
+    """簡易 Markdown → HTML（# / ## / ### 見出しと段落のみ）。
+
+    Phase 5 で markdown ライブラリ導入検討。当面は最低限。
+    """
+    lines = md_text.split("\n")
+    out: list[str] = []
+    para_buf: list[str] = []
+
+    def flush_para():
+        if para_buf:
+            text = " ".join(para_buf).strip()
+            if text:
+                out.append(f"<p>{text}</p>")
+            para_buf.clear()
+
+    for raw in lines:
+        line = raw.rstrip()
+        if not line.strip():
+            flush_para()
+            continue
+        if line.startswith("### "):
+            flush_para()
+            out.append(f"<h3>{line[4:].strip()}</h3>")
+        elif line.startswith("## "):
+            flush_para()
+            out.append(f"<h2>{line[3:].strip()}</h2>")
+        elif line.startswith("# "):
+            flush_para()
+            out.append(f"<h1>{line[2:].strip()}</h1>")
+        elif line.startswith("- "):
+            flush_para()
+            out.append(f"<li>{line[2:].strip()}</li>")
+        else:
+            para_buf.append(line)
+    flush_para()
+    return "\n".join(out)
+
+
+def build_inquiries(env: Environment) -> int:
+    """問い一覧 + 各 inquiry の latest / archive を生成。"""
+    inquiries = _load_inquiries()
+    if not inquiries:
+        # 問いがない場合でも index 自体は生成（空メッセージ）
+        _render(env, "inquiries_index.html.j2", SITE_DIR / "inquiries" / "index.html", inquiries=[])
+        return 0
+
+    _render(env, "inquiries_index.html.j2", SITE_DIR / "inquiries" / "index.html", inquiries=inquiries)
+
+    count = 0
+    for inq in inquiries:
+        inq_id = inq["id"]
+        reports_dir = DATA_DIR / "reports" / inq_id
+
+        # 最新レポート
+        latest_md_path = reports_dir / "latest.md"
+        report_html = None
+        report_date = None
+        if latest_md_path.exists():
+            md = latest_md_path.read_text(encoding="utf-8")
+            report_html = _md_to_simple_html(md)
+            # ファイル更新日時から日付推定（後で frontmatter で明示する案あり）
+            try:
+                report_date = datetime.fromtimestamp(latest_md_path.stat().st_mtime, tz=timezone.utc).date().isoformat()
+            except OSError:
+                report_date = None
+
+        _render(
+            env,
+            "inquiry_latest.html.j2",
+            SITE_DIR / "inquiries" / inq_id / "latest.html",
+            inquiry=inq,
+            report_html=report_html,
+            report_date=report_date,
+        )
+
+        # アーカイブ一覧
+        items = []
+        if reports_dir.exists():
+            for p in sorted(reports_dir.glob("*.md"), reverse=True):
+                if p.name == "latest.md":
+                    continue
+                items.append({
+                    "href": f"../{p.stem}.html",  # 個別ページは Phase 5 で実装、当面は latest と archive のみ
+                    "report_date": p.stem,
+                    "inquiry_title": inq["question"],
+                    "exec_summary": "",  # 将来 frontmatter or 先頭抜粋
+                })
+        _render(
+            env,
+            "inquiry_archive.html.j2",
+            SITE_DIR / "inquiries" / inq_id / "archive.html",
+            inquiry=inq,
+            items=items,
+        )
+        count += 1
+
+    return count
+
+
+def build_daily_pages(env: Environment, today: date) -> int:
+    """過去全デイリーの個別ページ + デイリー一覧 (/daily/archive/) を生成。"""
+    dates = _list_daily_archive_dates()
+    count = 0
+    # 個別ページ
+    for d in dates:
+        d_iso = d.isoformat()
+        cards = _load_cards_json(DATA_DIR / "processed" / "cards" / f"{d_iso}.json")
+        if not cards:
+            continue
+        sorted_cards = sort_cards_by_importance(cards)
+        daily_summary = _load_daily_summary_md(d_iso)
+        _render(
+            env,
+            "daily.html.j2",
+            SITE_DIR / "daily" / f"{d_iso}.html",
+            cards=sorted_cards,
+            daily_summary=daily_summary,
+            date_iso=d_iso,
+            date_label=_format_today_label(d),
+            today_iso=today.isoformat(),
+        )
+        count += 1
+
+    # アーカイブ一覧 (/daily/archive/index.html)
+    items = []
+    items_by_month: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for d in dates:
+        d_iso = d.isoformat()
+        cards = _load_cards_json(DATA_DIR / "processed" / "cards" / f"{d_iso}.json")
+        item = {
+            "_sort_date": d_iso,
+            "href": f"../{d_iso}.html",
+            "date_label": _format_today_label(d),
+            "card_count": len(cards),
+        }
+        items.append(item)
+        month_label = f"{d.year} 年 {d.month} 月"
+        items_by_month[month_label].append(item)
+
+    # 月降順ソート
+    def month_key(label: str) -> tuple[int, int]:
+        try:
+            year_part, month_part = label.replace("年", "").replace("月", "").split()
+            return (int(year_part), int(month_part))
+        except (ValueError, IndexError):
+            return (0, 0)
+
+    sorted_months = sorted(items_by_month.items(), key=lambda kv: month_key(kv[0]), reverse=True)
+
+    _render(
+        env,
+        "daily_archive.html.j2",
+        SITE_DIR / "daily" / "archive" / "index.html",
+        items_by_month=sorted_months,
+        total_count=len(items),
+    )
+    return count
+
+
 def run(today: date | None = None, dummy: bool = False) -> dict[str, Any]:
     today = today or date.today()
     env = _build_env()
@@ -639,11 +874,28 @@ def run(today: date | None = None, dummy: bool = False) -> dict[str, Any]:
     build_index(env, cards, today, daily_summary=daily_summary)
     build_weekly_index(env, weekly_items)
 
+    # /daily/archive/ + 過去デイリー個別ページ（ダミーモードでは過去データなし、
+    # 通常モードでは data/processed/cards/*.json を全部レンダ）
+    daily_pages_count = 0
+    if not dummy:
+        daily_pages_count = build_daily_pages(env, today)
+
+    # /inquiries/ 関連（Phase 3）
+    inquiries_count = build_inquiries(env)
+
+    # /weekly/{YYYY-WNN}.html 詳細ページ（Phase 4）
+    weekly_details_count = 0
+    if not dummy:
+        weekly_details_count = build_weekly_details(env)
+
     return {
         "today": today.isoformat(),
         "dummy": dummy,
         "cards": len(cards),
         "weekly_items": len(weekly_items),
+        "daily_pages": daily_pages_count,
+        "inquiries": inquiries_count,
+        "weekly_details": weekly_details_count,
     }
 
 

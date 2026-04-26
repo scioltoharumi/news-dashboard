@@ -1,0 +1,27 @@
+{# inquiry_archive.html.j2 — 問い別過去レポート一覧 #}
+{% extends "base.html.j2" %}
+{% from "macros/archive_item.html.j2" import archive_item %}
+
+{% block title %}{{ inquiry.id }} 過去レポート | News & Research Dashboard{% endblock %}
+
+{% block content %}
+<header>
+  <div class="date-label">INQUIRY ARCHIVE · {{ inquiry.id }}</div>
+  <h1>{{ inquiry.question }}</h1>
+  <div class="meta">過去レポート {{ items | length }} 本</div>
+</header>
+
+{% if items %}
+{% for it in items %}
+{{ archive_item(it, 'inquiries') }}
+{% endfor %}
+{% else %}
+<p style="color: var(--text-mute); padding: 20px; text-align: center;">
+  まだ過去レポートはありません。
+</p>
+{% endif %}
+
+<p style="margin-top: 24px;">
+  <a class="external-link" href="latest.html">← 最新レポート</a>
+</p>
+{% endblock %}

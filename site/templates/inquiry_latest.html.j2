@@ -1,0 +1,49 @@
+{# inquiry_latest.html.j2 — 最新ディープリサーチレポート単一表示 #}
+{% extends "base.html.j2" %}
+
+{% block title %}{{ inquiry.id }} 最新レポート | News & Research Dashboard{% endblock %}
+
+{% block content %}
+<header>
+  <div class="date-label">INQUIRY · {{ inquiry.id }}</div>
+  <h1>{{ inquiry.question }}</h1>
+  <div class="meta">
+    判断期限: {{ inquiry.decision_deadline }} ／ 深さ: {{ inquiry.depth }}
+    {% if report_date %} ／ 最新レポート: {{ report_date }}{% endif %}
+  </div>
+</header>
+
+{% if inquiry.context %}
+<div class="theme">
+  <div class="theme-label">問いの背景</div>
+  <div class="theme-body">
+    <p>{{ inquiry.context }}</p>
+  </div>
+  {% if inquiry.hypothesis %}
+  <div class="sowhat-block">
+    <div class="sowhat-label">現時点の仮説</div>
+    <div class="sowhat-body">{{ inquiry.hypothesis }}</div>
+  </div>
+  {% endif %}
+</div>
+{% endif %}
+
+{% if report_html %}
+<div class="weekly-part">
+  <div class="weekly-part-label">REPORT</div>
+  <div class="weekly-part-title">{{ report_date }} レポート</div>
+  <div class="weekly-part-body report-body">
+    {{ report_html | safe }}
+  </div>
+</div>
+{% else %}
+<p style="color: var(--text-mute); padding: 20px; text-align: center;">
+  まだレポートが生成されていません。<br>
+  `/loop` deep research（日曜 22:00 JST）で初回生成されます。
+</p>
+{% endif %}
+
+<p style="margin-top: 24px;">
+  <a class="external-link" href="archive.html">過去のレポート →</a>
+</p>
+{% endblock %}

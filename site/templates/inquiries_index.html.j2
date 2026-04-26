@@ -1,0 +1,30 @@
+{# inquiries_index.html.j2 — 問い一覧（D-12 で同時 3 本まで） #}
+{% extends "base.html.j2" %}
+
+{% block title %}問い一覧 | News & Research Dashboard{% endblock %}
+
+{% block content %}
+<header>
+  <div class="date-label">INQUIRIES</div>
+  <h1>問い一覧</h1>
+  <div class="meta">アクティブな問い {{ inquiries | length }} 本（同時最大 3 本推奨、D-12）</div>
+</header>
+
+{% if inquiries %}
+{% for inq in inquiries %}
+<a class="archive-list-item" href="{{ inq.id }}/latest.html">
+  <div class="archive-week-label">{{ inq.id }}</div>
+  <div class="archive-theme-title">{{ inq.question }}</div>
+  <p class="archive-summary-excerpt">
+    判断期限: {{ inq.decision_deadline }} ／ 深さ: {{ inq.depth }}
+  </p>
+  <div class="archive-cta">→ 最新レポート</div>
+</a>
+{% endfor %}
+{% else %}
+<p style="color: var(--text-mute); padding: 20px; text-align: center;">
+  問いはまだ登録されていません。<br>
+  `config/inquiries.yaml` に追加し、`/loop` deep research（日曜 22:00 JST）で初回レポートが生成されます。
+</p>
+{% endif %}
+{% endblock %}

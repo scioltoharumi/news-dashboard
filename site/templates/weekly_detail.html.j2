@@ -1,0 +1,78 @@
+{# weekly_detail.html.j2 — ウィークリーブリーフィング 3 部詳細 #}
+{% extends "base.html.j2" %}
+
+{% block title %}{{ weekly.week_label }} ウィークリー | News & Research Dashboard{% endblock %}
+
+{% block content %}
+<header>
+  <div class="date-label">{{ weekly.week_label }}</div>
+  <h1>週次ブリーフィング</h1>
+  <div class="meta">{{ weekly.date_range }}{% if weekly.card_count %} ／ 収録 {{ weekly.card_count }} 件{% endif %}</div>
+</header>
+
+{# Theme Summary（全体ハイライト） #}
+{% if weekly.theme_title or weekly.theme_summary %}
+<div class="theme">
+  {% if weekly.theme_title %}
+  <div class="theme-label">今週のハイライト</div>
+  <div class="theme-title">{{ weekly.theme_title }}</div>
+  {% endif %}
+  {% if weekly.theme_summary %}
+  <div class="theme-body">{{ weekly.theme_summary | safe }}</div>
+  {% endif %}
+</div>
+{% endif %}
+
+{# Part 1: 業界動向 #}
+{% if weekly.part1_html %}
+<div class="weekly-part">
+  <div class="weekly-part-label">PART 1 — 業界動向</div>
+  <div class="weekly-part-title">今週の業界の動き</div>
+  <div class="weekly-part-body">{{ weekly.part1_html | safe }}</div>
+</div>
+{% endif %}
+
+{# Part 2: 社会構造シグナル #}
+{% if weekly.part2_html %}
+<div class="weekly-part">
+  <div class="weekly-part-label">PART 2 — 社会構造シグナル</div>
+  {% if weekly.lens %}
+  <span class="lens-label">レンズ: {{ weekly.lens }}</span>
+  {% if weekly.lens_reason %}<div class="lens-reason">{{ weekly.lens_reason }}</div>{% endif %}
+  {% endif %}
+  <div class="weekly-part-body">{{ weekly.part2_html | safe }}</div>
+</div>
+{% endif %}
+
+{# Part 3: 歴史・同類事例との照射 #}
+{% if weekly.part3_html %}
+<div class="weekly-part">
+  <div class="weekly-part-label">PART 3 — 歴史・同類事例との照射</div>
+  <div class="weekly-part-body">{{ weekly.part3_html | safe }}</div>
+</div>
+{% endif %}
+
+{# 参考文献 #}
+{% if weekly.references %}
+<div class="references">
+  <div class="references-title">参考文献</div>
+  {% for group in weekly.references %}
+  <div class="ref-group">
+    <div class="ref-group-label">{{ group.label }}</div>
+    <ul class="ref-list">
+      {% for ref in group.items %}
+      <li>
+        {% if ref.tag %}<span class="domain-tag">{{ ref.tag }}</span>{% endif %}
+        {% if ref.url %}<a href="{{ ref.url }}" target="_blank" rel="noopener noreferrer">{{ ref.title }}</a>{% else %}{{ ref.title }}{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
+
+<p style="margin-top: 24px;">
+  <a class="external-link" href="index.html">← ウィークリー一覧に戻る</a>
+</p>
+{% endblock %}

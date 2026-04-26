@@ -1,6 +1,6 @@
-# sources.yaml — 情報源定義（Phase 1 = L1 はてブ + L2 IT メディア RSS、2〜3 本）
+# sources.yaml — 情報源定義（Phase 2 拡張、2026-04-26）
 # 正の定義: 04_core/02_information_architecture.md §3
-# Phase 2 で Zenn / Qiita / HN / Google News / Bluesky / Mastodon / ベンダーブログ を追加
+# Bluesky / Mastodon は Phase 5 で API 整備後に追加検討
 
 sources:
   # L1 ニュース系（はてブ）
@@ -40,3 +40,102 @@ sources:
     name: 日経クロステック
     url: https://xtech.nikkei.com/rss/index.rdf
     info_type: industry_media
+
+  # ==== Phase 2 拡張 (2026-04-26) ====
+
+  # L1 開発者コミュニティ
+  - id: zenn
+    layer: L1
+    type: rss
+    name: Zenn（フィード）
+    url: https://zenn.dev/feed
+    info_type: individual_blog
+
+  - id: qiita_popular
+    layer: L1
+    type: rss
+    name: Qiita（人気記事）
+    url: https://qiita.com/popular-items/feed
+    info_type: individual_blog
+
+  - id: hacker_news
+    layer: L1
+    type: rss
+    name: Hacker News（フロントページ）
+    url: https://news.ycombinator.com/rss
+    info_type: community_curated
+
+  # L1 Google News 検索（中心テーマ別、AI エージェント関連）
+  - id: google_news_ai_agents
+    layer: L1
+    type: rss
+    name: Google News - AIエージェント
+    url: https://news.google.com/rss/search?q=AI%E3%82%A8%E3%83%BC%E3%82%B8%E3%82%A7%E3%83%B3%E3%83%88&hl=ja&gl=JP&ceid=JP:ja
+    info_type: industry_media
+
+  - id: google_news_dx_cases
+    layer: L1
+    type: rss
+    name: Google News - DX 事例
+    url: https://news.google.com/rss/search?q=DX%E4%BA%8B%E4%BE%8B&hl=ja&gl=JP&ceid=JP:ja
+    info_type: industry_media
+
+  # L2 ベンダーブログ（D-09 で `info_type: vendor_blog` で PR 隔離）
+  - id: google_ai_blog
+    layer: L2
+    type: rss
+    name: Google AI Blog
+    url: https://blog.google/technology/ai/rss/
+    info_type: vendor_blog
+
+  - id: google_cloud_blog
+    layer: L2
+    type: rss
+    name: Google Cloud Blog
+    url: https://cloudblog.withgoogle.com/rss/
+    info_type: vendor_blog
+
+  - id: openai_news
+    layer: L2
+    type: rss
+    name: OpenAI News
+    url: https://openai.com/news/rss.xml
+    info_type: vendor_blog
+
+  - id: aws_ml_blog
+    layer: L2
+    type: rss
+    name: AWS Machine Learning Blog
+    url: https://aws.amazon.com/blogs/machine-learning/feed/
+    info_type: vendor_blog
+
+  # 留保:
+  # - Microsoft 系 (blogs.microsoft.com / news.microsoft.com) は bot ブロック (403) のため見送り
+  #   主要発表は ITmedia / Publickey / HN 経由で拾える
+  # - Anthropic 公式 RSS なし。コミュニティ経由（HN / はてブ）で拾う
+  # - Bluesky / Mastodon は Phase 5 で API 整備後に追加検討
+
+  # ==== Phase 4 拡張: L3 長文論考系（週次収集） ====
+  - id: toyokeizai_online
+    layer: L3
+    type: rss
+    name: 東洋経済オンライン
+    url: https://toyokeizai.net/list/feed/rss
+    info_type: long_form
+
+  - id: aeon_essays
+    layer: L3
+    type: rss
+    name: Aeon Essays
+    url: https://aeon.co/feed.atom
+    info_type: long_form
+
+  - id: the_atlantic_tech
+    layer: L3
+    type: rss
+    name: The Atlantic - Technology
+    url: https://www.theatlantic.com/feed/channel/technology/
+    info_type: long_form
+
+  # L4 リベラルアーツは動的発見型（D-08）— 静的 sources には載せず、
+  # `scripts/weekly_prep_prompt.md` の手順に従って /loop CC が能動探索する

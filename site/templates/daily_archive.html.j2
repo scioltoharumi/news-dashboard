@@ -1,0 +1,31 @@
+{# daily_archive.html.j2 — デイリー履歴一覧（D-38、月単位グルーピング） #}
+{% extends "base.html.j2" %}
+{% from "macros/archive_item.html.j2" import archive_item %}
+
+{% block title %}デイリー履歴 | News & Research Dashboard{% endblock %}
+
+{% block content %}
+<header>
+  <div class="date-label">DAILY ARCHIVE</div>
+  <h1>デイリー履歴</h1>
+  <div class="meta">過去のデイリーダッシュボード {{ total_count }}日分 ／ 月別グルーピング</div>
+</header>
+
+{% if items_by_month %}
+{% for month_label, month_items in items_by_month %}
+<div class="month-section">
+  <div class="month-header">{{ month_label }}（{{ month_items | length }} 日）</div>
+  <div class="month-items">
+    {% for it in month_items %}
+    {{ archive_item(it, 'daily') }}
+    {% endfor %}
+  </div>
+</div>
+{% endfor %}
+{% else %}
+<p style="color: var(--text-mute); padding: 20px; text-align: center;">
+  まだデイリーダッシュボードが生成されていません。<br>
+  /loop セッションが平日 7:00 JST に動き始めると、ここに日別で一覧が表示されます。
+</p>
+{% endif %}
+{% endblock %}

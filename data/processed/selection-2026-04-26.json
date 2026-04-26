@@ -13,14 +13,14 @@
     "raw_popularity_signal": {
       "hatebu_users": 248
     },
-    "collected_at": "2026-04-26T12:55:41.521784+00:00",
+    "collected_at": "2026-04-26T13:09:46.708764+00:00",
     "raw": {
       "title": "Gemini の Gem で 社内 GoogleDrive のチャットボットを作成 | DevelopersIO",
       "link": "https://dev.classmethod.jp/articles/gemini-gem-googledrive-chatbot/",
       "published": null,
       "updated": "2026-04-25T13:25:33Z"
     },
-    "score": 0.8094622524061676,
+    "score": 0.8087629294489918,
     "topic": "ai_agents",
     "importance_mechanical": "high"
   },
@@ -38,14 +38,14 @@
     "raw_popularity_signal": {
       "hatebu_users": 138
     },
-    "collected_at": "2026-04-26T12:55:41.521784+00:00",
+    "collected_at": "2026-04-26T13:09:46.708764+00:00",
     "raw": {
       "title": "米Anthropic調査「プログラマーはAIに職を奪われる、バーテンダーへ転職がおススメ」",
       "link": "https://www.sbbit.jp/article/cont1/185159",
       "published": null,
       "updated": "2026-04-25T09:02:52Z"
     },
-    "score": 0.7472648279325609,
+    "score": 0.7465655049753849,
     "topic": "other",
     "importance_mechanical": "mid"
   },
@@ -61,14 +61,14 @@
     "url": "https://xtech.nikkei.com/atcl/nxt/news/24/03194/",
     "published_at": "2026-04-24",
     "raw_popularity_signal": null,
-    "collected_at": "2026-04-26T12:56:24.960805+00:00",
+    "collected_at": "2026-04-26T13:10:29.663888+00:00",
     "raw": {
       "title": "NECのDXブランド「BluStellar」、2030年度までに売上高1兆3000億円へ",
       "link": "https://xtech.nikkei.com/atcl/nxt/news/24/03194/",
       "published": null,
       "updated": "2026-04-24T15:00:00+09:00"
     },
-    "score": 0.3386671231283069,
+    "score": 0.3379678001711309,
     "topic": "dx_cases",
     "importance_mechanical": "low"
   },
@@ -86,21 +86,21 @@
     "raw_popularity_signal": {
       "hatebu_users": 78
     },
-    "collected_at": "2026-04-26T12:55:41.521784+00:00",
+    "collected_at": "2026-04-26T13:09:46.708764+00:00",
     "raw": {
       "title": "「Python一択ではなくなった」　AIコーディング時代、新人が学んで損しないプログラミング言語は？",
       "link": "https://atmarkit.itmedia.co.jp/ait/articles/2604/26/news009.html",
       "published": null,
       "updated": "2026-04-26T03:03:26Z"
     },
-    "score": 0.79779544786719,
+    "score": 0.7970961249100141,
     "topic": "ai_agents",
     "importance_mechanical": "high"
   },
   {
-    "id": "223b12088bd2854f",
-    "source_id": "hatena_it_hotentry",
-    "source_name": "はてなブックマーク - テクノロジー（ホットエントリ）",
+    "id": "b1ff000d8940ce79",
+    "source_id": "hatena_it_entrylist",
+    "source_name": "はてなブックマーク - テクノロジー（新着エントリ）",
     "source_type": "コミュニティ集約",
     "layer": "L1",
     "title": "ハーネスエンジニアリングを楽にする Microsoft 製の新ツール「APM」ハンズオン",
@@ -109,16 +109,16 @@
     "url": "https://zenn.dev/microsoft/articles/agent-package-manager-handson",
     "published_at": "2026-04-25",
     "raw_popularity_signal": {
-      "hatebu_users": 129
+      "hatebu_users": 133
     },
-    "collected_at": "2026-04-26T12:55:41.521784+00:00",
+    "collected_at": "2026-04-26T13:09:46.829630+00:00",
     "raw": {
       "title": "ハーネスエンジニアリングを楽にする Microsoft 製の新ツール「APM」ハンズオン",
       "link": "https://zenn.dev/microsoft/articles/agent-package-manager-handson",
       "published": null,
       "updated": "2026-04-25T23:44:03Z"
     },
-    "score": 0.7624195866080179,
+    "score": 0.763913837993837,
     "topic": "ai_agents",
     "importance_mechanical": "high"
   },
@@ -134,16 +134,16 @@
     "url": "https://qiita.com/moritalous/items/3c5269610f26e23c5b04",
     "published_at": "2026-04-25",
     "raw_popularity_signal": {
-      "hatebu_users": 110
+      "hatebu_users": 117
     },
-    "collected_at": "2026-04-26T12:55:41.521784+00:00",
+    "collected_at": "2026-04-26T13:09:46.708764+00:00",
     "raw": {
       "title": "Claude CodeのVSCode拡張が使いやすいよ - Qiita",
       "link": "https://qiita.com/moritalous/items/3c5269610f26e23c5b04",
       "published": null,
       "updated": "2026-04-25T23:05:21Z"
     },
-    "score": 0.750982857687988,
+    "score": 0.7547100394840567,
     "topic": "ai_agents",
     "importance_mechanical": "high"
   },
@@ -161,16 +161,16 @@
     "raw_popularity_signal": {
       "hatebu_users": 109
     },
-    "collected_at": "2026-04-26T12:55:41.521784+00:00",
+    "collected_at": "2026-04-26T13:09:46.708764+00:00",
     "raw": {
       "title": "なぜLLMは日本文化に夢中なのか？ – LLMに潜む隠れた文化的・地域的バイアス - AIDB",
       "link": "https://ai-data-base.com/paper/2604-21751",
       "published": null,
       "updated": "2026-04-25T18:39:51Z"
     },
-    "score": 0.7503278087499159,
+    "score": 0.7496284857927399,
     "topic": "ai_agents",
-    "importance_mechanical": "high"
+    "importance_mechanical": "mid"
   },
   {
     "id": "f75824f786f2ba7f",
@@ -186,14 +186,14 @@
     "raw_popularity_signal": {
       "hatebu_users": 105
     },
-    "collected_at": "2026-04-26T12:55:41.521784+00:00",
+    "collected_at": "2026-04-26T13:09:46.708764+00:00",
     "raw": {
       "title": "ブロックされた時に「効いてて草」って勝ち誇っている人間は、周りからはこう見えている",
       "link": "https://posfie.com/@golden_haniwa/p/iGD9Gf4",
       "published": null,
       "updated": "2026-04-25T12:12:00Z"
     },
-    "score": 0.7276466721010066,
+    "score": 0.7269473491438307,
     "topic": "other",
     "importance_mechanical": "mid"
   },
@@ -211,14 +211,14 @@
     "raw_popularity_signal": {
       "hatebu_users": 101
     },
-    "collected_at": "2026-04-26T12:55:41.676189+00:00",
+    "collected_at": "2026-04-26T13:09:46.829630+00:00",
     "raw": {
       "title": "“スティック型DAP”再び、CDプレーヤー風など、レトロデザインオーディオ多数。ヘッドフォン祭開幕",
       "link": "https://av.watch.impress.co.jp/docs/news/2104721.html",
       "published": null,
       "updated": "2026-04-25T07:34:00Z"
     },
-    "score": 0.7248623898505313,
+    "score": 0.7241630668933553,
     "topic": "other",
     "importance_mechanical": "mid"
   },
@@ -236,14 +236,14 @@
     "raw_popularity_signal": {
       "hatebu_users": 45
     },
-    "collected_at": "2026-04-26T12:55:41.521784+00:00",
+    "collected_at": "2026-04-26T13:09:46.708764+00:00",
     "raw": {
       "title": "同じ Issue を Claude・Codex・Gemini に同時に解かせるとどうなるか — git worktree × tmux で衝突しない並列 AI 開発 - Qiita",
       "link": "https://qiita.com/nogataka/items/1156e2d3a40c4dab3398",
       "published": null,
       "updated": "2026-04-25T07:27:59Z"
     },
-    "score": 0.7072219998371407,
+    "score": 0.7065226768799647,
     "topic": "ai_agents",
     "importance_mechanical": "mid"
   },
@@ -261,14 +261,14 @@
     "raw_popularity_signal": {
       "hatebu_users": 44
     },
-    "collected_at": "2026-04-26T12:55:41.676189+00:00",
+    "collected_at": "2026-04-26T13:09:46.829630+00:00",
     "raw": {
       "title": "【renue】社員全員でClaude Codeを使い、自社のデモECをハッキングしてみた",
       "link": "https://zenn.dev/renue/articles/4687cb5e5c0031",
       "published": null,
       "updated": "2026-04-25T02:32:35Z"
     },
-    "score": 0.7056311135194356,
+    "score": 0.7049317905622596,
     "topic": "ai_agents",
     "importance_mechanical": "mid"
   },
@@ -286,14 +286,14 @@
     "raw_popularity_signal": {
       "hatebu_users": 74
     },
-    "collected_at": "2026-04-26T12:55:41.521784+00:00",
+    "collected_at": "2026-04-26T13:09:46.708764+00:00",
     "raw": {
       "title": "3社そろい踏みの「Starlink Direct」　料金で仕掛けるドコモとソフトバンク、先行するKDDIは“サービス”で差別化",
       "link": "https://www.itmedia.co.jp/mobile/articles/2604/25/news025.html",
       "published": null,
       "updated": "2026-04-25T05:55:32Z"
     },
-    "score": 0.7026059051221616,
+    "score": 0.7019065821649857,
     "topic": "other",
     "importance_mechanical": "mid"
   },
@@ -311,14 +311,14 @@
     "raw_popularity_signal": {
       "hatebu_users": 26
     },
-    "collected_at": "2026-04-26T12:55:41.521784+00:00",
+    "collected_at": "2026-04-26T13:09:46.708764+00:00",
     "raw": {
       "title": "OWASP ZAP の finding を Rust/Axum の handler に戻して直す - じゃあ、おうちで学べる",
       "link": "https://syu-m-5151.hatenablog.com/entry/2026/04/23/195535",
       "published": null,
       "updated": "2026-04-26T01:33:01Z"
     },
-    "score": 0.7000848933452809,
+    "score": 0.699385570388105,
     "topic": "other",
     "importance_mechanical": "mid"
   },
@@ -336,14 +336,14 @@
     "raw_popularity_signal": {
       "hatebu_users": 66
     },
-    "collected_at": "2026-04-26T12:55:41.676189+00:00",
+    "collected_at": "2026-04-26T13:09:46.829630+00:00",
     "raw": {
       "title": "髪フェチすぎてリアル求めすぎた2023年の絵柄、今のシンプル塗りが良いとされる時代でも受け入れてもらえるんだろうか→「髪の毛のリアルさが本当にすごい」",
       "link": "https://posfie.com/@taimport/p/Fj4rbiB",
       "published": null,
       "updated": "2026-04-25T05:53:07Z"
     },
-    "score": 0.6944414950070161,
+    "score": 0.6937421720498401,
     "topic": "other",
     "importance_mechanical": "mid"
   },
@@ -359,16 +359,16 @@
     "url": "https://gigazine.net/news/20260426-google-invest-up-to-40-billion-anthropic/",
     "published_at": "2026-04-26",
     "raw_popularity_signal": {
-      "hatebu_users": 10
+      "hatebu_users": 12
     },
-    "collected_at": "2026-04-26T12:55:41.521784+00:00",
+    "collected_at": "2026-04-26T13:09:46.708764+00:00",
     "raw": {
       "title": "Googleが競合AI企業のAnthropicに最大6兆4000億円を投資",
       "link": "https://gigazine.net/news/20260426-google-invest-up-to-40-billion-anthropic/",
       "published": null,
       "updated": "2026-04-26T00:13:21Z"
     },
-    "score": 0.6750897135118206,
+    "score": 0.6864821684127467,
     "topic": "ai_agents",
     "importance_mechanical": "mid"
   },
@@ -386,15 +386,40 @@
     "raw_popularity_signal": {
       "hatebu_users": 45
     },
-    "collected_at": "2026-04-26T12:55:41.676189+00:00",
+    "collected_at": "2026-04-26T13:09:46.829630+00:00",
     "raw": {
       "title": "スペインの全法律をMarkdownファイル化しGitリポジトリで公開するプロジェクト「legalize-es」、法改正はコミットとして管理され追跡も可能",
       "link": "https://gigazine.net/news/20260425-legalize-es/",
       "published": null,
       "updated": "2026-04-25T09:58:53Z"
     },
-    "score": 0.6672219998371407,
+    "score": 0.6665226768799647,
     "topic": "other",
+    "importance_mechanical": "mid"
+  },
+  {
+    "id": "7513d692d7208253",
+    "source_id": "hatena_it_entrylist",
+    "source_name": "はてなブックマーク - テクノロジー（新着エントリ）",
+    "source_type": "コミュニティ集約",
+    "layer": "L1",
+    "title": "Claude Code プラグインおすすめ 2026 — 公式マーケットプレイスから入れるべきプラグイン & MCP サーバー",
+    "summary": "はじめに Claude Code のプラグインエコシステムが急速に拡大しています。2026 年 4 月時点で、公式マーケットプレイス（claude-plugins-official）には 160 個のプラグインが登録されています。うち 32 個が Anthropic 製、残りはサードパーティ製です。 しかし、数が多すぎて「結局どれを入れればいいの？」と迷う方も...",
+    "content": null,
+    "url": "https://zenn.dev/ino_h/articles/2026-04-23-claude-code-plugins-ranking",
+    "published_at": "2026-04-24",
+    "raw_popularity_signal": {
+      "hatebu_users": 85
+    },
+    "collected_at": "2026-04-26T13:09:46.829630+00:00",
+    "raw": {
+      "title": "Claude Code プラグインおすすめ 2026 — 公式マーケットプレイスから入れるべきプラグイン & MCP サーバー",
+      "link": "https://zenn.dev/ino_h/articles/2026-04-23-claude-code-plugins-ranking",
+      "published": null,
+      "updated": "2026-04-24T21:57:36Z"
+    },
+    "score": 0.6603842087117255,
+    "topic": "ai_agents",
     "importance_mechanical": "mid"
   },
   {
@@ -411,40 +436,15 @@
     "raw_popularity_signal": {
       "hatebu_users": 40
     },
-    "collected_at": "2026-04-26T12:55:41.676189+00:00",
+    "collected_at": "2026-04-26T13:09:46.829630+00:00",
     "raw": {
       "title": "無料で自分好みのダッシュボードを作成できユーザーごとにログインもできる「Dashy」、セルフホスト可能でDockerで動作OK",
       "link": "https://gigazine.net/news/20260425-dashy/",
       "published": null,
       "updated": "2026-04-25T12:20:22Z"
     },
-    "score": 0.6588930040101675,
+    "score": 0.6581936810529916,
     "topic": "other",
-    "importance_mechanical": "mid"
-  },
-  {
-    "id": "68f0208e46b51f22",
-    "source_id": "hatena_it_hotentry",
-    "source_name": "はてなブックマーク - テクノロジー（ホットエントリ）",
-    "source_type": "コミュニティ集約",
-    "layer": "L1",
-    "title": "Claude Code プラグインおすすめ 2026 — 公式マーケットプレイスから入れるべきプラグイン & MCP サーバー",
-    "summary": "はじめに Claude Code のプラグインエコシステムが急速に拡大しています。2026 年 4 月時点で、公式マーケットプレイス（claude-plugins-official）には 160 個のプラグインが登録されています。うち 32 個が Anthropic 製、残りはサードパーティ製です。 しかし、数が多すぎて「結局どれを入れればいいの？」と迷う方も...",
-    "content": null,
-    "url": "https://zenn.dev/ino_h/articles/2026-04-23-claude-code-plugins-ranking",
-    "published_at": "2026-04-24",
-    "raw_popularity_signal": {
-      "hatebu_users": 81
-    },
-    "collected_at": "2026-04-26T12:55:41.521784+00:00",
-    "raw": {
-      "title": "Claude Code プラグインおすすめ 2026 — 公式マーケットプレイスから入れるべきプラグイン & MCP サーバー",
-      "link": "https://zenn.dev/ino_h/articles/2026-04-23-claude-code-plugins-ranking",
-      "published": null,
-      "updated": "2026-04-24T21:57:36Z"
-    },
-    "score": 0.657636098525593,
-    "topic": "ai_agents",
     "importance_mechanical": "mid"
   },
   {
@@ -461,14 +461,14 @@
     "raw_popularity_signal": {
       "hatebu_users": 39
     },
-    "collected_at": "2026-04-26T12:55:41.676189+00:00",
+    "collected_at": "2026-04-26T13:09:46.829630+00:00",
     "raw": {
       "title": "npm install だけで機密情報が漏洩するリスク — サプライチェーンリスクのデモと対策",
       "link": "https://zenn.dev/hisa_tech_2973/articles/13d4d58e62cb5b",
       "published": null,
       "updated": "2026-04-25T00:39:22Z"
     },
-    "score": 0.6571056931115387,
+    "score": 0.6564063701543628,
     "topic": "other",
     "importance_mechanical": "mid"
   },
@@ -484,16 +484,16 @@
     "url": "https://github.com/h4ckf0r0day/obscura",
     "published_at": "2026-04-24",
     "raw_popularity_signal": {
-      "hatebu_users": 78
+      "hatebu_users": 80
     },
-    "collected_at": "2026-04-26T12:55:41.521784+00:00",
+    "collected_at": "2026-04-26T13:09:46.708764+00:00",
     "raw": {
       "title": "GitHub - h4ckf0r0day/obscura: The headless browser for AI agents and web scraping",
       "link": "https://github.com/h4ckf0r0day/obscura",
       "published": null,
       "updated": "2026-04-24T22:10:26Z"
     },
-    "score": 0.6549383050100471,
+    "score": 0.656048636650906,
     "topic": "ai_agents",
     "importance_mechanical": "mid"
   }

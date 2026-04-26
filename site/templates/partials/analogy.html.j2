@@ -1,0 +1,18 @@
+{# analogy.html.j2 — Part 3 アナロジーブロック（限界独立段落付） #}
+{% macro render_analogy(analogy) -%}
+<div class="analogy">
+  <div class="analogy-label">{{ analogy.domain | upper }}</div>
+  <div class="analogy-source">
+    {{ analogy.source_title }}
+    {% if analogy.source_author or analogy.source_year %}
+    <cite>{{ analogy.source_author }}{% if analogy.source_year %} ({{ analogy.source_year }}){% endif %}</cite>
+    {% endif %}
+  </div>
+  <div class="analogy-body">
+    {% if analogy.summary %}<p>{{ analogy.summary | safe }}</p>{% endif %}
+    {% if analogy.reinterpretation %}<p>{{ analogy.reinterpretation | safe }}</p>{% endif %}
+    {% if analogy.modern_implication %}<p>{{ analogy.modern_implication | safe }}</p>{% endif %}
+    {% if analogy.limit %}<p class="limit">{{ analogy.limit | safe }}</p>{% endif %}
+  </div>
+</div>
+{%- endmacro %}
