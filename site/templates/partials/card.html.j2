@@ -59,6 +59,9 @@
         ファクト
       </div>
       <p>{{ card.fact }}</p>
+      {% if card.diagram_html %}
+      {{ card.diagram_html | safe }}
+      {% endif %}
     </section>
     {% endif %}
     {% if card.context_analysis %}

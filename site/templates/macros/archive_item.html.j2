@@ -14,31 +14,20 @@
      - href, report_date, inquiry_title, exec_summary
 #}
 {% macro archive_item(item, type) -%}
-<a class="archive-list-item" href="{{ item.href }}">
+<a class="archive-list-item archive-compact" href="{{ item.href }}">
   {%- if type == 'weekly' %}
-  <div class="archive-week-label">{{ item.week_label }}</div>
-  <div class="archive-date-range">{{ item.date_range }}</div>
+  <div class="archive-meta-row">
+    <span class="archive-week-label">{{ item.week_label }}</span>
+    <span class="archive-meta-sep">·</span>
+    <span class="archive-date-range">{{ item.date_range }}</span>
+  </div>
   <div class="archive-theme-title">{{ item.theme_title }}</div>
   {%- if item.lens %}
-  <div class="archive-lens-badge lens-{{ item.lens_id or 'labor' }}">
+  <span class="archive-lens-badge lens-{{ item.lens_id or 'labor' }}">
     <svg class="icon" aria-hidden="true"><use href="#icon-lens-{{ item.lens_id or 'labor' }}"/></svg>
-    レンズ: {{ item.lens }}
-  </div>
+    {{ item.lens }}
+  </span>
   {%- endif %}
-  {%- if item.summary_excerpt %}
-  <p class="archive-summary-excerpt">{{ item.summary_excerpt }}</p>
-  {%- endif %}
-  {%- if item.topics %}
-  <div class="archive-topics">
-    {%- for t in item.topics %}
-    <span class="archive-topic-chip topic-{{ t.id | replace('_','-') }}">
-      <svg class="icon" aria-hidden="true"><use href="#icon-topic-{{ t.id | replace('_','-') }}"/></svg>
-      {{ t.label }} <span class="chip-count">{{ t.count }}</span>
-    </span>
-    {%- endfor %}
-  </div>
-  {%- endif %}
-  <div class="archive-cta">→ 詳細を読む</div>
 
   {%- elif type == 'daily' %}
   <div class="archive-week-label">{{ item.date_label }}</div>

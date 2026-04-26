@@ -276,8 +276,8 @@ a.card-source:hover {
   min-height: 36px;
 }
 .filter-chip.active {
-  background: var(--accent-dim);
-  border-color: var(--accent);
+  background: rgba(111, 179, 214, 0.18);
+  border-color: var(--accent-dim);
   color: var(--text);
 }
 .filter-chip:hover { border-color: var(--accent); }
@@ -393,6 +393,22 @@ a.card-source:hover {
   transition: border-color 0.15s;
   min-height: 44px;
 }
+.archive-list-item.archive-compact { padding: 12px 16px; min-height: 56px; }
+.archive-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: var(--text-mute);
+  text-transform: uppercase;
+}
+.archive-meta-row .archive-week-label,
+.archive-meta-row .archive-date-range { display: inline; margin: 0; }
+.archive-meta-sep { opacity: 0.5; }
+.archive-compact .archive-theme-title { margin: 6px 0 8px; }
+.archive-compact .archive-lens-badge { margin: 0; }
+.archive-compact .archive-cta { margin-top: 8px; font-size: 11px; }
 .archive-list-item:hover { border-color: var(--accent); text-decoration: none; }
 .archive-week-label {
   font-size: 11px;
@@ -490,10 +506,11 @@ a.card-source:hover {
   transition: filter 0.15s;
 }
 .bar-seg:hover { filter: brightness(1.15); }
-.bar-seg.topic-ai-agents { background: var(--accent); }
-.bar-seg.topic-automation { background: var(--signal); }
-.bar-seg.topic-dx-cases { background: var(--highlight); }
-.bar-seg.topic-other { background: #c79bc7; }
+/* Bar segment: 暗色ベースに色相だけ感じさせる（明るすぎ回避） */
+.bar-seg.topic-ai-agents { background: rgba(111, 179, 214, 0.35); color: var(--text); }
+.bar-seg.topic-automation { background: rgba(127, 183, 126, 0.35); color: var(--text); }
+.bar-seg.topic-dx-cases { background: rgba(240, 185, 82, 0.32); color: var(--text); }
+.bar-seg.topic-other { background: rgba(199, 155, 199, 0.32); color: var(--text); }
 .bar-seg.empty { background: transparent; flex: 0; }
 .pulse-bar-legend {
   display: flex;
@@ -626,6 +643,130 @@ a.card-source:hover {
 .archive-topic-chip.topic-dx-cases .icon { color: var(--highlight); }
 .archive-topic-chip.topic-other .icon { color: #c79bc7; }
 
+/* §12.12 図解テンプレ (D-40 ② 構造図 / ③ 集約ビジュアル) */
+.diagram {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 14px 16px;
+  margin: 12px 0;
+}
+
+/* 数値強調 */
+.diagram-stat { text-align: center; padding: 18px 16px; }
+.stat-number {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+.stat-number .stat-unit {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-dim);
+  margin-left: 4px;
+}
+.stat-caption {
+  font-size: 12.5px;
+  color: var(--text-dim);
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+/* 3 ステップフロー */
+.diagram-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.flow-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.flow-step {
+  flex: 1 1 0;
+  min-width: 80px;
+  padding: 10px 8px;
+  background: var(--surface);
+  border: 1px solid var(--accent-dim);
+  border-radius: 6px;
+  text-align: center;
+  font-size: 12.5px;
+  color: var(--text);
+  font-weight: 600;
+}
+.flow-step .flow-step-cap {
+  display: block;
+  font-size: 10.5px;
+  color: var(--text-dim);
+  font-weight: 400;
+  margin-top: 2px;
+}
+.flow-arrow {
+  color: var(--accent-dim);
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.diagram-note {
+  font-size: 11.5px;
+  color: var(--text-mute);
+  text-align: center;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border);
+}
+
+/* 2 列対比 */
+.diagram-compare {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 12px;
+  align-items: stretch;
+}
+.compare-col {
+  background: var(--surface);
+  border-radius: 6px;
+  padding: 10px 12px;
+  border-top: 2px solid;
+}
+.compare-left { border-top-color: var(--accent-dim); }
+.compare-right { border-top-color: var(--danger); }
+.compare-title {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: var(--text-mute);
+  font-weight: 600;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+.compare-left .compare-title { color: var(--accent); }
+.compare-right .compare-title { color: var(--danger); }
+.compare-point {
+  font-size: 12.5px;
+  color: var(--text);
+  line-height: 1.5;
+  padding-left: 10px;
+  position: relative;
+  margin-bottom: 4px;
+}
+.compare-point::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--text-mute);
+}
+.compare-vs {
+  font-size: 11px;
+  color: var(--text-mute);
+  align-self: center;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
 /* §13 アイコン (D-40) */
 .icon {
   display: inline-block;
@@ -704,4 +845,9 @@ footer {
   .pulse-bar-legend { gap: 8px 12px; font-size: 10.5px; }
   .month-header { font-size: 13px; padding: 8px 12px; }
   .archive-topics { gap: 6px; }
+  /* 図解テンプレ: 480px で縦積みに */
+  .stat-number { font-size: 26px; }
+  .diagram-compare { grid-template-columns: 1fr; }
+  .compare-vs { display: none; }
+  .compare-right { margin-top: 4px; }
 }
