@@ -1,0 +1,77 @@
+{# card.html.j2 — 個別カード（3 ブロック構成、D-02 / D-36 / D-40）
+   引数: card (dict)。期待キー:
+     id, layer, importance, topic, info_type
+     title, source_name, published_at, url
+     fact, context_analysis, impact
+     inquiry (optional)
+   open_first: 当日先頭カードのみ <details open>
+#}
+{% macro render_card(card, is_first=false, today_iso=None) -%}
+{# 当日カード or 先頭カードを open（モバイル優先 D-34） #}
+{% set is_open = is_first or card.published_at == today_iso %}
+<details class="card"
+         id="card-{{ card.id }}"
+         data-topic="{{ card.topic }}"
+         data-importance="{{ card.importance }}"
+         data-layer="{{ card.layer }}"
+         data-inquiry="{{ card.inquiry or 'none' }}"
+         {% if is_open %}open{% endif %}>
+  <summary>
+    <div class="tag-row">
+      <span class="tag layer-{{ card.layer | lower }}">
+        <svg class="icon" aria-hidden="true"><use href="#icon-layer-{{ card.layer | lower }}"/></svg>
+        {{ card.layer }}
+      </span>
+      <span class="tag importance-{{ card.importance }}">
+        <svg class="icon" aria-hidden="true"><use href="#icon-importance-{{ card.importance }}"/></svg>
+        重要度: {{ {'high':'高','mid':'中','low':'低'}[card.importance] }}
+      </span>
+      <span class="tag topic-{{ card.topic | replace('_','-') }}">
+        <svg class="icon" aria-hidden="true"><use href="#icon-topic-{{ card.topic | replace('_','-') }}"/></svg>
+        {{ {'ai_agents':'AIエージェント','automation':'業務自動化','dx_cases':'DX事例','other':'その他'}[card.topic] }}
+      </span>
+      {% if card.info_type %}
+      <svg class="icon-info-type {{ card.info_type }}" aria-label="{{ card.info_type }}">
+        <use href="#icon-{{ {'vendor_announcement':'vendor','success_case':'case','failure':'failure','critic':'critic','tech_validation':'analysis','market':'analysis','essay':'analysis','historical':'analysis'}[card.info_type] }}"/>
+      </svg>
+      {% endif %}
+    </div>
+    <div class="card-title">{{ card.title }}</div>
+    {% if card.url %}
+    <a class="card-source"
+       href="{{ card.url }}"
+       target="_blank"
+       rel="noopener noreferrer"
+       onclick="event.stopPropagation()">{{ card.source_name }} · {{ card.published_at }} ↗</a>
+    {% else %}
+    <span class="card-source">{{ card.source_name }} · {{ card.published_at }}</span>
+    {% endif %}
+  </summary>
+  <div class="card-body">
+    {% if card.fact %}
+    <section class="fact">
+      <div class="label context">ファクト</div>
+      <p>{{ card.fact }}</p>
+    </section>
+    {% endif %}
+    {% if card.context_analysis %}
+    <section class="context">
+      <div class="label summary">背景考察</div>
+      <p>{{ card.context_analysis }}</p>
+    </section>
+    {% endif %}
+    {% if card.impact %}
+    <section class="impact">
+      <div class="label sowhat">実務への影響</div>
+      <p class="sowhat-text">{{ card.impact }}</p>
+    </section>
+    {% endif %}
+    {% if card.url %}
+    <a class="external-link"
+       href="{{ card.url }}"
+       target="_blank"
+       rel="noopener noreferrer">元記事を読む →</a>
+    {% endif %}
+  </div>
+</details>
+{%- endmacro %}

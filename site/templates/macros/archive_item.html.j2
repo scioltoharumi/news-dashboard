@@ -1,0 +1,40 @@
+{# archive_item.html.j2 — 共通 archive リスト項目 (D-38)
+   weekly / daily / inquiries の 3 種で再利用。
+   item の必須キーは type ごとに以下:
+
+   type='weekly':
+     - href, week_label (例 "WEEK 16 / 2026"), date_range, theme_title, lens, summary_excerpt
+   type='daily':
+     - href, date_label (例 "2026-04-24 (金)"), card_count
+   type='inquiries':
+     - href, report_date, inquiry_title, exec_summary
+#}
+{% macro archive_item(item, type) -%}
+<a class="archive-list-item" href="{{ item.href }}">
+  {%- if type == 'weekly' %}
+  <div class="archive-week-label">{{ item.week_label }}</div>
+  <div class="archive-date-range">{{ item.date_range }}</div>
+  <div class="archive-theme-title">{{ item.theme_title }}</div>
+  {%- if item.lens %}
+  <div class="archive-lens">レンズ: {{ item.lens }}</div>
+  {%- endif %}
+  {%- if item.summary_excerpt %}
+  <p class="archive-summary-excerpt">{{ item.summary_excerpt }}</p>
+  {%- endif %}
+  <div class="archive-cta">→ 詳細を読む</div>
+
+  {%- elif type == 'daily' %}
+  <div class="archive-week-label">{{ item.date_label }}</div>
+  <div class="archive-date-range">{{ item.card_count }} 件のカード</div>
+  <div class="archive-cta">→ 開く</div>
+
+  {%- elif type == 'inquiries' %}
+  <div class="archive-week-label">{{ item.report_date }}</div>
+  <div class="archive-theme-title">{{ item.inquiry_title }}</div>
+  {%- if item.exec_summary %}
+  <p class="archive-summary-excerpt">{{ item.exec_summary }}</p>
+  {%- endif %}
+  <div class="archive-cta">→ レポートを読む</div>
+  {%- endif %}
+</a>
+{%- endmacro %}

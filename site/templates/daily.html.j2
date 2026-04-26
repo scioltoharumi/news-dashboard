@@ -1,0 +1,25 @@
+{# daily.html.j2 — 過去デイリー単体表示 #}
+{% extends "base.html.j2" %}
+{% from "partials/card.html.j2" import render_card %}
+
+{% block title %}{{ date_iso }} デイリー | News & Research Dashboard{% endblock %}
+
+{% block content %}
+<header>
+  <div class="date-label">{{ date_iso }} ／ 過去アーカイブ</div>
+  <h1>{{ date_label }} のダッシュボード</h1>
+  <div class="meta">収録 {{ cards | length }}件</div>
+</header>
+
+{% if daily_summary %}
+<div class="theme">
+  <div class="theme-label">サマリー</div>
+  <div class="theme-body">{{ daily_summary | safe }}</div>
+</div>
+{% endif %}
+
+<div class="section-head">カード</div>
+{% for card in cards %}
+{{ render_card(card, is_first=false, today_iso=today_iso) }}
+{% endfor %}
+{% endblock %}

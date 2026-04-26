@@ -1,0 +1,35 @@
+{# base.html.j2 — 共通レイアウト
+   ブロック: title / extra_head / content / footer_extra
+   フッタ 3 リンク (D-38): デイリー履歴 / ウィークリー一覧 / 問い一覧
+#}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}News & Research Dashboard{% endblock %}</title>
+<link rel="stylesheet" href="{{ asset('style.css') }}">
+{% block extra_head %}{% endblock %}
+</head>
+<body>
+{# アイコン sprite を全ページで inline 読込（D-40 §11.4）
+   icons_sprite は build_site.py が site/assets/icons.svg の中身を渡す #}
+{{ icons_sprite | safe }}
+
+<div class="container">
+{% block content %}{% endblock %}
+
+<footer>
+  <nav class="footer-nav">
+    <a href="{{ url('/daily/archive/') }}">デイリー履歴</a>
+    <a href="{{ url('/weekly/') }}">ウィークリー一覧</a>
+    <a href="{{ url('/inquiries/') }}">問い一覧</a>
+  </nav>
+  <div>News &amp; Research Dashboard / 自動生成 ({{ generated_at }})</div>
+  {% block footer_extra %}{% endblock %}
+</footer>
+
+</div>
+<script src="{{ asset('filter.js') }}"></script>
+</body>
+</html>

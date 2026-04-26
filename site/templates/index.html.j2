@@ -1,0 +1,49 @@
+{# index.html.j2 — 最新デイリー（トップページ） #}
+{% extends "base.html.j2" %}
+{% from "partials/card.html.j2" import render_card %}
+
+{% block title %}{{ today_iso }} デイリー | News & Research Dashboard{% endblock %}
+
+{% block content %}
+<header>
+  <div class="date-label">WEEK {{ iso_week }} DAY {{ iso_dow }} / {{ today_iso }}</div>
+  <h1>今日のニュース・ダッシュボード</h1>
+  <div class="meta">{{ today_label }} ／ 収録 {{ cards | length }}件</div>
+</header>
+
+{% if daily_summary %}
+<div class="theme">
+  <div class="theme-label">今日のサマリー</div>
+  <div class="theme-body">
+    {{ daily_summary | safe }}
+  </div>
+</div>
+{% endif %}
+
+<details class="filter-bar" open>
+  <summary>フィルター</summary>
+  <div class="filter-group">
+    <span class="filter-label">トピック:</span>
+    <button class="filter-chip active" data-filter-topic="ai_agents">AIエージェント</button>
+    <button class="filter-chip active" data-filter-topic="automation">業務自動化</button>
+    <button class="filter-chip active" data-filter-topic="dx_cases">DX事例</button>
+    <button class="filter-chip active" data-filter-topic="other">その他</button>
+  </div>
+  <div class="filter-group">
+    <span class="filter-label">重要度:</span>
+    <button class="filter-chip active" data-filter-importance="high">高</button>
+    <button class="filter-chip active" data-filter-importance="mid">中</button>
+    <button class="filter-chip active" data-filter-importance="low">低</button>
+    <button class="filter-clear">すべて表示</button>
+  </div>
+</details>
+
+<div class="section-head">今日のカード</div>
+{% if cards %}
+  {% for card in cards %}
+  {{ render_card(card, is_first=loop.first, today_iso=today_iso) }}
+  {% endfor %}
+{% else %}
+<p style="color: var(--text-mute); padding: 20px; text-align: center;">本日収録のカードはまだありません。</p>
+{% endif %}
+{% endblock %}

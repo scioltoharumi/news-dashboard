@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ウィークリー一覧 | News & Research Dashboard</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  News & Research Dashboard アイコン sprite (D-40 §11.4)
+  使用: <svg class="icon"><use href="/assets/icons.svg#icon-vendor"/></svg>
+  全アイコン 24x24 viewBox、currentColor で着色（CSS で色制御）。
+-->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+
+  <!-- ===== 情報タイプ (5) ===== -->
+  <symbol id="icon-vendor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- megaphone -->
+    <path d="M3 11v3l9 4V7L3 11Z"/>
+    <path d="M14 8.5v7"/>
+    <path d="M18 9c1 .8 1 5.2 0 6"/>
+  </symbol>
+  <symbol id="icon-case" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- check in circle -->
+    <circle cx="12" cy="12" r="9"/>
+    <path d="M8 12.5l3 3 5-6"/>
+  </symbol>
+  <symbol id="icon-failure" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- x in circle -->
+    <circle cx="12" cy="12" r="9"/>
+    <path d="M8.5 8.5l7 7M15.5 8.5l-7 7"/>
+  </symbol>
+  <symbol id="icon-critic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- exclamation triangle -->
+    <path d="M12 3.5L21.5 20H2.5L12 3.5Z"/>
+    <path d="M12 10v4.5"/>
+    <circle cx="12" cy="17" r=".8" fill="currentColor"/>
+  </symbol>
+  <symbol id="icon-analysis" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- bar chart -->
+    <path d="M5 19V11M10 19V6M15 19V14M20 19V9"/>
+    <path d="M3 21h18"/>
+  </symbol>
+
+  <!-- ===== 重要度 (3) ===== -->
+  <symbol id="icon-importance-high" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="6" fill="currentColor"/>
+  </symbol>
+  <symbol id="icon-importance-mid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+    <circle cx="12" cy="12" r="6"/>
+    <path d="M12 6 A6 6 0 0 1 12 18 Z" fill="currentColor"/>
+  </symbol>
+  <symbol id="icon-importance-low" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+    <circle cx="12" cy="12" r="6"/>
+  </symbol>
+
+  <!-- ===== レイヤー (4) — ドット数で深度を示す ===== -->
+  <symbol id="icon-layer-l1" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="2.4" fill="currentColor"/>
+  </symbol>
+  <symbol id="icon-layer-l2" viewBox="0 0 24 24">
+    <circle cx="8" cy="12" r="2.2" fill="currentColor"/>
+    <circle cx="16" cy="12" r="2.2" fill="currentColor"/>
+  </symbol>
+  <symbol id="icon-layer-l3" viewBox="0 0 24 24">
+    <circle cx="6" cy="12" r="2" fill="currentColor"/>
+    <circle cx="12" cy="12" r="2" fill="currentColor"/>
+    <circle cx="18" cy="12" r="2" fill="currentColor"/>
+  </symbol>
+  <symbol id="icon-layer-l4" viewBox="0 0 24 24">
+    <circle cx="5" cy="12" r="1.8" fill="currentColor"/>
+    <circle cx="10" cy="12" r="1.8" fill="currentColor"/>
+    <circle cx="15" cy="12" r="1.8" fill="currentColor"/>
+    <circle cx="20" cy="12" r="1.8" fill="currentColor"/>
+  </symbol>
+
+  <!-- ===== トピック (4) ===== -->
+  <symbol id="icon-topic-ai-agents" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- agent: hex with center -->
+    <path d="M12 2 L20.5 7 L20.5 17 L12 22 L3.5 17 L3.5 7 Z"/>
+    <circle cx="12" cy="12" r="2.2" fill="currentColor"/>
+  </symbol>
+  <symbol id="icon-topic-automation" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- gear -->
+    <circle cx="12" cy="12" r="3.2"/>
+    <path d="M12 3 v3 M12 18 v3 M3 12 h3 M18 12 h3 M5.5 5.5 L7.5 7.5 M16.5 16.5 L18.5 18.5 M5.5 18.5 L7.5 16.5 M16.5 7.5 L18.5 5.5"/>
+  </symbol>
+  <symbol id="icon-topic-dx-cases" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- building -->
+    <path d="M5 21V6l7-3 7 3v15"/>
+    <path d="M5 21h14"/>
+    <path d="M9 9h2M13 9h2M9 13h2M13 13h2M9 17h2M13 17h2"/>
+  </symbol>
+  <symbol id="icon-topic-other" viewBox="0 0 24 24">
+    <!-- horizontal dots -->
+    <circle cx="6" cy="12" r="2" fill="currentColor"/>
+    <circle cx="12" cy="12" r="2" fill="currentColor"/>
+    <circle cx="18" cy="12" r="2" fill="currentColor"/>
+  </symbol>
+
+</svg>
+
+
+<div class="container">
+<header>
+  <div class="date-label">WEEKLY INDEX</div>
+  <h1>ウィークリー一覧</h1>
+  <div class="meta">過去のウィークリーブリーフィング 2件 ／ ISO 週降順</div>
+</header>
+
+<div class="section-head">過去の週</div>
+<a class="archive-list-item" href="weekly/2026-W17.html">  <div class="archive-week-label">WEEK 17 / 2026</div>
+  <div class="archive-date-range">2026-04-19 〜 2026-04-25</div>
+  <div class="archive-theme-title">「導入して終わり」から「内製化・オーケストレーション」へ — 主戦場の第 2 ラウンド</div>  <div class="archive-lens">レンズ: 労働 × 知識民主化</div>  <p class="archive-summary-excerpt">今週は、複数の動きが同じ方向を指している週でした。エージェント・オーケストレーターという新職務、Power Fx 連携、月 1,600 件のボイスボット完結事例。一方で「会議は減っていない」という現場感覚も…</p>  <div class="archive-cta">→ 詳細を読む</div></a>
+<a class="archive-list-item" href="weekly/2026-W16.html">  <div class="archive-week-label">WEEK 16 / 2026</div>
+  <div class="archive-date-range">2026-04-12 〜 2026-04-18</div>
+  <div class="archive-theme-title">「生成AI導入済み → エージェント化」企業 AI 活用が第 2 段階の競争フェーズへ</div>  <div class="archive-lens">レンズ: 労働 × 知識民主化</div>  <p class="archive-summary-excerpt">Google Cloud は「エージェント・オーケストレーター」という新職務を提唱、AIsmiley は「答える AI と動く AI」の分類論を…</p>  <div class="archive-cta">→ 詳細を読む</div></a>
+
+<footer>
+  <nav class="footer-nav">
+    <a href="/daily/archive/">デイリー履歴</a>
+    <a href="/weekly/">ウィークリー一覧</a>
+    <a href="/inquiries/">問い一覧</a>
+  </nav>
+  <div>News &amp; Research Dashboard / 自動生成 (2026-04-26 09:34 東京 (標準時))</div>
+</footer>
+
+</div>
+<script src="assets/filter.js"></script>
+</body>
+</html>

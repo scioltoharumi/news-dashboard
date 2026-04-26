@@ -1,0 +1,27 @@
+{# weekly_index.html.j2 — ウィークリー一覧（D-38）
+   archive_item マクロを type='weekly' で再利用。
+#}
+{% extends "base.html.j2" %}
+{% from "macros/archive_item.html.j2" import archive_item %}
+
+{% block title %}ウィークリー一覧 | News & Research Dashboard{% endblock %}
+
+{% block content %}
+<header>
+  <div class="date-label">WEEKLY INDEX</div>
+  <h1>ウィークリー一覧</h1>
+  <div class="meta">過去のウィークリーブリーフィング {{ items | length }}件 ／ ISO 週降順</div>
+</header>
+
+{% if items %}
+<div class="section-head">過去の週</div>
+{% for it in items %}
+{{ archive_item(it, 'weekly') }}
+{% endfor %}
+{% else %}
+<p style="color: var(--text-mute); padding: 20px; text-align: center;">
+  ウィークリーブリーフィングはまだ生成されていません。<br>
+  Phase 4 でウィークリー 3 部生成が稼働すると、ここに一覧が表示されます。
+</p>
+{% endif %}
+{% endblock %}
