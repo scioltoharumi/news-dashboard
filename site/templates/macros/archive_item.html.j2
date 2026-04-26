@@ -22,9 +22,7 @@
     <span class="archive-date-range">{{ item.date_range }}</span>
   </div>
   <div class="archive-theme-title">{{ item.theme_title }}</div>
-  {%- if item.lens %}
-  <span class="archive-lens-badge">{{ item.lens }}</span>
-  {%- endif %}
+  <div class="archive-cta">→</div>
 
   {%- elif type == 'daily' %}
   <div class="archive-week-label">{{ item.date_label }}</div>

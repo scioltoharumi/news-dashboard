@@ -18,9 +18,11 @@
 {% for month_label, month_items in items_by_month %}
 <div class="month-section">
   <div class="month-header">{{ month_label }}（{{ month_items | length }} 週）</div>
-  {% for it in month_items %}
-  {{ archive_item(it, 'weekly') }}
-  {% endfor %}
+  <div class="month-items">
+    {% for it in month_items %}
+    {{ archive_item(it, 'weekly') }}
+    {% endfor %}
+  </div>
 </div>
 {% endfor %}
 {% else %}

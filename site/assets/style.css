@@ -393,8 +393,40 @@ a.card-source:hover {
   transition: border-color 0.15s;
   min-height: 44px;
 }
-.archive-list-item.archive-compact { padding: 12px 16px; min-height: 56px; }
+.archive-list-item:hover { border-color: var(--accent); text-decoration: none; }
+
+/* compact 版は月セクションでインデント表示、bg は --bg（黒）で背景に溶ける */
+.month-items {
+  margin-left: 14px;
+  padding-left: 14px;
+  border-left: 1px solid var(--border);
+}
+.archive-list-item.archive-compact {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  padding: 12px 14px 12px 0;
+  margin: 0;
+  min-height: 56px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  column-gap: 12px;
+  row-gap: 4px;
+  align-items: center;
+  transition: padding-left 0.15s, background 0.15s;
+}
+.archive-list-item.archive-compact:hover {
+  background: rgba(111, 179, 214, 0.05);
+  padding-left: 8px;
+  border-color: var(--border);
+}
+.month-items > .archive-list-item.archive-compact:last-child { border-bottom: none; }
+
 .archive-meta-row {
+  grid-column: 1;
+  grid-row: 1;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -402,13 +434,28 @@ a.card-source:hover {
   letter-spacing: 1px;
   color: var(--text-mute);
   text-transform: uppercase;
+  margin: 0;
 }
 .archive-meta-row .archive-week-label,
 .archive-meta-row .archive-date-range { display: inline; margin: 0; }
 .archive-meta-sep { opacity: 0.5; }
-.archive-compact .archive-theme-title { margin: 6px 0 8px; }
-.archive-compact .archive-lens-badge { margin: 0; }
-.archive-compact .archive-cta { margin-top: 8px; font-size: 11px; }
+.archive-compact .archive-theme-title {
+  grid-column: 1;
+  grid-row: 2;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+  line-height: 1.45;
+}
+.archive-compact .archive-cta {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: center;
+  margin: 0;
+  font-size: 16px;
+  color: var(--accent);
+}
 .archive-list-item:hover { border-color: var(--accent); text-decoration: none; }
 .archive-week-label {
   font-size: 11px;
@@ -596,19 +643,8 @@ a.card-source:hover {
   border-bottom: 1px solid var(--border);
 }
 
-/* §12.11 ウィークリー archive item — タグスタイルに統一 (lens 色分け廃止) */
-.archive-lens-badge {
-  display: inline-block;
-  font-size: 10px;
-  letter-spacing: 1px;
-  padding: 2px 8px;
-  border-radius: 3px;
-  border: 1px solid var(--border);
-  background: transparent;
-  color: var(--text-dim);
-  font-weight: 500;
-  margin: 0;
-}
+/* §12.11 archive-lens-badge は撤去（マスター指示で意味なしのため非表示）。
+   lens 情報はデータには保持し、Phase 4 のウィークリー Part 2 生成時に内部で使用。 */
 
 /* §12.12 図解テンプレ (D-40 ② 構造図 / ③ 集約ビジュアル) */
 .diagram {
