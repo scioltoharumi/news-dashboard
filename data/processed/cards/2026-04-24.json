@@ -1,0 +1,502 @@
+[
+  {
+    "id": "afc92b3a198d9c19",
+    "source_id": "hatena_it_hotentry",
+    "source_name": "はてなブックマーク - テクノロジー（ホットエントリ）",
+    "source_type": "コミュニティ集約",
+    "layer": "L1",
+    "title": "マイクロソフトの新IME「Copilot Keyboard」が正式版に ～そしてあいつが帰ってきた！／安定性や動作速度が大幅に向上",
+    "summary": "",
+    "content": null,
+    "url": "https://forest.watch.impress.co.jp/docs/news/2103886.html",
+    "published_at": "2026-04-23",
+    "raw_popularity_signal": {
+      "hatebu_users": 329
+    },
+    "collected_at": "2026-04-23T16:38:51.912676+00:00",
+    "raw": {
+      "title": "マイクロソフトの新IME「Copilot Keyboard」が正式版に ～そしてあいつが帰ってきた！／安定性や動作速度が大幅に向上",
+      "link": "https://forest.watch.impress.co.jp/docs/news/2103886.html",
+      "published": null,
+      "updated": "2026-04-23T01:05:50Z"
+    },
+    "score": 0.8702058241347406,
+    "topic": "other",
+    "importance_mechanical": "high"
+  },
+  {
+    "id": "90375d6f63dbc378",
+    "source_id": "hatena_it_hotentry",
+    "source_name": "はてなブックマーク - テクノロジー（ホットエントリ）",
+    "source_type": "コミュニティ集約",
+    "layer": "L1",
+    "title": "あのイルカが20年ぶりに復活 生成AIで質問に回答 | NHKニュース",
+    "summary": "質問に回答するチャットボットの先駆けとして知られ、パソコンの文書作成ソフトなどのアシスタントとして人気だったイルカのキャラクターが、生成AIを活用した日本語入力ソフトの中で20年ぶりに復活しました。 …",
+    "content": null,
+    "url": "https://news.web.nhk/newsweb/na/na-k10015106271000",
+    "published_at": "2026-04-23",
+    "raw_popularity_signal": {
+      "hatebu_users": 177
+    },
+    "collected_at": "2026-04-23T16:38:51.912676+00:00",
+    "raw": {
+      "title": "あのイルカが20年ぶりに復活 生成AIで質問に回答 | NHKニュース",
+      "link": "https://news.web.nhk/newsweb/na/na-k10015106271000",
+      "published": null,
+      "updated": "2026-04-23T04:59:58Z"
+    },
+    "score": 0.8455235012065749,
+    "topic": "ai_agents",
+    "importance_mechanical": "high"
+  },
+  {
+    "id": "6fe1de112f8271c6",
+    "source_id": "hatena_it_hotentry",
+    "source_name": "はてなブックマーク - テクノロジー（ホットエントリ）",
+    "source_type": "コミュニティ集約",
+    "layer": "L1",
+    "title": "ボトルネックは「人と人の間」に移動する──TOC（制約理論）の限界と絡み合った組織への適応 - Agile Journey",
+    "summary": "ボトルネックを見つけて解消する。それで問題は解決するはずでした。 しかし実際には、別の場所にボトルネックが現れ続けます。その繰り返しの中で、問題はやがてコードや工程ではなく、「人と人の間」に移っていく。 TOC（制約理論）の考え方から出発し、複雑な組織における問題の捉え方と、「視点を動かす」という立ち...",
+    "content": null,
+    "url": "https://agilejourney.uzabase.com/entry/2026/04/23/103000",
+    "published_at": "2026-04-23",
+    "raw_popularity_signal": {
+      "hatebu_users": 165
+    },
+    "collected_at": "2026-04-23T16:38:51.912676+00:00",
+    "raw": {
+      "title": "ボトルネックは「人と人の間」に移動する──TOC（制約理論）の限界と絡み合った組織への適応 - Agile Journey",
+      "link": "https://agilejourney.uzabase.com/entry/2026/04/23/103000",
+      "published": null,
+      "updated": "2026-04-23T01:33:11Z"
+    },
+    "score": 0.8404715154951018,
+    "topic": "ai_agents",
+    "importance_mechanical": "high"
+  },
+  {
+    "id": "5a5e44bb92bb766e",
+    "source_id": "hatena_it_hotentry",
+    "source_name": "はてなブックマーク - テクノロジー（ホットエントリ）",
+    "source_type": "コミュニティ集約",
+    "layer": "L1",
+    "title": "「AIを使えば全員同じになる」　羽生善治九段が語るAI時代の差別化と意思決定",
+    "summary": "AIによる最適解が戦略の均質化を招く中、羽生善治九段は、あえて評価の低い手を選ぶことにこそ差別化の核があると説く。数字に翻弄されず、一貫性を持って決断し、責任を負う。AI時代における人間ならではの意思決定と真の個性の在り方とは。 AIが初めて人間に将棋で勝利をしてから既に十年以上がたつ。棋士たちのAI利用...",
+    "content": null,
+    "url": "https://www.itmedia.co.jp/enterprise/articles/2604/23/news019.html",
+    "published_at": "2026-04-23",
+    "raw_popularity_signal": {
+      "hatebu_users": 186
+    },
+    "collected_at": "2026-04-23T16:38:51.912676+00:00",
+    "raw": {
+      "title": "「AIを使えば全員同じになる」　羽生善治九段が語るAI時代の差別化と意思決定",
+      "link": "https://www.itmedia.co.jp/enterprise/articles/2604/23/news019.html",
+      "published": null,
+      "updated": "2026-04-23T00:02:49Z"
+    },
+    "score": 0.8290937685778424,
+    "topic": "other",
+    "importance_mechanical": "high"
+  },
+  {
+    "id": "210b855c74cc1109",
+    "source_id": "hatena_it_hotentry",
+    "source_name": "はてなブックマーク - テクノロジー（ホットエントリ）",
+    "source_type": "コミュニティ集約",
+    "layer": "L1",
+    "title": "Claude 4.5 Opus匹敵「Qwen3.6-27B」無償公開、前世代397Bを圧倒",
+    "summary": "",
+    "content": null,
+    "url": "https://pc.watch.impress.co.jp/docs/news/2103895.html",
+    "published_at": "2026-04-22",
+    "raw_popularity_signal": {
+      "hatebu_users": 293
+    },
+    "collected_at": "2026-04-23T16:38:51.912676+00:00",
+    "raw": {
+      "title": "Claude 4.5 Opus匹敵「Qwen3.6-27B」無償公開、前世代397Bを圧倒",
+      "link": "https://pc.watch.impress.co.jp/docs/news/2103895.html",
+      "published": null,
+      "updated": "2026-04-22T17:44:30Z"
+    },
+    "score": 0.8104161511285474,
+    "topic": "ai_agents",
+    "importance_mechanical": "high"
+  },
+  {
+    "id": "10923ab28bd4fce5",
+    "source_id": "hatena_it_hotentry",
+    "source_name": "はてなブックマーク - テクノロジー（ホットエントリ）",
+    "source_type": "コミュニティ集約",
+    "layer": "L1",
+    "title": "3D-CADはなぜ「誰でも使える」ようになったのか——「無料」と「自由」の狭間の歴史 - FabScene（ファブシーン）",
+    "summary": "1990年代はじめ、製造業で設計の仕事をするには、まず数千万円の出費を覚悟しなければならなかった。 機械設計の現場で使われていた3次元CADシステム「CATIA」は、ソフトウェアのライセンスだけで1シート数百万円。それを動かすためのUNIXワークステーションと合わせると、設計環境1式で数千万円になることも珍しくなか...",
+    "content": null,
+    "url": "https://fabscene.com/new/special/cad-software-free-history-freedom-vs-free/",
+    "published_at": "2026-04-23",
+    "raw_popularity_signal": {
+      "hatebu_users": 141
+    },
+    "collected_at": "2026-04-23T16:38:51.912676+00:00",
+    "raw": {
+      "title": "3D-CADはなぜ「誰でも使える」ようになったのか——「無料」と「自由」の狭間の歴史 - FabScene（ファブシーン）",
+      "link": "https://fabscene.com/new/special/cad-software-free-history-freedom-vs-free/",
+      "published": null,
+      "updated": "2026-04-23T01:09:13Z"
+    },
+    "score": 0.809168224885602,
+    "topic": "other",
+    "importance_mechanical": "high"
+  },
+  {
+    "id": "7b1c0c1e8d563c9e",
+    "source_id": "hatena_it_hotentry",
+    "source_name": "はてなブックマーク - テクノロジー（ホットエントリ）",
+    "source_type": "コミュニティ集約",
+    "layer": "L1",
+    "title": "MAGA支持者は「超バカ」インドの医学生、AIが生成した金髪女性のビキニ写真で荒稼ぎ",
+    "summary": "トランプ米大統領が掲げる「MAGA（米国を再び偉大に）」を支持する男性の間で人気を博した金髪の女性インフルエンサー「エミリー・ハート」は実在せず、インドの医学生が生成AIで作った虚像だったことを、米誌WIREDが明らかにした。医学生は、SNSを介してビキニ写真を売り荒稼ぎ、購入者を「超バカ」と評したという。 医...",
+    "content": null,
+    "url": "https://www.itmedia.co.jp/news/articles/2604/23/news067.html",
+    "published_at": "2026-04-23",
+    "raw_popularity_signal": {
+      "hatebu_users": 64
+    },
+    "collected_at": "2026-04-23T16:38:51.912676+00:00",
+    "raw": {
+      "title": "MAGA支持者は「超バカ」インドの医学生、AIが生成した金髪女性のビキニ写真で荒稼ぎ",
+      "link": "https://www.itmedia.co.jp/news/articles/2604/23/news067.html",
+      "published": null,
+      "updated": "2026-04-23T02:02:50Z"
+    },
+    "score": 0.772605726928902,
+    "topic": "ai_agents",
+    "importance_mechanical": "high"
+  },
+  {
+    "id": "f87556d2cb6cae1d",
+    "source_id": "hatena_it_hotentry",
+    "source_name": "はてなブックマーク - テクノロジー（ホットエントリ）",
+    "source_type": "コミュニティ集約",
+    "layer": "L1",
+    "title": "実装コストが下がった今、エンジニアの仕事はどう変わるか",
+    "summary": "はじめに この記事は、先日Rehab for JAPANのエンジニア月次定例で話した内容の外向け版です。社内向けに用意したスライドをもとに、要旨をあらためて整理し直しました。 テーマは「これからのITエンジニア」。AIコーディングが実務で使えるものになってきた今、エンジニアの仕事は「コードを書く人」から「AIとプロダク...",
+    "content": null,
+    "url": "https://zenn.dev/rehabforjapan/articles/after-ai-engineer",
+    "published_at": "2026-04-22",
+    "raw_popularity_signal": {
+      "hatebu_users": 194
+    },
+    "collected_at": "2026-04-23T16:38:51.912676+00:00",
+    "raw": {
+      "title": "実装コストが下がった今、エンジニアの仕事はどう変わるか",
+      "link": "https://zenn.dev/rehabforjapan/articles/after-ai-engineer",
+      "published": null,
+      "updated": "2026-04-22T22:42:26Z"
+    },
+    "score": 0.7606973646202742,
+    "topic": "other",
+    "importance_mechanical": "high"
+  },
+  {
+    "id": "968b5aa45c0e82b4",
+    "source_id": "hatena_it_hotentry",
+    "source_name": "はてなブックマーク - テクノロジー（ホットエントリ）",
+    "source_type": "コミュニティ集約",
+    "layer": "L1",
+    "title": "高騰するメモリ(RAM)を自宅の裏庭で一から自作する方法",
+    "summary": "AI需要の増加でGPUやスマートフォン、PC向けのメモリ(RAM)需要が強まり、しかも供給はMicron、Samsung、SK hynixの大手3社に大きく依存しているため、すぐに増産できないという事情があります。そこでYouTubeチャンネルのDr.Semiconductorが、工場の新設を待つ代わりに、自宅の裏庭の小屋をクリーンルーム化し、自前で半...",
+    "content": null,
+    "url": "https://gigazine.net/news/20260423-make-ram-at-my-home/",
+    "published_at": "2026-04-23",
+    "raw_popularity_signal": {
+      "hatebu_users": 64
+    },
+    "collected_at": "2026-04-23T16:38:51.912676+00:00",
+    "raw": {
+      "title": "高騰するメモリ(RAM)を自宅の裏庭で一から自作する方法",
+      "link": "https://gigazine.net/news/20260423-make-ram-at-my-home/",
+      "published": null,
+      "updated": "2026-04-23T08:20:57Z"
+    },
+    "score": 0.7526057269289019,
+    "topic": "other",
+    "importance_mechanical": "high"
+  },
+  {
+    "id": "7c441fbee8f373de",
+    "source_id": "hatena_it_entrylist",
+    "source_name": "はてなブックマーク - テクノロジー（新着エントリ）",
+    "source_type": "コミュニティ集約",
+    "layer": "L1",
+    "title": "大AIエージェント時代！AG-UI準拠でアプリを構築する - Taste of Tech Topics",
+    "summary": "こんにちは。最近、AI将棋モデルの対局解説動画を見るのにハマっている大塚です。 将棋は全然わからないのですが、AIの予想外の手に驚いている解説を聞くのが結構面白いんですよね。 さて今回は、Agent–User Interaction（AG-UI）がどのような課題を解決するプロトコルなのかを確認します。 また、CopilotKitというフレ...",
+    "content": null,
+    "url": "https://acro-engineer.hatenablog.com/entry/2026/04/23/120000",
+    "published_at": "2026-04-23",
+    "raw_popularity_signal": {
+      "hatebu_users": 43
+    },
+    "collected_at": "2026-04-23T16:38:52.146847+00:00",
+    "raw": {
+      "title": "大AIエージェント時代！AG-UI準拠でアプリを構築する - Taste of Tech Topics",
+      "link": "https://acro-engineer.hatenablog.com/entry/2026/04/23/120000",
+      "published": null,
+      "updated": "2026-04-23T03:31:53Z"
+    },
+    "score": 0.7443622802361238,
+    "topic": "ai_agents",
+    "importance_mechanical": "mid"
+  },
+  {
+    "id": "8c8d52ba15bd4766",
+    "source_id": "hatena_it_hotentry",
+    "source_name": "はてなブックマーク - テクノロジー（ホットエントリ）",
+    "source_type": "コミュニティ集約",
+    "layer": "L1",
+    "title": "ハーネスエンジニアリングの本質 ー従来の開発規律を、エージェントが回せるように再設計する / 開発者向けブログ・イベント | GMO Developers",
+    "summary": "この 4 軸は、ハーネスエンジニアリングを考えるときの基本的なフレームワークになります。 制御なき AI コーディングの課題 ハーネスなしで AI に自由にコーディングさせると、以下の問題が構造的に発生します。 一貫性の欠如: ファイルごとに実装パターンがずれる、命名規約に揺れが出るアーキテクチャの崩壊: 境界を...",
+    "content": null,
+    "url": "https://developers.gmo.jp/technology/81971/",
+    "published_at": "2026-04-23",
+    "raw_popularity_signal": {
+      "hatebu_users": 45
+    },
+    "collected_at": "2026-04-23T16:38:51.912676+00:00",
+    "raw": {
+      "title": "ハーネスエンジニアリングの本質 ー従来の開発規律を、エージェントが回せるように再設計する / 開発者向けブログ・イベント | GMO Developers",
+      "link": "https://developers.gmo.jp/technology/81971/",
+      "published": null,
+      "updated": "2026-04-23T05:01:50Z"
+    },
+    "score": 0.7275798061020216,
+    "topic": "other",
+    "importance_mechanical": "mid"
+  },
+  {
+    "id": "1503c8c08d82a30f",
+    "source_id": "hatena_it_hotentry",
+    "source_name": "はてなブックマーク - テクノロジー（ホットエントリ）",
+    "source_type": "コミュニティ集約",
+    "layer": "L1",
+    "title": "ソフトウェア唯識論",
+    "summary": "唯識思想（八識・三性・種子薫習・転識得智）をソフトウェア設計の読み解き枠組みとして使う試みです。前五識・第六意識・末那識・阿頼耶識の各層をセンサー／モデリング／バイアス／状態管理に対応させ、「なぜ認識がズレるのか」「チームの共通理解はどう形成されるか」を問い直します。唯識の哲学的背景から丁寧に説...",
+    "content": null,
+    "url": "https://zenn.dev/kawasima/books/software-yogacara",
+    "published_at": "2026-04-23",
+    "raw_popularity_signal": {
+      "hatebu_users": 44
+    },
+    "collected_at": "2026-04-23T16:38:51.912676+00:00",
+    "raw": {
+      "title": "ソフトウェア唯識論",
+      "link": "https://zenn.dev/kawasima/books/software-yogacara",
+      "published": null,
+      "updated": "2026-04-23T09:24:08Z"
+    },
+    "score": 0.7259889197843166,
+    "topic": "other",
+    "importance_mechanical": "mid"
+  },
+  {
+    "id": "949dc7b963739f35",
+    "source_id": "hatena_it_hotentry",
+    "source_name": "はてなブックマーク - テクノロジー（ホットエントリ）",
+    "source_type": "コミュニティ集約",
+    "layer": "L1",
+    "title": "OpenAIが文書中の個人名・メアド・電話番号などの個人情報をマスキングして流出を防ぐ「OpenAI Privacy Filter」をオープンソースでリリース",
+    "summary": "OpenAIがテキスト中の個人情報を検出してマスキングするモデル「OpenAI Privacy Filter」を公開しました。OpenAI Privacy Filterは個人を特定できる情報の検出と伏せ字化に特化した小型モデルで、未加工の文書を外部サーバーに送らずローカル環境で処理できる点を特徴としており、Apache 2.0ライセンスの下でGitHubとHug...",
+    "content": null,
+    "url": "https://gigazine.net/news/20260423-openai-privacy-filter/",
+    "published_at": "2026-04-23",
+    "raw_popularity_signal": {
+      "hatebu_users": 35
+    },
+    "collected_at": "2026-04-23T16:38:51.912676+00:00",
+    "raw": {
+      "title": "OpenAIが文書中の個人名・メアド・電話番号などの個人情報をマスキングして流出を防ぐ「OpenAI Privacy Filter」をオープンソースでリリース",
+      "link": "https://gigazine.net/news/20260423-openai-privacy-filter/",
+      "published": null,
+      "updated": "2026-04-23T03:40:35Z"
+    },
+    "score": 0.7098372509496405,
+    "topic": "other",
+    "importance_mechanical": "mid"
+  },
+  {
+    "id": "84216149958f6d0c",
+    "source_id": "hatena_it_hotentry",
+    "source_name": "はてなブックマーク - テクノロジー（ホットエントリ）",
+    "source_type": "コミュニティ集約",
+    "layer": "L1",
+    "title": "時々実父の名前でGoogle検索する",
+    "summary": "Yahooニュースとかで引っかかる それで、あー元気にしてんだなーって確認する 両親は幼い頃に離婚していて、実父と書いたのは母が再婚して今は別の父親がいるから 実父は結構破天荒というか、趣味や仕事に生きる人で家庭とは？？ってタイプの人だったらしい 地元が嫌で東京に飛び出した母を、「情熱的」に口説いて(スト...",
+    "content": null,
+    "url": "https://anond.hatelabo.jp/20260423124257",
+    "published_at": "2026-04-23",
+    "raw_popularity_signal": {
+      "hatebu_users": 31
+    },
+    "collected_at": "2026-04-23T16:38:51.912676+00:00",
+    "raw": {
+      "title": "時々実父の名前でGoogle検索する",
+      "link": "https://anond.hatelabo.jp/20260423124257",
+      "published": null,
+      "updated": "2026-04-23T03:46:58Z"
+    },
+    "score": 0.7013118305417436,
+    "topic": "other",
+    "importance_mechanical": "mid"
+  },
+  {
+    "id": "ee66aa8277c494c7",
+    "source_id": "hatena_it_hotentry",
+    "source_name": "はてなブックマーク - テクノロジー（ホットエントリ）",
+    "source_type": "コミュニティ集約",
+    "layer": "L1",
+    "title": "偉い人「日本から送られてきた資料はAIに翻訳させよう。そうすれば資料作成の時間が実質ゼロになる！」→“一丁目一番地”を訳させてみた結果",
+    "summary": "てんてん @durable_tenten 👨‍🦰「日本から送られてきた資料はAIに翻訳させよう。そうすれば資料作成の時間が実質ゼロになる！」 と偉い人が言い出したので、 「一丁目一番地」というJTC用語がAIにより「1-chome, 1-banchi」と訳される様子をその場で実演してみせたら絶句していた。 2026-04-23 05:53:54 てんてん @durable...",
+    "content": null,
+    "url": "https://togetter.com/li/2689062",
+    "published_at": "2026-04-23",
+    "raw_popularity_signal": {
+      "hatebu_users": 30
+    },
+    "collected_at": "2026-04-23T16:38:51.912676+00:00",
+    "raw": {
+      "title": "偉い人「日本から送られてきた資料はAIに翻訳させよう。そうすれば資料作成の時間が実質ゼロになる！」→“一丁目一番地”を訳させてみた結果",
+      "link": "https://togetter.com/li/2689062",
+      "published": null,
+      "updated": "2026-04-23T11:14:43Z"
+    },
+    "score": 0.6990137831274714,
+    "topic": "other",
+    "importance_mechanical": "mid"
+  },
+  {
+    "id": "2433d861eddb3f68",
+    "source_id": "hatena_it_entrylist",
+    "source_name": "はてなブックマーク - テクノロジー（新着エントリ）",
+    "source_type": "コミュニティ集約",
+    "layer": "L1",
+    "title": "【やじうまPC Watch】 出力はナノワット。“しょぼい”けど本当に発電する「自作原子力電池」",
+    "summary": "",
+    "content": null,
+    "url": "https://pc.watch.impress.co.jp/docs/news/yajiuma/2104042.html",
+    "published_at": "2026-04-23",
+    "raw_popularity_signal": {
+      "hatebu_users": 29
+    },
+    "collected_at": "2026-04-23T16:38:52.146847+00:00",
+    "raw": {
+      "title": "【やじうまPC Watch】 出力はナノワット。“しょぼい”けど本当に発電する「自作原子力電池」",
+      "link": "https://pc.watch.impress.co.jp/docs/news/yajiuma/2104042.html",
+      "published": null,
+      "updated": "2026-04-23T06:06:17Z"
+    },
+    "score": 0.6966403766083696,
+    "topic": "other",
+    "importance_mechanical": "mid"
+  },
+  {
+    "id": "84f9be6add71c299",
+    "source_id": "hatena_it_entrylist",
+    "source_name": "はてなブックマーク - テクノロジー（新着エントリ）",
+    "source_type": "コミュニティ集約",
+    "layer": "L1",
+    "title": "岩手県の山林火災でドコモに通信障害　初めて提供された「JAPANローミング」の仕組みと注意点",
+    "summary": "岩手県の大槌町で4月22日に発生した山林火災の影響でNTTドコモの携帯電話サービスに障害が発生し、「JAPANローミング」が初めて提供された。現地のドコモユーザーは、他社回線を使って携帯電話サービスを利用できる。 22日の午後5時ごろから岩手県大槌町の吉里吉里地区と小鎚地区で、携帯電話（4G、5G）の音声通話とデー...",
+    "content": null,
+    "url": "https://www.itmedia.co.jp/news/articles/2604/23/news106.html",
+    "published_at": "2026-04-23",
+    "raw_popularity_signal": {
+      "hatebu_users": 27
+    },
+    "collected_at": "2026-04-23T16:38:52.146847+00:00",
+    "raw": {
+      "title": "岩手県の山林火災でドコモに通信障害　初めて提供された「JAPANローミング」の仕組みと注意点",
+      "link": "https://www.itmedia.co.jp/news/articles/2604/23/news106.html",
+      "published": null,
+      "updated": "2026-04-23T05:27:57Z"
+    },
+    "score": 0.6916465060454625,
+    "topic": "other",
+    "importance_mechanical": "mid"
+  },
+  {
+    "id": "7fcbad981bf10e91",
+    "source_id": "hatena_it_hotentry",
+    "source_name": "はてなブックマーク - テクノロジー（ホットエントリ）",
+    "source_type": "コミュニティ集約",
+    "layer": "L1",
+    "title": "ローカルPCで動作するのにClaude Opus 4.5に迫る性能の「Qwen3.6-27B」が登場、モデルを誰でもダウンロード可能",
+    "summary": "中国のAI企業・AlibabaのAI研究チームであるQwen(Tongyi Lab)が270億パラメータのマルチモーダルAIモデル「Qwen3.6-27B」を公開しました。ライセンスはオープンなApache License 2.0で、商用利用も可能となっています。 Qwen3.6-27B: Flagship-Level Coding in a 27B Dense Model https://qwen.ai/blog?id=qwen3.6-27b 1...",
+    "content": null,
+    "url": "https://gigazine.net/news/20260423-qwen-3-6-27b/",
+    "published_at": "2026-04-23",
+    "raw_popularity_signal": {
+      "hatebu_users": 15
+    },
+    "collected_at": "2026-04-23T16:38:51.912676+00:00",
+    "raw": {
+      "title": "ローカルPCで動作するのにClaude Opus 4.5に迫る性能の「Qwen3.6-27B」が登場、モデルを誰でもダウンロード可能",
+      "link": "https://gigazine.net/news/20260423-qwen-3-6-27b/",
+      "published": null,
+      "updated": "2026-04-23T03:32:00Z"
+    },
+    "score": 0.6911401645977467,
+    "topic": "ai_agents",
+    "importance_mechanical": "mid"
+  },
+  {
+    "id": "0c46d7f01940bd03",
+    "source_id": "hatena_it_hotentry",
+    "source_name": "はてなブックマーク - テクノロジー（ホットエントリ）",
+    "source_type": "コミュニティ集約",
+    "layer": "L1",
+    "title": "【kintone×Claude Code】非エンジニアの人事が”書類選考の自動化システム”を自力で設計・構築した話 | えけすぽ！",
+    "summary": "こんにちは！ 人事広報部の石井です。 【社員インタビュー】クリエイター：石井さん 突然ですが、みなさんの日々の業務の中に 毎回同じような手順を繰り返してる作業ってありませんか？ 僕の場合、メールで届いた情報を社内ツールに転記する。書類を1枚ずつ確認して所定のフォーマットに入力する。みたいな定常業務があ...",
+    "content": null,
+    "url": "https://akspot.april-knights.com/technology/21135/",
+    "published_at": "2026-04-23",
+    "raw_popularity_signal": {
+      "hatebu_users": 19
+    },
+    "collected_at": "2026-04-23T16:38:51.912676+00:00",
+    "raw": {
+      "title": "【kintone×Claude Code】非エンジニアの人事が”書類選考の自動化システム”を自力で設計・構築した話 | えけすぽ！",
+      "link": "https://akspot.april-knights.com/technology/21135/",
+      "published": null,
+      "updated": "2026-04-23T10:06:51Z"
+    },
+    "score": 0.6872918334324228,
+    "topic": "ai_agents",
+    "importance_mechanical": "mid"
+  },
+  {
+    "id": "b06d55daa41d03a2",
+    "source_id": "hatena_it_hotentry",
+    "source_name": "はてなブックマーク - テクノロジー（ホットエントリ）",
+    "source_type": "コミュニティ集約",
+    "layer": "L1",
+    "title": "グーグルのAI認定講座、先着1万人に無料提供　「Google AI Pro」3カ月利用権も",
+    "summary": "",
+    "content": null,
+    "url": "https://www.watch.impress.co.jp/docs/news/2104171.html",
+    "published_at": "2026-04-23",
+    "raw_popularity_signal": {
+      "hatebu_users": 25
+    },
+    "collected_at": "2026-04-23T16:38:51.912676+00:00",
+    "raw": {
+      "title": "グーグルのAI認定講座、先着1万人に無料提供　「Google AI Pro」3カ月利用権も",
+      "link": "https://www.watch.impress.co.jp/docs/news/2104171.html",
+      "published": null,
+      "updated": "2026-04-23T09:31:16Z"
+    },
+    "score": 0.6862823921502289,
+    "topic": "other",
+    "importance_mechanical": "mid"
+  }
+]

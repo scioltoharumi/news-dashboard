@@ -1,0 +1,500 @@
+[
+  {
+    "id": "b0f11a8348e3f3c1",
+    "source_id": "hatena_it_hotentry",
+    "source_name": "はてなブックマーク - テクノロジー（ホットエントリ）",
+    "source_type": "コミュニティ集約",
+    "layer": "L1",
+    "title": "Gemini の Gem で 社内 GoogleDrive のチャットボットを作成 | DevelopersIO",
+    "summary": "GeminiのGemを利用して、社内GoogleDriveの資料より、問い合わせの回答を行うチャットボット作成しましたので記載します。 概要 社内でGoogleDriveの共有ドライブを利用していますが、ファイルの数やフォルダの階層が多くなっていくと、必要な資料・情報を探したいとき、時間がかかることがあるかもしれません。例えば、...",
+    "content": null,
+    "url": "https://dev.classmethod.jp/articles/gemini-gem-googledrive-chatbot/",
+    "published_at": "2026-04-25",
+    "raw_popularity_signal": {
+      "hatebu_users": 248
+    },
+    "collected_at": "2026-04-26T12:55:41.521784+00:00",
+    "raw": {
+      "title": "Gemini の Gem で 社内 GoogleDrive のチャットボットを作成 | DevelopersIO",
+      "link": "https://dev.classmethod.jp/articles/gemini-gem-googledrive-chatbot/",
+      "published": null,
+      "updated": "2026-04-25T13:25:33Z"
+    },
+    "score": 0.8094622524061676,
+    "topic": "ai_agents",
+    "importance_mechanical": "high"
+  },
+  {
+    "id": "e73567c852758103",
+    "source_id": "hatena_it_hotentry",
+    "source_name": "はてなブックマーク - テクノロジー（ホットエントリ）",
+    "source_type": "コミュニティ集約",
+    "layer": "L1",
+    "title": "米Anthropic調査「プログラマーはAIに職を奪われる、バーテンダーへ転職がおススメ」",
+    "summary": "米Anthropicは、8万1000人のAIユーザーを対象とした労働市場への影響調査結果を公表した。デジタル環境での作業が多い職業ほど雇用の伸びが鈍化し、仕事が代替されるリスクが高い。一方で物理作業を伴う約3割の職業はAIの影響を受けにくい。またAIにより個人のタスク処理速度は向上するものの、その分業務量や残業が増え...",
+    "content": null,
+    "url": "https://www.sbbit.jp/article/cont1/185159",
+    "published_at": "2026-04-25",
+    "raw_popularity_signal": {
+      "hatebu_users": 138
+    },
+    "collected_at": "2026-04-26T12:55:41.521784+00:00",
+    "raw": {
+      "title": "米Anthropic調査「プログラマーはAIに職を奪われる、バーテンダーへ転職がおススメ」",
+      "link": "https://www.sbbit.jp/article/cont1/185159",
+      "published": null,
+      "updated": "2026-04-25T09:02:52Z"
+    },
+    "score": 0.7472648279325609,
+    "topic": "other",
+    "importance_mechanical": "mid"
+  },
+  {
+    "id": "2cb53455bd364331",
+    "source_id": "nikkei_xtech",
+    "source_name": "日経クロステック",
+    "source_type": "業界メディア",
+    "layer": "L2",
+    "title": "NECのDXブランド「BluStellar」、2030年度までに売上高1兆3000億円へ",
+    "summary": "NECは2026年4月24日、DX（デジタル変革）ビジネスのブランド「BluStellar（ブルーステラ）」で、2030年度までに売上収益で1兆3000億円を目指すと発表した。調整後営業利益は25％を狙う。従来は将来目標として売上収益1兆円、調整後営業利益20％を掲げていた。",
+    "content": null,
+    "url": "https://xtech.nikkei.com/atcl/nxt/news/24/03194/",
+    "published_at": "2026-04-24",
+    "raw_popularity_signal": null,
+    "collected_at": "2026-04-26T12:56:24.960805+00:00",
+    "raw": {
+      "title": "NECのDXブランド「BluStellar」、2030年度までに売上高1兆3000億円へ",
+      "link": "https://xtech.nikkei.com/atcl/nxt/news/24/03194/",
+      "published": null,
+      "updated": "2026-04-24T15:00:00+09:00"
+    },
+    "score": 0.3386671231283069,
+    "topic": "dx_cases",
+    "importance_mechanical": "low"
+  },
+  {
+    "id": "dfa4fa46a88773ee",
+    "source_id": "hatena_it_hotentry",
+    "source_name": "はてなブックマーク - テクノロジー（ホットエントリ）",
+    "source_type": "コミュニティ集約",
+    "layer": "L1",
+    "title": "「Python一択ではなくなった」　AIコーディング時代、新人が学んで損しないプログラミング言語は？",
+    "summary": "「Python一択ではなくなった」　AIコーディング時代、新人が学んで損しないプログラミング言語は？：人気や話題性、求人数、案件単価のランキングから探る 生成AIの普及で「コードを書く力」の意味が変わりつつあります。新人であれば、どのプログラミング言語を学ぶべきなのでしょうか。人気や話題性、求人数、案件単価...",
+    "content": null,
+    "url": "https://atmarkit.itmedia.co.jp/ait/articles/2604/26/news009.html",
+    "published_at": "2026-04-26",
+    "raw_popularity_signal": {
+      "hatebu_users": 78
+    },
+    "collected_at": "2026-04-26T12:55:41.521784+00:00",
+    "raw": {
+      "title": "「Python一択ではなくなった」　AIコーディング時代、新人が学んで損しないプログラミング言語は？",
+      "link": "https://atmarkit.itmedia.co.jp/ait/articles/2604/26/news009.html",
+      "published": null,
+      "updated": "2026-04-26T03:03:26Z"
+    },
+    "score": 0.79779544786719,
+    "topic": "ai_agents",
+    "importance_mechanical": "high"
+  },
+  {
+    "id": "223b12088bd2854f",
+    "source_id": "hatena_it_hotentry",
+    "source_name": "はてなブックマーク - テクノロジー（ホットエントリ）",
+    "source_type": "コミュニティ集約",
+    "layer": "L1",
+    "title": "ハーネスエンジニアリングを楽にする Microsoft 製の新ツール「APM」ハンズオン",
+    "summary": "はじめに 最近、AI エージェント（GitHub Copilot / Claude Code / Cursor / OpenCode / Codex …）に渡す「指示書」の種類が一気に増えました。 GitHub Copilot → .github/instructions/*.md, .github/prompts/*.md Claude Code → .claude/commands/*.md, .claude/agents/*.md Cursor → .cursor/rules/*.mdc これに加え...",
+    "content": null,
+    "url": "https://zenn.dev/microsoft/articles/agent-package-manager-handson",
+    "published_at": "2026-04-25",
+    "raw_popularity_signal": {
+      "hatebu_users": 129
+    },
+    "collected_at": "2026-04-26T12:55:41.521784+00:00",
+    "raw": {
+      "title": "ハーネスエンジニアリングを楽にする Microsoft 製の新ツール「APM」ハンズオン",
+      "link": "https://zenn.dev/microsoft/articles/agent-package-manager-handson",
+      "published": null,
+      "updated": "2026-04-25T23:44:03Z"
+    },
+    "score": 0.7624195866080179,
+    "topic": "ai_agents",
+    "importance_mechanical": "high"
+  },
+  {
+    "id": "421e0b7f44f8e99e",
+    "source_id": "hatena_it_hotentry",
+    "source_name": "はてなブックマーク - テクノロジー（ホットエントリ）",
+    "source_type": "コミュニティ集約",
+    "layer": "L1",
+    "title": "Claude CodeのVSCode拡張が使いやすいよ - Qiita",
+    "summary": "皆様、Claude Code使ってますか？ CLIで利用されている方が大多数だと思いますが、VSCodeの拡張も悪くないよ、というお話です。 いつのころからか、左右にパネルが出るような構成になっています。 右側が通常（？）のチャット欄で左が過去のセッション一覧みたいな感じです。 左側にある「New session」をクリックすると...",
+    "content": null,
+    "url": "https://qiita.com/moritalous/items/3c5269610f26e23c5b04",
+    "published_at": "2026-04-25",
+    "raw_popularity_signal": {
+      "hatebu_users": 110
+    },
+    "collected_at": "2026-04-26T12:55:41.521784+00:00",
+    "raw": {
+      "title": "Claude CodeのVSCode拡張が使いやすいよ - Qiita",
+      "link": "https://qiita.com/moritalous/items/3c5269610f26e23c5b04",
+      "published": null,
+      "updated": "2026-04-25T23:05:21Z"
+    },
+    "score": 0.750982857687988,
+    "topic": "ai_agents",
+    "importance_mechanical": "high"
+  },
+  {
+    "id": "b68d792b55f397d8",
+    "source_id": "hatena_it_hotentry",
+    "source_name": "はてなブックマーク - テクノロジー（ホットエントリ）",
+    "source_type": "コミュニティ集約",
+    "layer": "L1",
+    "title": "なぜLLMは日本文化に夢中なのか？ – LLMに潜む隠れた文化的・地域的バイアス - AIDB",
+    "summary": "LLMs have been showing limitations when it comes to cultural coverage and competence, and in some cases show regional biases such as amplifying Western and Anglocentric viewpoints. While there have been works analysing the cultural capabilities of LLMs, there has not been specific work on highlig...",
+    "content": null,
+    "url": "https://ai-data-base.com/paper/2604-21751",
+    "published_at": "2026-04-25",
+    "raw_popularity_signal": {
+      "hatebu_users": 109
+    },
+    "collected_at": "2026-04-26T12:55:41.521784+00:00",
+    "raw": {
+      "title": "なぜLLMは日本文化に夢中なのか？ – LLMに潜む隠れた文化的・地域的バイアス - AIDB",
+      "link": "https://ai-data-base.com/paper/2604-21751",
+      "published": null,
+      "updated": "2026-04-25T18:39:51Z"
+    },
+    "score": 0.7503278087499159,
+    "topic": "ai_agents",
+    "importance_mechanical": "high"
+  },
+  {
+    "id": "f75824f786f2ba7f",
+    "source_id": "hatena_it_hotentry",
+    "source_name": "はてなブックマーク - テクノロジー（ホットエントリ）",
+    "source_type": "コミュニティ集約",
+    "layer": "L1",
+    "title": "ブロックされた時に「効いてて草」って勝ち誇っている人間は、周りからはこう見えている",
+    "summary": "3っつ @3ttz0131 @peroperorinko01 ブロックしにそいつのアカウントに飛んだら 「ピキッてて草」 「見にきた時点でお前の負け」 とか書いてる。 2026-04-23 14:03:35",
+    "content": null,
+    "url": "https://posfie.com/@golden_haniwa/p/iGD9Gf4",
+    "published_at": "2026-04-25",
+    "raw_popularity_signal": {
+      "hatebu_users": 105
+    },
+    "collected_at": "2026-04-26T12:55:41.521784+00:00",
+    "raw": {
+      "title": "ブロックされた時に「効いてて草」って勝ち誇っている人間は、周りからはこう見えている",
+      "link": "https://posfie.com/@golden_haniwa/p/iGD9Gf4",
+      "published": null,
+      "updated": "2026-04-25T12:12:00Z"
+    },
+    "score": 0.7276466721010066,
+    "topic": "other",
+    "importance_mechanical": "mid"
+  },
+  {
+    "id": "d59b9afdb1838b34",
+    "source_id": "hatena_it_entrylist",
+    "source_name": "はてなブックマーク - テクノロジー（新着エントリ）",
+    "source_type": "コミュニティ集約",
+    "layer": "L1",
+    "title": "“スティック型DAP”再び、CDプレーヤー風など、レトロデザインオーディオ多数。ヘッドフォン祭開幕",
+    "summary": "",
+    "content": null,
+    "url": "https://av.watch.impress.co.jp/docs/news/2104721.html",
+    "published_at": "2026-04-25",
+    "raw_popularity_signal": {
+      "hatebu_users": 101
+    },
+    "collected_at": "2026-04-26T12:55:41.676189+00:00",
+    "raw": {
+      "title": "“スティック型DAP”再び、CDプレーヤー風など、レトロデザインオーディオ多数。ヘッドフォン祭開幕",
+      "link": "https://av.watch.impress.co.jp/docs/news/2104721.html",
+      "published": null,
+      "updated": "2026-04-25T07:34:00Z"
+    },
+    "score": 0.7248623898505313,
+    "topic": "other",
+    "importance_mechanical": "mid"
+  },
+  {
+    "id": "d4baf55bea6ed0f1",
+    "source_id": "hatena_it_hotentry",
+    "source_name": "はてなブックマーク - テクノロジー（ホットエントリ）",
+    "source_type": "コミュニティ集約",
+    "layer": "L1",
+    "title": "同じ Issue を Claude・Codex・Gemini に同時に解かせるとどうなるか — git worktree × tmux で衝突しない並列 AI 開発 - Qiita",
+    "summary": "はじめに AI コーディングエージェントを 2 つ同時に動かし、同じブランチで型エラーが 40 件積み上がった経験はありますか。筆者は最初に試した日、昼休みから戻ったら tsc --noEmit が通らず、どちらが壊したかの特定だけで 30 分を使いました。この問題はエージェント側を賢くしても解けません。本質は「同じ作業ツリ...",
+    "content": null,
+    "url": "https://qiita.com/nogataka/items/1156e2d3a40c4dab3398",
+    "published_at": "2026-04-25",
+    "raw_popularity_signal": {
+      "hatebu_users": 45
+    },
+    "collected_at": "2026-04-26T12:55:41.521784+00:00",
+    "raw": {
+      "title": "同じ Issue を Claude・Codex・Gemini に同時に解かせるとどうなるか — git worktree × tmux で衝突しない並列 AI 開発 - Qiita",
+      "link": "https://qiita.com/nogataka/items/1156e2d3a40c4dab3398",
+      "published": null,
+      "updated": "2026-04-25T07:27:59Z"
+    },
+    "score": 0.7072219998371407,
+    "topic": "ai_agents",
+    "importance_mechanical": "mid"
+  },
+  {
+    "id": "fbee82c4762f4eee",
+    "source_id": "hatena_it_entrylist",
+    "source_name": "はてなブックマーク - テクノロジー（新着エントリ）",
+    "source_type": "コミュニティ集約",
+    "layer": "L1",
+    "title": "【renue】社員全員でClaude Codeを使い、自社のデモECをハッキングしてみた",
+    "summary": "株式会社renueは、2026年4月10日に四半期イベント「renue SUMMIT」を開催し、AIエージェントを活用したセキュリティ演習を実施しました。全社員がチーム対抗で取り組み、60分の実技時間を設けました。AIエージェントを前提とした業務設計を自社で体現する試みとして位置付けました。 エグゼクティブサマリー 演習の対象...",
+    "content": null,
+    "url": "https://zenn.dev/renue/articles/4687cb5e5c0031",
+    "published_at": "2026-04-25",
+    "raw_popularity_signal": {
+      "hatebu_users": 44
+    },
+    "collected_at": "2026-04-26T12:55:41.676189+00:00",
+    "raw": {
+      "title": "【renue】社員全員でClaude Codeを使い、自社のデモECをハッキングしてみた",
+      "link": "https://zenn.dev/renue/articles/4687cb5e5c0031",
+      "published": null,
+      "updated": "2026-04-25T02:32:35Z"
+    },
+    "score": 0.7056311135194356,
+    "topic": "ai_agents",
+    "importance_mechanical": "mid"
+  },
+  {
+    "id": "7f16114e22e0b35b",
+    "source_id": "hatena_it_hotentry",
+    "source_name": "はてなブックマーク - テクノロジー（ホットエントリ）",
+    "source_type": "コミュニティ集約",
+    "layer": "L1",
+    "title": "3社そろい踏みの「Starlink Direct」　料金で仕掛けるドコモとソフトバンク、先行するKDDIは“サービス”で差別化",
+    "summary": "3社そろい踏みの「Starlink Direct」　料金で仕掛けるドコモとソフトバンク、先行するKDDIは“サービス”で差別化：石野純也のMobile Eye（1/3 ページ） 2025年4月にスタートしたKDDIとSpaceXの「au Starlink Direct」は、上空300キロを飛ぶ低軌道衛星（LEO）とスマートフォンが直接通信するサービス。当初はメッセージサ...",
+    "content": null,
+    "url": "https://www.itmedia.co.jp/mobile/articles/2604/25/news025.html",
+    "published_at": "2026-04-25",
+    "raw_popularity_signal": {
+      "hatebu_users": 74
+    },
+    "collected_at": "2026-04-26T12:55:41.521784+00:00",
+    "raw": {
+      "title": "3社そろい踏みの「Starlink Direct」　料金で仕掛けるドコモとソフトバンク、先行するKDDIは“サービス”で差別化",
+      "link": "https://www.itmedia.co.jp/mobile/articles/2604/25/news025.html",
+      "published": null,
+      "updated": "2026-04-25T05:55:32Z"
+    },
+    "score": 0.7026059051221616,
+    "topic": "other",
+    "importance_mechanical": "mid"
+  },
+  {
+    "id": "8c876296fa1f274b",
+    "source_id": "hatena_it_hotentry",
+    "source_name": "はてなブックマーク - テクノロジー（ホットエントリ）",
+    "source_type": "コミュニティ集約",
+    "layer": "L1",
+    "title": "OWASP ZAP の finding を Rust/Axum の handler に戻して直す - じゃあ、おうちで学べる",
+    "summary": "はじめに vulnerable-app に ZAP の full scan を回すと、High finding が並びます。XSS、SQL Injection、Path Traversal。alert 名を眺めて、ふと気づく。これは「危険です」の一覧ではない。handler への差し戻し指示書だ。 OWASP ZAP を実行すると、HTML、Markdown、JSON のレポートが出ます。そこには Cross Site Sc...",
+    "content": null,
+    "url": "https://syu-m-5151.hatenablog.com/entry/2026/04/23/195535",
+    "published_at": "2026-04-26",
+    "raw_popularity_signal": {
+      "hatebu_users": 26
+    },
+    "collected_at": "2026-04-26T12:55:41.521784+00:00",
+    "raw": {
+      "title": "OWASP ZAP の finding を Rust/Axum の handler に戻して直す - じゃあ、おうちで学べる",
+      "link": "https://syu-m-5151.hatenablog.com/entry/2026/04/23/195535",
+      "published": null,
+      "updated": "2026-04-26T01:33:01Z"
+    },
+    "score": 0.7000848933452809,
+    "topic": "other",
+    "importance_mechanical": "mid"
+  },
+  {
+    "id": "b51c1ced92f872c1",
+    "source_id": "hatena_it_entrylist",
+    "source_name": "はてなブックマーク - テクノロジー（新着エントリ）",
+    "source_type": "コミュニティ集約",
+    "layer": "L1",
+    "title": "髪フェチすぎてリアル求めすぎた2023年の絵柄、今のシンプル塗りが良いとされる時代でも受け入れてもらえるんだろうか→「髪の毛のリアルさが本当にすごい」",
+    "summary": "猫麦🐟 @09ra_19ra 髪フェチすぎてリアル求めすぎた2023年の絵柄、今のシンプル塗りが良いとされる時代でも受け入れてもらえるんだろうか pic.x.com/ZOO9EjyvOV 2026-04-22 09:14:50 猫麦🐟 @09ra_19ra 【髪＆質感フェチによる髪の描き方】 ”てかず”は少ないけど、１つ１つのタッチを大切に”どういう情報を伝えたいか”を...",
+    "content": null,
+    "url": "https://posfie.com/@taimport/p/Fj4rbiB",
+    "published_at": "2026-04-25",
+    "raw_popularity_signal": {
+      "hatebu_users": 66
+    },
+    "collected_at": "2026-04-26T12:55:41.676189+00:00",
+    "raw": {
+      "title": "髪フェチすぎてリアル求めすぎた2023年の絵柄、今のシンプル塗りが良いとされる時代でも受け入れてもらえるんだろうか→「髪の毛のリアルさが本当にすごい」",
+      "link": "https://posfie.com/@taimport/p/Fj4rbiB",
+      "published": null,
+      "updated": "2026-04-25T05:53:07Z"
+    },
+    "score": 0.6944414950070161,
+    "topic": "other",
+    "importance_mechanical": "mid"
+  },
+  {
+    "id": "b06ee8e446b0a4a1",
+    "source_id": "hatena_it_hotentry",
+    "source_name": "はてなブックマーク - テクノロジー（ホットエントリ）",
+    "source_type": "コミュニティ集約",
+    "layer": "L1",
+    "title": "Googleが競合AI企業のAnthropicに最大6兆4000億円を投資",
+    "summary": "AIアシスタントのGeminiを提供するGoogleが、AIアシスタントのClaudeを開発する競合他社であるAnthropicに、最大400億ドル(約6兆4000億円)を投資することを計画していると報じられました。 Google to invest up to $40 billion in AI rival Anthropic | Reuters https://www.reuters.com/business/google-plans-invest-u...",
+    "content": null,
+    "url": "https://gigazine.net/news/20260426-google-invest-up-to-40-billion-anthropic/",
+    "published_at": "2026-04-26",
+    "raw_popularity_signal": {
+      "hatebu_users": 10
+    },
+    "collected_at": "2026-04-26T12:55:41.521784+00:00",
+    "raw": {
+      "title": "Googleが競合AI企業のAnthropicに最大6兆4000億円を投資",
+      "link": "https://gigazine.net/news/20260426-google-invest-up-to-40-billion-anthropic/",
+      "published": null,
+      "updated": "2026-04-26T00:13:21Z"
+    },
+    "score": 0.6750897135118206,
+    "topic": "ai_agents",
+    "importance_mechanical": "mid"
+  },
+  {
+    "id": "75ec8efbb07e7f95",
+    "source_id": "hatena_it_entrylist",
+    "source_name": "はてなブックマーク - テクノロジー（新着エントリ）",
+    "source_type": "コミュニティ集約",
+    "layer": "L1",
+    "title": "スペインの全法律をMarkdownファイル化しGitリポジトリで公開するプロジェクト「legalize-es」、法改正はコミットとして管理され追跡も可能",
+    "summary": "法律は社会のルールを定める重要な文書ではあるものの一般人は条文そのものに触れる機会はあまり多くありません。「legalize-es」プロジェクトはスペインの全法律をMarkdownファイルとしてGitリポジトリで公開することで法律の透明性やアクセス性を向上させることを目指したプロジェクトです。 legalize-dev/legalize-es...",
+    "content": null,
+    "url": "https://gigazine.net/news/20260425-legalize-es/",
+    "published_at": "2026-04-25",
+    "raw_popularity_signal": {
+      "hatebu_users": 45
+    },
+    "collected_at": "2026-04-26T12:55:41.676189+00:00",
+    "raw": {
+      "title": "スペインの全法律をMarkdownファイル化しGitリポジトリで公開するプロジェクト「legalize-es」、法改正はコミットとして管理され追跡も可能",
+      "link": "https://gigazine.net/news/20260425-legalize-es/",
+      "published": null,
+      "updated": "2026-04-25T09:58:53Z"
+    },
+    "score": 0.6672219998371407,
+    "topic": "other",
+    "importance_mechanical": "mid"
+  },
+  {
+    "id": "29de55f27ad252ff",
+    "source_id": "hatena_it_entrylist",
+    "source_name": "はてなブックマーク - テクノロジー（新着エントリ）",
+    "source_type": "コミュニティ集約",
+    "layer": "L1",
+    "title": "無料で自分好みのダッシュボードを作成できユーザーごとにログインもできる「Dashy」、セルフホスト可能でDockerで動作OK",
+    "summary": "ブックマークでは物足りず、監視ツールでは堅すぎる。そんな自宅サーバー管理者にちょうどいいのが「Dashy」です。多数のサービスリンクを1画面に整理し、オンライン状態の確認やRSS・天気予報などのウィジェットも設置できるモダンな見た目のオープンソースダッシュボードです。 Dashy - The Ultimate Homepage for you...",
+    "content": null,
+    "url": "https://gigazine.net/news/20260425-dashy/",
+    "published_at": "2026-04-25",
+    "raw_popularity_signal": {
+      "hatebu_users": 40
+    },
+    "collected_at": "2026-04-26T12:55:41.676189+00:00",
+    "raw": {
+      "title": "無料で自分好みのダッシュボードを作成できユーザーごとにログインもできる「Dashy」、セルフホスト可能でDockerで動作OK",
+      "link": "https://gigazine.net/news/20260425-dashy/",
+      "published": null,
+      "updated": "2026-04-25T12:20:22Z"
+    },
+    "score": 0.6588930040101675,
+    "topic": "other",
+    "importance_mechanical": "mid"
+  },
+  {
+    "id": "68f0208e46b51f22",
+    "source_id": "hatena_it_hotentry",
+    "source_name": "はてなブックマーク - テクノロジー（ホットエントリ）",
+    "source_type": "コミュニティ集約",
+    "layer": "L1",
+    "title": "Claude Code プラグインおすすめ 2026 — 公式マーケットプレイスから入れるべきプラグイン & MCP サーバー",
+    "summary": "はじめに Claude Code のプラグインエコシステムが急速に拡大しています。2026 年 4 月時点で、公式マーケットプレイス（claude-plugins-official）には 160 個のプラグインが登録されています。うち 32 個が Anthropic 製、残りはサードパーティ製です。 しかし、数が多すぎて「結局どれを入れればいいの？」と迷う方も...",
+    "content": null,
+    "url": "https://zenn.dev/ino_h/articles/2026-04-23-claude-code-plugins-ranking",
+    "published_at": "2026-04-24",
+    "raw_popularity_signal": {
+      "hatebu_users": 81
+    },
+    "collected_at": "2026-04-26T12:55:41.521784+00:00",
+    "raw": {
+      "title": "Claude Code プラグインおすすめ 2026 — 公式マーケットプレイスから入れるべきプラグイン & MCP サーバー",
+      "link": "https://zenn.dev/ino_h/articles/2026-04-23-claude-code-plugins-ranking",
+      "published": null,
+      "updated": "2026-04-24T21:57:36Z"
+    },
+    "score": 0.657636098525593,
+    "topic": "ai_agents",
+    "importance_mechanical": "mid"
+  },
+  {
+    "id": "d3801b338601cf61",
+    "source_id": "hatena_it_entrylist",
+    "source_name": "はてなブックマーク - テクノロジー（新着エントリ）",
+    "source_type": "コミュニティ集約",
+    "layer": "L1",
+    "title": "npm install だけで機密情報が漏洩するリスク — サプライチェーンリスクのデモと対策",
+    "summary": "「信頼できるパッケージを使っているから大丈夫」と思っていませんか？ 近年、npm パッケージを経由したサプライチェーンリスクが増加しており、npm install を実行しただけで機密情報が漏洩するリスクがあります。 本記事では、このリスクを実際に手元で再現できるデモを紹介し、取りうる対策とその限界を整理します。 ...",
+    "content": null,
+    "url": "https://zenn.dev/hisa_tech_2973/articles/13d4d58e62cb5b",
+    "published_at": "2026-04-25",
+    "raw_popularity_signal": {
+      "hatebu_users": 39
+    },
+    "collected_at": "2026-04-26T12:55:41.676189+00:00",
+    "raw": {
+      "title": "npm install だけで機密情報が漏洩するリスク — サプライチェーンリスクのデモと対策",
+      "link": "https://zenn.dev/hisa_tech_2973/articles/13d4d58e62cb5b",
+      "published": null,
+      "updated": "2026-04-25T00:39:22Z"
+    },
+    "score": 0.6571056931115387,
+    "topic": "other",
+    "importance_mechanical": "mid"
+  },
+  {
+    "id": "06848bfe0ee7e4fc",
+    "source_id": "hatena_it_hotentry",
+    "source_name": "はてなブックマーク - テクノロジー（ホットエントリ）",
+    "source_type": "コミュニティ集約",
+    "layer": "L1",
+    "title": "GitHub - h4ckf0r0day/obscura: The headless browser for AI agents and web scraping",
+    "summary": "You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert",
+    "content": null,
+    "url": "https://github.com/h4ckf0r0day/obscura",
+    "published_at": "2026-04-24",
+    "raw_popularity_signal": {
+      "hatebu_users": 78
+    },
+    "collected_at": "2026-04-26T12:55:41.521784+00:00",
+    "raw": {
+      "title": "GitHub - h4ckf0r0day/obscura: The headless browser for AI agents and web scraping",
+      "link": "https://github.com/h4ckf0r0day/obscura",
+      "published": null,
+      "updated": "2026-04-24T22:10:26Z"
+    },
+    "score": 0.6549383050100471,
+    "topic": "ai_agents",
+    "importance_mechanical": "mid"
+  }
+]

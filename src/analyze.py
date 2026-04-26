@@ -1,10 +1,12 @@
-"""Analyze — Claude API でカード JSON を生成する。
+"""Analyze — [DEPRECATED, D-41] Anthropic API 直叩きでカード JSON を生成する旧モジュール。
 
-親プロジェクト `04_core/07_prompts_design.md` §2 実装。
-- モデル: claude-sonnet-4-6（D-28）
-- プロンプト: config/prompts/card_analyze.md（{{USER_CONTEXT}} は context_loader が差し込む）
-- 出力: 3 ブロック (fact / context_analysis / impact) + topic / importance / info_type / source_type
-- 日付不正/欠落: {"skip": true, "reason": "..."} として返る（LLM 側判定）
+D-41 (2026-04-26) で本モジュールは Phase 1〜4 のメインフローから外された。
+カード生成は Claude Code (`/loop` セッション) が `scripts/daily_prompt.md` に従って担当する。
+
+本ファイルは:
+- 将来「ローカル fallback」「他クライアントから API 直叩き」が必要になった場合の参照実装として保持
+- もはや `src/pipeline/daily_collect.py` からは import されない
+- `_build_system_prompt` / `_build_user_message` のヘルパは、CC が同等処理をするためのリファレンスとして残す
 """
 from __future__ import annotations
 

@@ -1,19 +1,20 @@
-"""Daily collect pipeline — Phase 1 MVP の end-to-end エントリポイント。
+"""Daily collect pipeline — 収集 + 検証 + スコア + 選抜まで（D-41 後の役割）。
+
+D-41 で API 直叩きを撤回。カード生成は Claude Code (`/loop` セッション) が担当する。
+本モジュールは決定論的な前処理だけを行い、選抜結果を JSON で出力する。
 
 フロー:
-  1. config/sources.yaml / tracks.yaml / inquiries.yaml を読み込み
-  2. Hatena + RSS collectors で raw items を取得
-  3. validate.py で日付バリデーション (D-37) — 不合格は data/rejected/ へ
+  1. config/sources.yaml / tracks.yaml を読込
+  2. Hatena + RSS collectors で raw items 取得 → `data/raw/{today}.jsonl`
+  3. validate.py で日付バリデーション (D-37) — 不合格は `data/rejected/{today}.jsonl`
   4. scoring.py でスコア + トピック分類、importance_score_based 暫定分類
   5. dedup.py で URL/タイトル重複排除
   6. 日次上限 20 件 / 各トラック最低 1 件保証
-  7. analyze.py でカード JSON 生成（--dry-run で API を呼ばずにスキップ可）
-  8. 成果物を data/raw/ と data/processed/cards/ に保存
+  7. 選抜結果を `data/processed/selection-{today}.json` に出力
 
-使用例:
-  python -m src.pipeline.daily_collect --dry-run             # API を呼ばずに収集のみ
-  python -m src.pipeline.daily_collect                        # 本番（API Key 必須）
-  python -m src.pipeline.daily_collect --today 2026-04-24     # 今日を固定（テスト用）
+呼び出し（Claude Code が `/loop` 起床時に実行）:
+  python -m src.pipeline.daily_collect
+  python -m src.pipeline.daily_collect --today 2026-04-26   # テスト用に日付固定
 """
 from __future__ import annotations
 
@@ -28,14 +29,10 @@ from pathlib import Path
 from typing import Any
 
 import yaml
-from dotenv import load_dotenv
 
 from src import dedup as _dedup
 from src import scoring, validate
 from src.collectors import hatena, rss
-
-# `.env` をロード（API Key 等。`.env` は .gitignore 対象、未配置でも黙って続行）
-load_dotenv()
 
 logger = logging.getLogger("daily_collect")
 
@@ -163,16 +160,13 @@ def select_daily_cards(
     return selected
 
 
-def run(
-    today: date | None = None,
-    dry_run: bool = False,
-) -> dict[str, Any]:
-    """Daily pipeline のエントリポイント。結果サマリー dict を返す。"""
+def run(today: date | None = None) -> dict[str, Any]:
+    """Daily collect の実行（API は呼ばない、選抜まで）。結果サマリー dict を返す。"""
     today = today or date.today()
     now = datetime.now(timezone.utc)
     today_iso = today.isoformat()
 
-    logger.info("daily_collect start: today=%s dry_run=%s", today_iso, dry_run)
+    logger.info("daily_collect start: today=%s", today_iso)
 
     sources_cfg = _load_yaml(CONFIG_DIR / "sources.yaml")
     tracks_cfg = _load_yaml(CONFIG_DIR / "tracks.yaml")
@@ -197,47 +191,18 @@ def run(
     # 6. Select up to 20 with per-track minimum
     selected = select_daily_cards(deduped, max_total=DAILY_MAX_CARDS, min_per_track=1)
 
-    # 7. Card generation via Claude API (unless dry-run)
-    cards: list[dict[str, Any]] = []
-    skipped: list[dict[str, Any]] = []
-    if dry_run:
-        logger.info("dry-run: skipping Claude API calls, saving selected items only")
-        cards = selected
-    else:
-        from src.analyze import analyze_card, client_from_env  # lazy import to avoid API key errors in dry-run
-
-        client = client_from_env()
-        for it in selected:
-            try:
-                result = analyze_card(it, client=client)
-                if result.get("skip"):
-                    skipped.append({**it, "skip_reason": result.get("reason")})
-                    continue
-                card = {
-                    "id": it["id"],
-                    "url": it["url"],
-                    "source_name": it.get("source_name"),
-                    "layer": it.get("layer"),
-                    "published_at": it.get("published_at"),
-                    **result,
-                }
-                cards.append(card)
-            except Exception as e:  # noqa: BLE001
-                logger.error("analyze failed for id=%s: %s", it.get("id"), e)
-
-    # 8. Save
-    _save_json(DATA_DIR / "processed" / "cards" / f"{today_iso}.json", cards)
+    # 7. Save selection（カード生成は Claude Code が `/loop` で本ファイルを読んで実行）
+    selection_path = DATA_DIR / "processed" / f"selection-{today_iso}.json"
+    _save_json(selection_path, selected)
 
     summary = {
         "today": today_iso,
-        "dry_run": dry_run,
         "raw_count": len(raw_items),
         "accepted": len(accepted),
         "rejected": len(rejected),
         "after_dedup": len(deduped),
         "selected": len(selected),
-        "cards_generated": len(cards),
-        "skipped_by_llm": len(skipped),
+        "selection_path": str(selection_path.relative_to(REPO_ROOT)),
     }
     logger.info("daily_collect done: %s", summary)
     return summary
@@ -248,13 +213,14 @@ def main() -> int:
         level=os.environ.get("LOG_LEVEL", "INFO"),
         format="%(asctime)s %(levelname)s %(name)s: %(message)s",
     )
-    parser = argparse.ArgumentParser(description="News & Research Dashboard daily pipeline")
-    parser.add_argument("--dry-run", action="store_true", help="Skip Claude API calls")
+    parser = argparse.ArgumentParser(
+        description="News & Research Dashboard daily pre-processing (collect/validate/score/dedup/select)"
+    )
     parser.add_argument("--today", type=str, help="Override today (YYYY-MM-DD)")
     args = parser.parse_args()
 
     today = date.fromisoformat(args.today) if args.today else None
-    result = run(today=today, dry_run=args.dry_run)
+    result = run(today=today)
     print(json.dumps(result, ensure_ascii=False, indent=2))
     return 0
 
