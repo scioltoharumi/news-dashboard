@@ -1,6 +1,7 @@
 {# index.html.j2 — 最新デイリー（トップページ） #}
 {% extends "base.html.j2" %}
 {% from "partials/card.html.j2" import render_card %}
+{% from "partials/pulse.html.j2" import today_pulse %}
 
 {% block title %}{{ today_iso }} デイリー | News & Research Dashboard{% endblock %}
 
@@ -18,6 +19,11 @@
     {{ daily_summary | safe }}
   </div>
 </div>
+{% endif %}
+
+{# Today's Pulse — 数値 + トピック分布バー #}
+{% if cards %}
+{{ today_pulse(stats) }}
 {% endif %}
 
 <details class="filter-bar" open>
@@ -38,10 +44,26 @@
   </div>
 </details>
 
-<div class="section-head">今日のカード</div>
+{# 重要度グルーピング — 高 → 中 → 低 #}
 {% if cards %}
-  {% for card in cards %}
-  {{ render_card(card, is_first=loop.first, today_iso=today_iso) }}
+  {% set first_done = namespace(value=false) %}
+  {% for level, label in [('high','高'), ('mid','中'), ('low','低')] %}
+    {% set group = cards | selectattr('importance', 'equalto', level) | list %}
+    {% if group %}
+    <div class="section-divider importance-{{ level }}">
+      <svg class="icon" aria-hidden="true"><use href="#icon-importance-{{ level }}"/></svg>
+      <span class="section-divider-label">重要度: {{ label }}</span>
+      <span class="section-divider-count">{{ group | length }} 件</span>
+    </div>
+      {% for card in group %}
+        {% if not first_done.value %}
+          {{ render_card(card, is_first=true, today_iso=today_iso) }}
+          {% set first_done.value = true %}
+        {% else %}
+          {{ render_card(card, is_first=false, today_iso=today_iso) }}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
   {% endfor %}
 {% else %}
 <p style="color: var(--text-mute); padding: 20px; text-align: center;">本日収録のカードはまだありません。</p>

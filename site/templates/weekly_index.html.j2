@@ -1,5 +1,6 @@
 {# weekly_index.html.j2 — ウィークリー一覧（D-38）
-   archive_item マクロを type='weekly' で再利用。
+   月単位グルーピング + レンズバッジ + トピックチップ行で、
+   何週も積み重なっても探しやすい設計。
 #}
 {% extends "base.html.j2" %}
 {% from "macros/archive_item.html.j2" import archive_item %}
@@ -10,18 +11,22 @@
 <header>
   <div class="date-label">WEEKLY INDEX</div>
   <h1>ウィークリー一覧</h1>
-  <div class="meta">過去のウィークリーブリーフィング {{ items | length }}件 ／ ISO 週降順</div>
+  <div class="meta">過去のウィークリーブリーフィング {{ total_count }}件 ／ ISO 週降順 ／ 月別グルーピング</div>
 </header>
 
-{% if items %}
-<div class="section-head">過去の週</div>
-{% for it in items %}
-{{ archive_item(it, 'weekly') }}
+{% if items_by_month %}
+{% for month_label, month_items in items_by_month %}
+<div class="month-section">
+  <div class="month-header">{{ month_label }}（{{ month_items | length }} 週）</div>
+  {% for it in month_items %}
+  {{ archive_item(it, 'weekly') }}
+  {% endfor %}
+</div>
 {% endfor %}
 {% else %}
 <p style="color: var(--text-mute); padding: 20px; text-align: center;">
   ウィークリーブリーフィングはまだ生成されていません。<br>
-  Phase 4 でウィークリー 3 部生成が稼働すると、ここに一覧が表示されます。
+  Phase 4 でウィークリー 3 部生成が稼働すると、ここに月別で一覧が表示されます。
 </p>
 {% endif %}
 {% endblock %}

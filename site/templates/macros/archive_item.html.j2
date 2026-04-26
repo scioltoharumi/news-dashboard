@@ -3,9 +3,13 @@
    item の必須キーは type ごとに以下:
 
    type='weekly':
-     - href, week_label (例 "WEEK 16 / 2026"), date_range, theme_title, lens, summary_excerpt
+     - href, week_label, date_range, theme_title, lens, lens_id (optional, for color)
+     - summary_excerpt
+     - topics: [{id, label, count}]  (オプション、トピックチップ行表示)
+
    type='daily':
-     - href, date_label (例 "2026-04-24 (金)"), card_count
+     - href, date_label, card_count
+
    type='inquiries':
      - href, report_date, inquiry_title, exec_summary
 #}
@@ -16,10 +20,23 @@
   <div class="archive-date-range">{{ item.date_range }}</div>
   <div class="archive-theme-title">{{ item.theme_title }}</div>
   {%- if item.lens %}
-  <div class="archive-lens">レンズ: {{ item.lens }}</div>
+  <div class="archive-lens-badge lens-{{ item.lens_id or 'labor' }}">
+    <svg class="icon" aria-hidden="true"><use href="#icon-lens-{{ item.lens_id or 'labor' }}"/></svg>
+    レンズ: {{ item.lens }}
+  </div>
   {%- endif %}
   {%- if item.summary_excerpt %}
   <p class="archive-summary-excerpt">{{ item.summary_excerpt }}</p>
+  {%- endif %}
+  {%- if item.topics %}
+  <div class="archive-topics">
+    {%- for t in item.topics %}
+    <span class="archive-topic-chip topic-{{ t.id | replace('_','-') }}">
+      <svg class="icon" aria-hidden="true"><use href="#icon-topic-{{ t.id | replace('_','-') }}"/></svg>
+      {{ t.label }} <span class="chip-count">{{ t.count }}</span>
+    </span>
+    {%- endfor %}
+  </div>
   {%- endif %}
   <div class="archive-cta">→ 詳細を読む</div>
 

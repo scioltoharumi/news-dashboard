@@ -17,6 +17,7 @@ import argparse
 import json
 import logging
 import sys
+from collections import Counter, defaultdict
 from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -206,6 +207,79 @@ def _generate_dummy_cards(today: date) -> list[dict[str, Any]]:
     ]
 
 
+_TOPIC_LABEL = {
+    "ai_agents": "AIエージェント",
+    "automation": "業務自動化",
+    "dx_cases": "DX事例",
+    "other": "その他",
+}
+_TOPIC_ORDER = ["ai_agents", "automation", "dx_cases", "other"]
+
+
+def compute_today_stats(cards: list[dict[str, Any]]) -> dict[str, Any]:
+    """Today's Pulse パネル用の集計。"""
+    importance_counter = Counter(c.get("importance", "low") for c in cards)
+    info_type_counter = Counter(c.get("info_type") for c in cards)
+    topic_counter = Counter(c.get("topic", "other") for c in cards)
+    topics_list = [
+        {"id": tid, "label": _TOPIC_LABEL[tid], "count": topic_counter.get(tid, 0)}
+        for tid in _TOPIC_ORDER
+    ]
+    return {
+        "total": len(cards),
+        "high": importance_counter.get("high", 0),
+        "mid": importance_counter.get("mid", 0),
+        "low": importance_counter.get("low", 0),
+        "vendor": info_type_counter.get("vendor_announcement", 0),
+        "success": info_type_counter.get("success_case", 0),
+        "failure": info_type_counter.get("failure", 0),
+        "critic": info_type_counter.get("critic", 0),
+        "topics": topics_list,
+    }
+
+
+def sort_cards_by_importance(cards: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """重要度順 high → mid → low、各内では published_at 降順。"""
+    rank = {"high": 0, "mid": 1, "low": 2}
+    return sorted(
+        cards,
+        key=lambda c: (
+            rank.get(c.get("importance"), 3),
+            c.get("published_at") or "",
+        ),
+        reverse=False,
+    )
+
+
+def group_weekly_by_month(items: list[dict[str, Any]]) -> list[tuple[str, list[dict[str, Any]]]]:
+    """weekly_items を 月ラベル ('2026 年 4月') でグルーピング。降順。
+
+    各 item は date_range の先頭日付 (YYYY-MM-DD) を `_sort_date` キーで保持する想定。
+    """
+    grouped: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for it in items:
+        # date_range '2026-04-19 〜 2026-04-25' から先頭日付抽出
+        sort_date_str = it.get("_sort_date") or it.get("date_range", "").split(" ")[0]
+        try:
+            d = date.fromisoformat(sort_date_str)
+            month_key = (d.year, d.month)
+            month_label = f"{d.year} 年 {d.month} 月"
+        except ValueError:
+            month_key = (0, 0)
+            month_label = "日付不明"
+        grouped[month_label].append(it)
+
+    # 月キーで降順ソート
+    def month_key(label: str) -> tuple[int, int]:
+        try:
+            year_part, month_part = label.replace("年", "").replace("月", "").split()
+            return (int(year_part), int(month_part))
+        except (ValueError, IndexError):
+            return (0, 0)
+
+    return sorted(grouped.items(), key=lambda kv: month_key(kv[0]), reverse=True)
+
+
 def _generate_dummy_summary() -> str:
     return """
 <p>本日のハイライトは、エージェント運用の主戦場が「単体導入」から「オーケストレーション・全社展開」に移っている兆候です。Microsoft の Power Fx 連携追加と、横浜銀行のボイスボット完結事例は、別の角度から同じ方向を指しています。</p>
@@ -215,23 +289,119 @@ def _generate_dummy_summary() -> str:
 
 
 def _generate_dummy_weekly_items() -> list[dict[str, Any]]:
-    """ウィークリー一覧 (D-38) のダミーデータ。"""
+    """ウィークリー一覧 (D-38) のダミーデータ。
+
+    積み重なり時の視認性確認のため、4 ヶ月にわたる 9 週分を生成。
+    レンズ ID で色分け、各週にトピックチップを付与して内容を一目で把握可能に。
+    """
+
+    def topics(ai: int, au: int, dx: int, other: int) -> list[dict[str, Any]]:
+        return [
+            {"id": "ai_agents", "label": "AIエージェント", "count": ai},
+            {"id": "automation", "label": "業務自動化", "count": au},
+            {"id": "dx_cases", "label": "DX事例", "count": dx},
+            {"id": "other", "label": "その他", "count": other},
+        ]
+
     return [
         {
+            "_sort_date": "2026-04-19",
             "href": "weekly/2026-W17.html",
             "week_label": "WEEK 17 / 2026",
             "date_range": "2026-04-19 〜 2026-04-25",
             "theme_title": "「導入して終わり」から「内製化・オーケストレーション」へ — 主戦場の第 2 ラウンド",
-            "lens": "労働 × 知識民主化",
-            "summary_excerpt": "今週は、複数の動きが同じ方向を指している週でした。エージェント・オーケストレーターという新職務、Power Fx 連携、月 1,600 件のボイスボット完結事例。一方で「会議は減っていない」という現場感覚も…",
+            "lens": "労働",
+            "lens_id": "labor",
+            "summary_excerpt": "今週は、複数の動きが同じ方向を指している週でした。エージェント・オーケストレーターという新職務、Power Fx 連携、月 1,600 件のボイスボット完結事例。一方で「会議は減っていない」という現場感覚も。",
+            "topics": topics(12, 4, 6, 3),
         },
         {
+            "_sort_date": "2026-04-12",
             "href": "weekly/2026-W16.html",
             "week_label": "WEEK 16 / 2026",
             "date_range": "2026-04-12 〜 2026-04-18",
             "theme_title": "「生成AI導入済み → エージェント化」企業 AI 活用が第 2 段階の競争フェーズへ",
-            "lens": "労働 × 知識民主化",
-            "summary_excerpt": "Google Cloud は「エージェント・オーケストレーター」という新職務を提唱、AIsmiley は「答える AI と動く AI」の分類論を…",
+            "lens": "知識民主化",
+            "lens_id": "knowledge",
+            "summary_excerpt": "Google Cloud は「エージェント・オーケストレーター」という新職務を提唱、AIsmiley は「答える AI と動く AI」の分類論を、Microsoft は Copilot Studio に Power Fx 連携を発表しました。",
+            "topics": topics(11, 3, 5, 4),
+        },
+        {
+            "_sort_date": "2026-04-05",
+            "href": "weekly/2026-W15.html",
+            "week_label": "WEEK 15 / 2026",
+            "date_range": "2026-04-05 〜 2026-04-11",
+            "theme_title": "プライバシー設計が AI エージェント運用の前提条件に",
+            "lens": "プライバシー",
+            "lens_id": "privacy",
+            "summary_excerpt": "国内外で AI エージェント運用におけるデータ保護要件の議論が活発化。EU AI 法の高リスク分類に該当する事例の整理が進んでいます。",
+            "topics": topics(8, 5, 4, 6),
+        },
+        {
+            "_sort_date": "2026-03-29",
+            "href": "weekly/2026-W14.html",
+            "week_label": "WEEK 14 / 2026",
+            "date_range": "2026-03-29 〜 2026-04-04",
+            "theme_title": "RPA から自律エージェントへ — 業務自動化の主役が交代しはじめた週",
+            "lens": "労働",
+            "lens_id": "labor",
+            "summary_excerpt": "従来 RPA ベンダーが軒並み「エージェント機能搭載」を発表。同時に「RPA は AI エージェントに置き換えられるのか」という現場議論も加熱しました。",
+            "topics": topics(9, 11, 4, 2),
+        },
+        {
+            "_sort_date": "2026-03-22",
+            "href": "weekly/2026-W13.html",
+            "week_label": "WEEK 13 / 2026",
+            "date_range": "2026-03-22 〜 2026-03-28",
+            "theme_title": "ベンダー集中の懸念と国産プラットフォームの再評価",
+            "lens": "権力配分",
+            "lens_id": "power",
+            "summary_excerpt": "Microsoft / OpenAI / Google の寡占懸念に対し、国産 AI プラットフォーム陣営が連携を発表。エンタープライズ調達の選択肢として再評価されています。",
+            "topics": topics(7, 6, 8, 4),
+        },
+        {
+            "_sort_date": "2026-03-15",
+            "href": "weekly/2026-W12.html",
+            "week_label": "WEEK 12 / 2026",
+            "date_range": "2026-03-15 〜 2026-03-21",
+            "theme_title": "「ワクワクする業務」を語る企業文化の変化兆候",
+            "lens": "倫理責任",
+            "lens_id": "ethics",
+            "summary_excerpt": "効率化一辺倒の DX 言説に対し、「働きがい」「創造性」を前面に出した変革事例が複数報じられました。一方で表層的な置き換えとの批判も。",
+            "topics": topics(5, 3, 9, 7),
+        },
+        {
+            "_sort_date": "2026-03-08",
+            "href": "weekly/2026-W11.html",
+            "week_label": "WEEK 11 / 2026",
+            "date_range": "2026-03-08 〜 2026-03-14",
+            "theme_title": "若手・ベテラン世代間で生成 AI 活用の差が顕在化",
+            "lens": "世代間非対称",
+            "lens_id": "generation",
+            "summary_excerpt": "新人 OJT に AI を組み込む企業と、ベテラン業務知識のドキュメント化に AI を使う企業で、組織内のスキル分布が変化しはじめています。",
+            "topics": topics(6, 4, 8, 5),
+        },
+        {
+            "_sort_date": "2026-02-22",
+            "href": "weekly/2026-W08.html",
+            "week_label": "WEEK 08 / 2026",
+            "date_range": "2026-02-22 〜 2026-02-28",
+            "theme_title": "金融・行政におけるエージェント活用の規制動向",
+            "lens": "プライバシー",
+            "lens_id": "privacy",
+            "summary_excerpt": "金融庁・デジタル庁から、エージェント運用時のログ保管要件と説明責任ガイドラインが相次いで公表されました。",
+            "topics": topics(7, 2, 10, 3),
+        },
+        {
+            "_sort_date": "2026-02-15",
+            "href": "weekly/2026-W07.html",
+            "week_label": "WEEK 07 / 2026",
+            "date_range": "2026-02-15 〜 2026-02-21",
+            "theme_title": "失敗事例の共有が始まった週 — 撤退・見直しの公開議論",
+            "lens": "倫理責任",
+            "lens_id": "ethics",
+            "summary_excerpt": "AI チャットボット撤退、社内 RAG 運用見直し、コスト超過の Copilot 削減など、これまで公にされにくかった失敗事例の共有が始まりました。",
+            "topics": topics(4, 6, 7, 5),
         },
     ]
 
@@ -243,11 +413,14 @@ def build_index(
     daily_summary: str | None = None,
 ) -> None:
     iso_year, iso_week, iso_dow = today.isocalendar()
+    sorted_cards = sort_cards_by_importance(cards)
+    stats = compute_today_stats(cards)
     _render(
         env,
         "index.html.j2",
         SITE_DIR / "index.html",
-        cards=cards,
+        cards=sorted_cards,
+        stats=stats,
         today_iso=today.isoformat(),
         today_label=_format_today_label(today),
         iso_week=iso_week,
@@ -257,11 +430,13 @@ def build_index(
 
 
 def build_weekly_index(env: Environment, items: list[dict[str, Any]]) -> None:
+    items_by_month = group_weekly_by_month(items)
     _render(
         env,
         "weekly_index.html.j2",
         SITE_DIR / "weekly" / "index.html",
-        items=items,
+        items_by_month=items_by_month,
+        total_count=len(items),
     )
 
 

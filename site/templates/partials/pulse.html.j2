@@ -1,0 +1,50 @@
+{# pulse.html.j2 — Today's Pulse パネル
+   build_site.py が cards から集計した stats を渡す。
+   stats:
+     total: int
+     high: int / mid: int / low: int
+     vendor: int / success: int / failure: int / critic: int / analysis: int
+     topics: list of {id, label, count}
+#}
+{% macro today_pulse(stats) -%}
+<div class="pulse-panel">
+  <div class="pulse-label">TODAY'S PULSE</div>
+  <div class="pulse-stats">
+    <div class="pulse-stat">
+      <span class="pulse-num">{{ stats.total }}</span>
+      <span class="pulse-cap">記事</span>
+    </div>
+    <div class="pulse-stat pulse-stat-high">
+      <span class="pulse-num">{{ stats.high }}</span>
+      <span class="pulse-cap">重要度: 高</span>
+    </div>
+    <div class="pulse-stat pulse-stat-vendor">
+      <span class="pulse-num">{{ stats.vendor }}</span>
+      <span class="pulse-cap">ベンダー発表</span>
+    </div>
+    <div class="pulse-stat pulse-stat-success">
+      <span class="pulse-num">{{ stats.success }}</span>
+      <span class="pulse-cap">成功事例</span>
+    </div>
+  </div>
+
+  <div class="pulse-bar-label">トピック分布</div>
+  <div class="pulse-bar-segments">
+    {%- for t in stats.topics %}
+    {%- if t.count > 0 %}
+    <div class="bar-seg topic-{{ t.id | replace('_','-') }}"
+         style="flex: {{ t.count }};"
+         title="{{ t.label }}: {{ t.count }} 件">{{ t.count }}</div>
+    {%- endif %}
+    {%- endfor %}
+  </div>
+  <div class="pulse-bar-legend">
+    {%- for t in stats.topics %}
+    <span class="legend-item topic-{{ t.id | replace('_','-') }}">
+      <svg class="icon" aria-hidden="true"><use href="#icon-topic-{{ t.id | replace('_','-') }}"/></svg>
+      {{ t.label }} ({{ t.count }})
+    </span>
+    {%- endfor %}
+  </div>
+</div>
+{%- endmacro %}

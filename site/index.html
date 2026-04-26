@@ -76,6 +76,60 @@
     <circle cx="20" cy="12" r="1.8" fill="currentColor"/>
   </symbol>
 
+  <!-- ===== カードセクション (3) — fact / context / impact ===== -->
+  <symbol id="icon-section-fact" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- document with lines -->
+    <path d="M6 3h9l3 3v15H6Z"/>
+    <path d="M15 3v3h3"/>
+    <path d="M9 12h6M9 15h6M9 18h4"/>
+  </symbol>
+  <symbol id="icon-section-context" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- compass -->
+    <circle cx="12" cy="12" r="9"/>
+    <path d="M9 15 L13 13 L15 9 L11 11 Z" fill="currentColor"/>
+  </symbol>
+  <symbol id="icon-section-impact" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- target -->
+    <circle cx="12" cy="12" r="9"/>
+    <circle cx="12" cy="12" r="5"/>
+    <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+  </symbol>
+
+  <!-- ===== レンズ (6) — Part 2 で使う社会構造レンズ、ウィークリー archive bage 用 ===== -->
+  <symbol id="icon-lens-labor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- briefcase -->
+    <path d="M4 8h16v11H4Z"/>
+    <path d="M9 8V5h6v3"/>
+    <path d="M4 13h16"/>
+  </symbol>
+  <symbol id="icon-lens-privacy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- shield -->
+    <path d="M12 3 L20 6v6c0 5-4 8-8 9-4-1-8-4-8-9V6Z"/>
+  </symbol>
+  <symbol id="icon-lens-power" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- crown -->
+    <path d="M3 17h18l-2-9-4 4-3-7-3 7-4-4Z"/>
+  </symbol>
+  <symbol id="icon-lens-knowledge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- open book -->
+    <path d="M12 5C9 4 5 4 3 5v14c2-1 6-1 9 0"/>
+    <path d="M12 5c3-1 7-1 9 0v14c-2-1-6-1-9 0"/>
+    <path d="M12 5v14"/>
+  </symbol>
+  <symbol id="icon-lens-generation" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- hourglass -->
+    <path d="M6 3h12M6 21h12"/>
+    <path d="M6 3v3l6 6 6-6V3"/>
+    <path d="M6 21v-3l6-6 6 6v3"/>
+  </symbol>
+  <symbol id="icon-lens-ethics" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- balance scale -->
+    <path d="M12 4v16"/>
+    <path d="M5 20h14"/>
+    <path d="M5 11l3-7 3 7"/>
+    <path d="M13 11l3-7 3 7"/>
+  </symbol>
+
   <!-- ===== トピック (4) ===== -->
   <symbol id="icon-topic-ai-agents" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
     <!-- agent: hex with center -->
@@ -119,6 +173,52 @@
   </div>
 </div>
 
+<div class="pulse-panel">
+  <div class="pulse-label">TODAY'S PULSE</div>
+  <div class="pulse-stats">
+    <div class="pulse-stat">
+      <span class="pulse-num">8</span>
+      <span class="pulse-cap">記事</span>
+    </div>
+    <div class="pulse-stat pulse-stat-high">
+      <span class="pulse-num">3</span>
+      <span class="pulse-cap">重要度: 高</span>
+    </div>
+    <div class="pulse-stat pulse-stat-vendor">
+      <span class="pulse-num">2</span>
+      <span class="pulse-cap">ベンダー発表</span>
+    </div>
+    <div class="pulse-stat pulse-stat-success">
+      <span class="pulse-num">1</span>
+      <span class="pulse-cap">成功事例</span>
+    </div>
+  </div>
+
+  <div class="pulse-bar-label">トピック分布</div>
+  <div class="pulse-bar-segments">    <div class="bar-seg topic-ai-agents"
+         style="flex: 3;"
+         title="AIエージェント: 3 件">3</div>    <div class="bar-seg topic-automation"
+         style="flex: 1;"
+         title="業務自動化: 1 件">1</div>    <div class="bar-seg topic-dx-cases"
+         style="flex: 2;"
+         title="DX事例: 2 件">2</div>    <div class="bar-seg topic-other"
+         style="flex: 2;"
+         title="その他: 2 件">2</div>  </div>
+  <div class="pulse-bar-legend">    <span class="legend-item topic-ai-agents">
+      <svg class="icon" aria-hidden="true"><use href="#icon-topic-ai-agents"/></svg>
+      AIエージェント (3)
+    </span>    <span class="legend-item topic-automation">
+      <svg class="icon" aria-hidden="true"><use href="#icon-topic-automation"/></svg>
+      業務自動化 (1)
+    </span>    <span class="legend-item topic-dx-cases">
+      <svg class="icon" aria-hidden="true"><use href="#icon-topic-dx-cases"/></svg>
+      DX事例 (2)
+    </span>    <span class="legend-item topic-other">
+      <svg class="icon" aria-hidden="true"><use href="#icon-topic-other"/></svg>
+      その他 (2)
+    </span>  </div>
+</div>
+
 <details class="filter-bar" open>
   <summary>フィルター</summary>
   <div class="filter-group">
@@ -137,8 +237,12 @@
   </div>
 </details>
 
-<div class="section-head">今日のカード</div>
-  <details class="card"
+    <div class="section-divider importance-high">
+      <svg class="icon" aria-hidden="true"><use href="#icon-importance-high"/></svg>
+      <span class="section-divider-label">重要度: 高</span>
+      <span class="section-divider-count">3 件</span>
+    </div>
+          <details class="card importance-accent-high"
          id="card-dummy-001"
          data-topic="ai_agents"
          data-importance="high"
@@ -164,6 +268,7 @@ open>
       </svg>
     </div>
     <div class="card-title">Microsoft、Copilot Studio に Power Fx ベースのエージェント連携を発表</div>
+    <div class="card-preview">Microsoft は Build 2026 で、Copilot Studio に Power Fx スクリプトでエージェント間連携を制御する機能を追加したと発表しました。プレビュー版は本日提供開始です。</div>
     <a class="card-source"
        href="https://example.com/dummy/1"
        target="_blank"
@@ -172,15 +277,24 @@ open>
   </summary>
   <div class="card-body">
     <section class="fact">
-      <div class="label context">ファクト</div>
+      <div class="label context">
+        <svg class="icon" aria-hidden="true"><use href="#icon-section-fact"/></svg>
+        ファクト
+      </div>
       <p>Microsoft は Build 2026 で、Copilot Studio に Power Fx スクリプトでエージェント間連携を制御する機能を追加したと発表しました。プレビュー版は本日提供開始です。</p>
     </section>
     <section class="context">
-      <div class="label summary">背景考察</div>
+      <div class="label summary">
+        <svg class="icon" aria-hidden="true"><use href="#icon-section-context"/></svg>
+        背景考察
+      </div>
       <p>このニュースはベンダー発表であり、第三者検証は伴っていません。背景には、エージェント技術が「単体」から「オーケストレーション」へ主戦場が移っている流れがあります。Power Fx を採用した点は、Microsoft の既存 Power Platform 顧客基盤を活かす戦略であり、Dify などの新興プラットフォームへの対抗軸として読めます。</p>
     </section>
     <section class="impact">
-      <div class="label sowhat">実務への影響</div>
+      <div class="label sowhat">
+        <svg class="icon" aria-hidden="true"><use href="#icon-section-impact"/></svg>
+        実務への影響
+      </div>
       <p class="sowhat-text">Copilot Studio / Dify / Power Automate の 3 層アーキテクチャ提案を行う際、Power Fx 連携を前提としたシナリオが描ける余地があります。ただしプレビュー段階のため本番投入は慎重に検討する余地があります。</p>
     </section>
     <a class="external-link"
@@ -189,7 +303,7 @@ open>
        rel="noopener noreferrer">元記事を読む →</a>
   </div>
 </details>
-  <details class="card"
+          <details class="card importance-accent-high"
          id="card-dummy-002"
          data-topic="dx_cases"
          data-importance="high"
@@ -215,6 +329,7 @@ open>
       </svg>
     </div>
     <div class="card-title">横浜銀行、ボイスボットで月 1,600 件の証明書発行を自動完結</div>
+    <div class="card-preview">横浜銀行は、ボイスボットを活用した証明書発行の自動化を本格稼働させ、月 1,600 件を電話オペレーターを介さず完結させていると発表しました。導入から 6 か月の実績です。</div>
     <a class="card-source"
        href="https://example.com/dummy/2"
        target="_blank"
@@ -223,15 +338,24 @@ open>
   </summary>
   <div class="card-body">
     <section class="fact">
-      <div class="label context">ファクト</div>
+      <div class="label context">
+        <svg class="icon" aria-hidden="true"><use href="#icon-section-fact"/></svg>
+        ファクト
+      </div>
       <p>横浜銀行は、ボイスボットを活用した証明書発行の自動化を本格稼働させ、月 1,600 件を電話オペレーターを介さず完結させていると発表しました。導入から 6 か月の実績です。</p>
     </section>
     <section class="context">
-      <div class="label summary">背景考察</div>
+      <div class="label summary">
+        <svg class="icon" aria-hidden="true"><use href="#icon-section-context"/></svg>
+        背景考察
+      </div>
       <p>金融機関での音声 AI による完結型業務処理は、これまで「補助」としての導入が主流でした。月 1,600 件規模の完結処理は、業界構造として「人を介さない選択肢」が現実になりつつあることを示しています。導入事例レポートのため、失敗事例や撤退事例の言及はありません。</p>
     </section>
     <section class="impact">
-      <div class="label sowhat">実務への影響</div>
+      <div class="label sowhat">
+        <svg class="icon" aria-hidden="true"><use href="#icon-section-impact"/></svg>
+        実務への影響
+      </div>
       <p class="sowhat-text">金融業界向け提案で「完結型音声 AI」のリファレンスケースとして引用できる余地があります。一方で、お客様体験の観点から「人を介さない」ことの是非は別途検討する必要があります。</p>
     </section>
     <a class="external-link"
@@ -240,211 +364,7 @@ open>
        rel="noopener noreferrer">元記事を読む →</a>
   </div>
 </details>
-  <details class="card"
-         id="card-dummy-003"
-         data-topic="other"
-         data-importance="mid"
-         data-layer="L1"
-         data-inquiry="none"
-open>
-  <summary>
-    <div class="tag-row">
-      <span class="tag layer-l1">
-        <svg class="icon" aria-hidden="true"><use href="#icon-layer-l1"/></svg>
-        L1
-      </span>
-      <span class="tag importance-mid">
-        <svg class="icon" aria-hidden="true"><use href="#icon-importance-mid"/></svg>
-        重要度: 中
-      </span>
-      <span class="tag topic-other">
-        <svg class="icon" aria-hidden="true"><use href="#icon-topic-other"/></svg>
-        その他
-      </span>
-      <svg class="icon-info-type essay" aria-label="essay">
-        <use href="#icon-analysis"/>
-      </svg>
-    </div>
-    <div class="card-title">「AI と創作」の境界: 人間が描くべき余白とは何か</div>
-    <a class="card-source"
-       href="https://example.com/dummy/3"
-       target="_blank"
-       rel="noopener noreferrer"
-       onclick="event.stopPropagation()">はてなブックマーク - テクノロジー · 2026-04-26 ↗</a>
-  </summary>
-  <div class="card-body">
-    <section class="fact">
-      <div class="label context">ファクト</div>
-      <p>個人ブログで「生成 AI の普及で創作の主体は誰なのか」を論じた記事が、はてブで 320 ブックマークを集めています。著者は文芸誌の連載作家です。</p>
-    </section>
-    <section class="context">
-      <div class="label summary">背景考察</div>
-      <p>創作系の議論はこれまで「効率化の文脈」で語られがちでしたが、本記事は「人間の余白」という視点を持ち込んでいます。エッセイのため一般化は慎重に行う必要がありますが、はてブの反応からは類似の問題意識を持つ読み手が一定数いることがわかります。</p>
-    </section>
-    <section class="impact">
-      <div class="label sowhat">実務への影響</div>
-      <p class="sowhat-text">コンサル提案で「ワクワクする業務」を語る際の素材として、創作領域での議論を引用できる余地があります。ただし業務文脈と創作文脈は前提が異なるため、安易な類推は避ける必要があります。</p>
-    </section>
-    <a class="external-link"
-       href="https://example.com/dummy/3"
-       target="_blank"
-       rel="noopener noreferrer">元記事を読む →</a>
-  </div>
-</details>
-  <details class="card"
-         id="card-dummy-004"
-         data-topic="automation"
-         data-importance="mid"
-         data-layer="L2"
-         data-inquiry="none"
-open>
-  <summary>
-    <div class="tag-row">
-      <span class="tag layer-l2">
-        <svg class="icon" aria-hidden="true"><use href="#icon-layer-l2"/></svg>
-        L2
-      </span>
-      <span class="tag importance-mid">
-        <svg class="icon" aria-hidden="true"><use href="#icon-importance-mid"/></svg>
-        重要度: 中
-      </span>
-      <span class="tag topic-automation">
-        <svg class="icon" aria-hidden="true"><use href="#icon-topic-automation"/></svg>
-        業務自動化
-      </span>
-      <svg class="icon-info-type tech_validation" aria-label="tech_validation">
-        <use href="#icon-analysis"/>
-      </svg>
-    </div>
-    <div class="card-title">n8n と Power Automate の統合パターン 5 選: 実装上の落とし穴</div>
-    <a class="card-source"
-       href="https://example.com/dummy/4"
-       target="_blank"
-       rel="noopener noreferrer"
-       onclick="event.stopPropagation()">Publickey · 2026-04-26 ↗</a>
-  </summary>
-  <div class="card-body">
-    <section class="fact">
-      <div class="label context">ファクト</div>
-      <p>Publickey は、ワークフロー自動化ツール n8n と Microsoft Power Automate を組み合わせた統合パターン 5 種について、実装上の制約と落とし穴を検証記事として公開しました。</p>
-    </section>
-    <section class="context">
-      <div class="label summary">背景考察</div>
-      <p>技術検証記事であり、ベンダー側の宣伝とは異なる視点で書かれています。RPA 領域では「複数ツール併用」が現実的な選択肢として広まっており、実装ノウハウの可視化は業界全体のリテラシー向上に寄与します。</p>
-    </section>
-    <section class="impact">
-      <div class="label sowhat">実務への影響</div>
-      <p class="sowhat-text">業務自動化案件の提案時、ツール選定の議論で本記事の検証結果を参照できる余地があります。特に「ハイブリッド構成」を選択した場合の運用コストの試算に役立ちます。</p>
-    </section>
-    <a class="external-link"
-       href="https://example.com/dummy/4"
-       target="_blank"
-       rel="noopener noreferrer">元記事を読む →</a>
-  </div>
-</details>
-  <details class="card"
-         id="card-dummy-005"
-         data-topic="ai_agents"
-         data-importance="low"
-         data-layer="L1"
-         data-inquiry="none"
-open>
-  <summary>
-    <div class="tag-row">
-      <span class="tag layer-l1">
-        <svg class="icon" aria-hidden="true"><use href="#icon-layer-l1"/></svg>
-        L1
-      </span>
-      <span class="tag importance-low">
-        <svg class="icon" aria-hidden="true"><use href="#icon-importance-low"/></svg>
-        重要度: 低
-      </span>
-      <span class="tag topic-ai-agents">
-        <svg class="icon" aria-hidden="true"><use href="#icon-topic-ai-agents"/></svg>
-        AIエージェント
-      </span>
-      <svg class="icon-info-type market" aria-label="market">
-        <use href="#icon-analysis"/>
-      </svg>
-    </div>
-    <div class="card-title">国内エンタープライズ AI 基盤市場、2025 年度は前年比 1.8 倍</div>
-    <a class="card-source"
-       href="https://example.com/dummy/5"
-       target="_blank"
-       rel="noopener noreferrer"
-       onclick="event.stopPropagation()">はてなブックマーク - テクノロジー · 2026-04-26 ↗</a>
-  </summary>
-  <div class="card-body">
-    <section class="fact">
-      <div class="label context">ファクト</div>
-      <p>民間調査会社が国内エンタープライズ AI 基盤市場の 2025 年度規模を発表しました。前年度比 1.8 倍の伸びで、Copilot Studio / Dify / 国産プラットフォームの競合が激化しているとされています。</p>
-    </section>
-    <section class="context">
-      <div class="label summary">背景考察</div>
-      <p>調査会社レポートのため、サンプリング・定義の前提が結果を大きく左右します。1.8 倍の伸び自体は他調査と整合的ですが、市場区分の取り方によって解釈は変わります。</p>
-    </section>
-    <section class="impact">
-      <div class="label sowhat">実務への影響</div>
-      <p class="sowhat-text">市場サイズの議論を提案資料に組み込む際の参考データとして使える余地があります。一次ソース（調査会社レポート本体）を確認した上で引用するのが望ましい状況です。</p>
-    </section>
-    <a class="external-link"
-       href="https://example.com/dummy/5"
-       target="_blank"
-       rel="noopener noreferrer">元記事を読む →</a>
-  </div>
-</details>
-  <details class="card"
-         id="card-dummy-006"
-         data-topic="dx_cases"
-         data-importance="mid"
-         data-layer="L2"
-         data-inquiry="none"
-open>
-  <summary>
-    <div class="tag-row">
-      <span class="tag layer-l2">
-        <svg class="icon" aria-hidden="true"><use href="#icon-layer-l2"/></svg>
-        L2
-      </span>
-      <span class="tag importance-mid">
-        <svg class="icon" aria-hidden="true"><use href="#icon-importance-mid"/></svg>
-        重要度: 中
-      </span>
-      <span class="tag topic-dx-cases">
-        <svg class="icon" aria-hidden="true"><use href="#icon-topic-dx-cases"/></svg>
-        DX事例
-      </span>
-      <svg class="icon-info-type failure" aria-label="failure">
-        <use href="#icon-failure"/>
-      </svg>
-    </div>
-    <div class="card-title">ある製造業の AI チャットボット、半年で利用率 8% に低下</div>
-    <a class="card-source"
-       href="https://example.com/dummy/6"
-       target="_blank"
-       rel="noopener noreferrer"
-       onclick="event.stopPropagation()">日経クロステック · 2026-04-26 ↗</a>
-  </summary>
-  <div class="card-body">
-    <section class="fact">
-      <div class="label context">ファクト</div>
-      <p>ある中堅製造業が導入した社内 AI チャットボットの利用率が、運用半年で 8% まで低下したと記事は報告しています。同社は導入当初の社内告知で「業務効率化」を前面に出していました。</p>
-    </section>
-    <section class="context">
-      <div class="label summary">背景考察</div>
-      <p>失敗事例の記事は、業界誌で扱われる頻度が成功事例より少ないため貴重です。利用率低下の主因は「知りたいことに答えてくれない」「自分で検索した方が早い」という従業員の声で、技術側ではなく業務文脈の理解不足が示唆されています。</p>
-    </section>
-    <section class="impact">
-      <div class="label sowhat">実務への影響</div>
-      <p class="sowhat-text">導入提案の際、KPI を「利用率」だけで測ることのリスクを示す材料として使える余地があります。業務文脈の調査を初期フェーズに組み込む提案アプローチの後押しになります。</p>
-    </section>
-    <a class="external-link"
-       href="https://example.com/dummy/6"
-       target="_blank"
-       rel="noopener noreferrer">元記事を読む →</a>
-  </div>
-</details>
-  <details class="card"
+          <details class="card importance-accent-high"
          id="card-dummy-007"
          data-topic="other"
          data-importance="high"
@@ -470,6 +390,7 @@ open>
       </svg>
     </div>
     <div class="card-title">「生成 AI は本当に会議を減らしているのか」議論、800 ブクマ突破</div>
+    <div class="card-preview">個人ブログ記事「生成 AI は本当に会議を減らしているのか」がはてブで 800 ブックマークを超え、議論が活発化しています。著者は事業会社の DX 推進担当です。</div>
     <a class="card-source"
        href="https://example.com/dummy/7"
        target="_blank"
@@ -478,15 +399,24 @@ open>
   </summary>
   <div class="card-body">
     <section class="fact">
-      <div class="label context">ファクト</div>
+      <div class="label context">
+        <svg class="icon" aria-hidden="true"><use href="#icon-section-fact"/></svg>
+        ファクト
+      </div>
       <p>個人ブログ記事「生成 AI は本当に会議を減らしているのか」がはてブで 800 ブックマークを超え、議論が活発化しています。著者は事業会社の DX 推進担当です。</p>
     </section>
     <section class="context">
-      <div class="label summary">背景考察</div>
+      <div class="label summary">
+        <svg class="icon" aria-hidden="true"><use href="#icon-section-context"/></svg>
+        背景考察
+      </div>
       <p>記事は、ベンダー言説の「会議が減る」と現場感覚の「むしろ準備が増えた」「意思決定の可視化で会議が増えた」のずれを論じています。批判的記事のため一般化には注意が必要ですが、ベンダー言説と現場感覚の乖離は、複数の現場で観察される構造です。</p>
     </section>
     <section class="impact">
-      <div class="label sowhat">実務への影響</div>
+      <div class="label sowhat">
+        <svg class="icon" aria-hidden="true"><use href="#icon-section-impact"/></svg>
+        実務への影響
+      </div>
       <p class="sowhat-text">提案資料で導入効果を語る際、定量 ROI だけでなく「現場での使用感」を定性指標として組み込む設計が、提案の深さに効いてくる余地があります。</p>
     </section>
     <a class="external-link"
@@ -495,7 +425,261 @@ open>
        rel="noopener noreferrer">元記事を読む →</a>
   </div>
 </details>
-  <details class="card"
+    <div class="section-divider importance-mid">
+      <svg class="icon" aria-hidden="true"><use href="#icon-importance-mid"/></svg>
+      <span class="section-divider-label">重要度: 中</span>
+      <span class="section-divider-count">3 件</span>
+    </div>
+          <details class="card"
+         id="card-dummy-003"
+         data-topic="other"
+         data-importance="mid"
+         data-layer="L1"
+         data-inquiry="none"
+open>
+  <summary>
+    <div class="tag-row">
+      <span class="tag layer-l1">
+        <svg class="icon" aria-hidden="true"><use href="#icon-layer-l1"/></svg>
+        L1
+      </span>
+      <span class="tag importance-mid">
+        <svg class="icon" aria-hidden="true"><use href="#icon-importance-mid"/></svg>
+        重要度: 中
+      </span>
+      <span class="tag topic-other">
+        <svg class="icon" aria-hidden="true"><use href="#icon-topic-other"/></svg>
+        その他
+      </span>
+      <svg class="icon-info-type essay" aria-label="essay">
+        <use href="#icon-analysis"/>
+      </svg>
+    </div>
+    <div class="card-title">「AI と創作」の境界: 人間が描くべき余白とは何か</div>
+    <div class="card-preview">個人ブログで「生成 AI の普及で創作の主体は誰なのか」を論じた記事が、はてブで 320 ブックマークを集めています。著者は文芸誌の連載作家です。</div>
+    <a class="card-source"
+       href="https://example.com/dummy/3"
+       target="_blank"
+       rel="noopener noreferrer"
+       onclick="event.stopPropagation()">はてなブックマーク - テクノロジー · 2026-04-26 ↗</a>
+  </summary>
+  <div class="card-body">
+    <section class="fact">
+      <div class="label context">
+        <svg class="icon" aria-hidden="true"><use href="#icon-section-fact"/></svg>
+        ファクト
+      </div>
+      <p>個人ブログで「生成 AI の普及で創作の主体は誰なのか」を論じた記事が、はてブで 320 ブックマークを集めています。著者は文芸誌の連載作家です。</p>
+    </section>
+    <section class="context">
+      <div class="label summary">
+        <svg class="icon" aria-hidden="true"><use href="#icon-section-context"/></svg>
+        背景考察
+      </div>
+      <p>創作系の議論はこれまで「効率化の文脈」で語られがちでしたが、本記事は「人間の余白」という視点を持ち込んでいます。エッセイのため一般化は慎重に行う必要がありますが、はてブの反応からは類似の問題意識を持つ読み手が一定数いることがわかります。</p>
+    </section>
+    <section class="impact">
+      <div class="label sowhat">
+        <svg class="icon" aria-hidden="true"><use href="#icon-section-impact"/></svg>
+        実務への影響
+      </div>
+      <p class="sowhat-text">コンサル提案で「ワクワクする業務」を語る際の素材として、創作領域での議論を引用できる余地があります。ただし業務文脈と創作文脈は前提が異なるため、安易な類推は避ける必要があります。</p>
+    </section>
+    <a class="external-link"
+       href="https://example.com/dummy/3"
+       target="_blank"
+       rel="noopener noreferrer">元記事を読む →</a>
+  </div>
+</details>
+          <details class="card"
+         id="card-dummy-004"
+         data-topic="automation"
+         data-importance="mid"
+         data-layer="L2"
+         data-inquiry="none"
+open>
+  <summary>
+    <div class="tag-row">
+      <span class="tag layer-l2">
+        <svg class="icon" aria-hidden="true"><use href="#icon-layer-l2"/></svg>
+        L2
+      </span>
+      <span class="tag importance-mid">
+        <svg class="icon" aria-hidden="true"><use href="#icon-importance-mid"/></svg>
+        重要度: 中
+      </span>
+      <span class="tag topic-automation">
+        <svg class="icon" aria-hidden="true"><use href="#icon-topic-automation"/></svg>
+        業務自動化
+      </span>
+      <svg class="icon-info-type tech_validation" aria-label="tech_validation">
+        <use href="#icon-analysis"/>
+      </svg>
+    </div>
+    <div class="card-title">n8n と Power Automate の統合パターン 5 選: 実装上の落とし穴</div>
+    <div class="card-preview">Publickey は、ワークフロー自動化ツール n8n と Microsoft Power Automate を組み合わせた統合パターン 5 種について、実装上の制約と落とし穴を検証記事として公開しました。</div>
+    <a class="card-source"
+       href="https://example.com/dummy/4"
+       target="_blank"
+       rel="noopener noreferrer"
+       onclick="event.stopPropagation()">Publickey · 2026-04-26 ↗</a>
+  </summary>
+  <div class="card-body">
+    <section class="fact">
+      <div class="label context">
+        <svg class="icon" aria-hidden="true"><use href="#icon-section-fact"/></svg>
+        ファクト
+      </div>
+      <p>Publickey は、ワークフロー自動化ツール n8n と Microsoft Power Automate を組み合わせた統合パターン 5 種について、実装上の制約と落とし穴を検証記事として公開しました。</p>
+    </section>
+    <section class="context">
+      <div class="label summary">
+        <svg class="icon" aria-hidden="true"><use href="#icon-section-context"/></svg>
+        背景考察
+      </div>
+      <p>技術検証記事であり、ベンダー側の宣伝とは異なる視点で書かれています。RPA 領域では「複数ツール併用」が現実的な選択肢として広まっており、実装ノウハウの可視化は業界全体のリテラシー向上に寄与します。</p>
+    </section>
+    <section class="impact">
+      <div class="label sowhat">
+        <svg class="icon" aria-hidden="true"><use href="#icon-section-impact"/></svg>
+        実務への影響
+      </div>
+      <p class="sowhat-text">業務自動化案件の提案時、ツール選定の議論で本記事の検証結果を参照できる余地があります。特に「ハイブリッド構成」を選択した場合の運用コストの試算に役立ちます。</p>
+    </section>
+    <a class="external-link"
+       href="https://example.com/dummy/4"
+       target="_blank"
+       rel="noopener noreferrer">元記事を読む →</a>
+  </div>
+</details>
+          <details class="card"
+         id="card-dummy-006"
+         data-topic="dx_cases"
+         data-importance="mid"
+         data-layer="L2"
+         data-inquiry="none"
+open>
+  <summary>
+    <div class="tag-row">
+      <span class="tag layer-l2">
+        <svg class="icon" aria-hidden="true"><use href="#icon-layer-l2"/></svg>
+        L2
+      </span>
+      <span class="tag importance-mid">
+        <svg class="icon" aria-hidden="true"><use href="#icon-importance-mid"/></svg>
+        重要度: 中
+      </span>
+      <span class="tag topic-dx-cases">
+        <svg class="icon" aria-hidden="true"><use href="#icon-topic-dx-cases"/></svg>
+        DX事例
+      </span>
+      <svg class="icon-info-type failure" aria-label="failure">
+        <use href="#icon-failure"/>
+      </svg>
+    </div>
+    <div class="card-title">ある製造業の AI チャットボット、半年で利用率 8% に低下</div>
+    <div class="card-preview">ある中堅製造業が導入した社内 AI チャットボットの利用率が、運用半年で 8% まで低下したと記事は報告しています。同社は導入当初の社内告知で「業務効率化」を前面に出していました。</div>
+    <a class="card-source"
+       href="https://example.com/dummy/6"
+       target="_blank"
+       rel="noopener noreferrer"
+       onclick="event.stopPropagation()">日経クロステック · 2026-04-26 ↗</a>
+  </summary>
+  <div class="card-body">
+    <section class="fact">
+      <div class="label context">
+        <svg class="icon" aria-hidden="true"><use href="#icon-section-fact"/></svg>
+        ファクト
+      </div>
+      <p>ある中堅製造業が導入した社内 AI チャットボットの利用率が、運用半年で 8% まで低下したと記事は報告しています。同社は導入当初の社内告知で「業務効率化」を前面に出していました。</p>
+    </section>
+    <section class="context">
+      <div class="label summary">
+        <svg class="icon" aria-hidden="true"><use href="#icon-section-context"/></svg>
+        背景考察
+      </div>
+      <p>失敗事例の記事は、業界誌で扱われる頻度が成功事例より少ないため貴重です。利用率低下の主因は「知りたいことに答えてくれない」「自分で検索した方が早い」という従業員の声で、技術側ではなく業務文脈の理解不足が示唆されています。</p>
+    </section>
+    <section class="impact">
+      <div class="label sowhat">
+        <svg class="icon" aria-hidden="true"><use href="#icon-section-impact"/></svg>
+        実務への影響
+      </div>
+      <p class="sowhat-text">導入提案の際、KPI を「利用率」だけで測ることのリスクを示す材料として使える余地があります。業務文脈の調査を初期フェーズに組み込む提案アプローチの後押しになります。</p>
+    </section>
+    <a class="external-link"
+       href="https://example.com/dummy/6"
+       target="_blank"
+       rel="noopener noreferrer">元記事を読む →</a>
+  </div>
+</details>
+    <div class="section-divider importance-low">
+      <svg class="icon" aria-hidden="true"><use href="#icon-importance-low"/></svg>
+      <span class="section-divider-label">重要度: 低</span>
+      <span class="section-divider-count">2 件</span>
+    </div>
+          <details class="card"
+         id="card-dummy-005"
+         data-topic="ai_agents"
+         data-importance="low"
+         data-layer="L1"
+         data-inquiry="none"
+open>
+  <summary>
+    <div class="tag-row">
+      <span class="tag layer-l1">
+        <svg class="icon" aria-hidden="true"><use href="#icon-layer-l1"/></svg>
+        L1
+      </span>
+      <span class="tag importance-low">
+        <svg class="icon" aria-hidden="true"><use href="#icon-importance-low"/></svg>
+        重要度: 低
+      </span>
+      <span class="tag topic-ai-agents">
+        <svg class="icon" aria-hidden="true"><use href="#icon-topic-ai-agents"/></svg>
+        AIエージェント
+      </span>
+      <svg class="icon-info-type market" aria-label="market">
+        <use href="#icon-analysis"/>
+      </svg>
+    </div>
+    <div class="card-title">国内エンタープライズ AI 基盤市場、2025 年度は前年比 1.8 倍</div>
+    <div class="card-preview">民間調査会社が国内エンタープライズ AI 基盤市場の 2025 年度規模を発表しました。前年度比 1.8 倍の伸びで、Copilot Studio / Dify / 国産プラットフォームの競合が激化しているとされています。</div>
+    <a class="card-source"
+       href="https://example.com/dummy/5"
+       target="_blank"
+       rel="noopener noreferrer"
+       onclick="event.stopPropagation()">はてなブックマーク - テクノロジー · 2026-04-26 ↗</a>
+  </summary>
+  <div class="card-body">
+    <section class="fact">
+      <div class="label context">
+        <svg class="icon" aria-hidden="true"><use href="#icon-section-fact"/></svg>
+        ファクト
+      </div>
+      <p>民間調査会社が国内エンタープライズ AI 基盤市場の 2025 年度規模を発表しました。前年度比 1.8 倍の伸びで、Copilot Studio / Dify / 国産プラットフォームの競合が激化しているとされています。</p>
+    </section>
+    <section class="context">
+      <div class="label summary">
+        <svg class="icon" aria-hidden="true"><use href="#icon-section-context"/></svg>
+        背景考察
+      </div>
+      <p>調査会社レポートのため、サンプリング・定義の前提が結果を大きく左右します。1.8 倍の伸び自体は他調査と整合的ですが、市場区分の取り方によって解釈は変わります。</p>
+    </section>
+    <section class="impact">
+      <div class="label sowhat">
+        <svg class="icon" aria-hidden="true"><use href="#icon-section-impact"/></svg>
+        実務への影響
+      </div>
+      <p class="sowhat-text">市場サイズの議論を提案資料に組み込む際の参考データとして使える余地があります。一次ソース（調査会社レポート本体）を確認した上で引用するのが望ましい状況です。</p>
+    </section>
+    <a class="external-link"
+       href="https://example.com/dummy/5"
+       target="_blank"
+       rel="noopener noreferrer">元記事を読む →</a>
+  </div>
+</details>
+          <details class="card"
          id="card-dummy-008"
          data-topic="ai_agents"
          data-importance="low"
@@ -521,6 +705,7 @@ open>
       </svg>
     </div>
     <div class="card-title">Anthropic、Claude のメモリ機能ベータ提供開始</div>
+    <div class="card-preview">Anthropic は Claude のメモリ機能をベータ提供開始したと発表しました。会話履歴を超えた永続的なコンテキスト保持を実現するとされています。</div>
     <a class="card-source"
        href="https://example.com/dummy/8"
        target="_blank"
@@ -529,15 +714,24 @@ open>
   </summary>
   <div class="card-body">
     <section class="fact">
-      <div class="label context">ファクト</div>
+      <div class="label context">
+        <svg class="icon" aria-hidden="true"><use href="#icon-section-fact"/></svg>
+        ファクト
+      </div>
       <p>Anthropic は Claude のメモリ機能をベータ提供開始したと発表しました。会話履歴を超えた永続的なコンテキスト保持を実現するとされています。</p>
     </section>
     <section class="context">
-      <div class="label summary">背景考察</div>
+      <div class="label summary">
+        <svg class="icon" aria-hidden="true"><use href="#icon-section-context"/></svg>
+        背景考察
+      </div>
       <p>このニュースはベンダー発表であり、第三者検証は伴っていません。OpenAI / Google が先行している領域への追随で、エージェント運用の文脈で重要な機能ですが、企業利用におけるデータ保護観点での評価は別途必要です。</p>
     </section>
     <section class="impact">
-      <div class="label sowhat">実務への影響</div>
+      <div class="label sowhat">
+        <svg class="icon" aria-hidden="true"><use href="#icon-section-impact"/></svg>
+        実務への影響
+      </div>
       <p class="sowhat-text">エージェント設計提案でメモリ機能を前提にしたシナリオを描く際、実装オプションが増える余地があります。ベータ段階のため SLA の確認が必要な状況です。</p>
     </section>
     <a class="external-link"
@@ -553,7 +747,7 @@ open>
     <a href="/weekly/">ウィークリー一覧</a>
     <a href="/inquiries/">問い一覧</a>
   </nav>
-  <div>News &amp; Research Dashboard / 自動生成 (2026-04-26 09:34 東京 (標準時))</div>
+  <div>News &amp; Research Dashboard / 自動生成 (2026-04-26 09:52 東京 (標準時))</div>
 </footer>
 
 </div>

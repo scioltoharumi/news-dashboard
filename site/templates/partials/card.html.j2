@@ -4,12 +4,13 @@
      title, source_name, published_at, url
      fact, context_analysis, impact
      inquiry (optional)
-   open_first: 当日先頭カードのみ <details open>
+   is_first / today_iso でクローズ判定
 #}
 {% macro render_card(card, is_first=false, today_iso=None) -%}
 {# 当日カード or 先頭カードを open（モバイル優先 D-34） #}
 {% set is_open = is_first or card.published_at == today_iso %}
-<details class="card"
+{% set high_accent = (card.importance == 'high') %}
+<details class="card{% if high_accent %} importance-accent-high{% endif %}"
          id="card-{{ card.id }}"
          data-topic="{{ card.topic }}"
          data-importance="{{ card.importance }}"
@@ -37,6 +38,9 @@
       {% endif %}
     </div>
     <div class="card-title">{{ card.title }}</div>
+    {% if card.fact %}
+    <div class="card-preview">{{ card.fact }}</div>
+    {% endif %}
     {% if card.url %}
     <a class="card-source"
        href="{{ card.url }}"
@@ -50,19 +54,28 @@
   <div class="card-body">
     {% if card.fact %}
     <section class="fact">
-      <div class="label context">ファクト</div>
+      <div class="label context">
+        <svg class="icon" aria-hidden="true"><use href="#icon-section-fact"/></svg>
+        ファクト
+      </div>
       <p>{{ card.fact }}</p>
     </section>
     {% endif %}
     {% if card.context_analysis %}
     <section class="context">
-      <div class="label summary">背景考察</div>
+      <div class="label summary">
+        <svg class="icon" aria-hidden="true"><use href="#icon-section-context"/></svg>
+        背景考察
+      </div>
       <p>{{ card.context_analysis }}</p>
     </section>
     {% endif %}
     {% if card.impact %}
     <section class="impact">
-      <div class="label sowhat">実務への影響</div>
+      <div class="label sowhat">
+        <svg class="icon" aria-hidden="true"><use href="#icon-section-impact"/></svg>
+        実務への影響
+      </div>
       <p class="sowhat-text">{{ card.impact }}</p>
     </section>
     {% endif %}
